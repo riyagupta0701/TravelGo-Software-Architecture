@@ -1,0 +1,4 @@
+## Week 1
+Our group was formed on 2nd September. Soon after, I met the team for about an hour to get to know each other and discuss potential systems we could choose. On Thursday, 4th September, we finalized our system, "TravelGo!", after two meetings and extensive brainstorming. We initially considered domains like finance and disaster management, but evaluating feasibility and scope, we decided to explore other areas such as travel, which led to the idea of TravelGo.
+## Week 2
+On Monday, 8th September, we scheduled a meeting with the TA to discuss our system idea and the potential steps moving forward. After the meeting, the team met to divide tasks for the week. I was assigned the market research. On Tuesday, we collaborated in the library for about two hours to prepare the project plan, which was due on 15th September. Over the next few days, I focused on the market research section, analyzing potential competitors and their approaches.
