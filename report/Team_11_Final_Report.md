@@ -148,10 +148,6 @@ Yes. Market trends indicate that travellers increasingly seek experiences over m
 ![Power / Interest Grid](/img/Power_Interest_Grid.png)
 Figure 1: Power / Interest Grid
 
-## Use Cases and Features (rename or erase chapter)
-
-///Assumed stakeholders: toursits, local businesses, hotels & traveling agencies, sponsors
-
 ## 4. Personas
 
 Personas are defined as fictional representations of users aimed to represent the diverse range of individuals
