@@ -5,3 +5,12 @@ On Tuesday 2nd September, I joined the group 11. The subsequent day, I met with 
 I spent around 2 hours in the preliminary meeting bouncing around ideas with the team, deciding which industry sector we would like to work on. We narrowed it down to two industries: Finance and Emergency Services. It was decided to reconvene after everyone had some time to ponder on the ideas and think about the pros and cons of each industry.
 
 Finally, I joined a partially virtual meeting to finalise our system. There was a consensus to eliminate these sectors and we came up with our proposed system, 'TravelGo'. The second half of the meeting was spent writing the description and motivation for our chosen system and solution.
+
+---
+## Week 2
+
+On Monday, 8th September, we had a meeting with our assigned TA for 30 minutes. We walked him through our proposed system and discusses next steps while also clarifying any underlying doubts. We had a separate team meeting after this to ponder over the suggestions given by the TA and split work between us. I took on the task to do the stakeholder analysis.
+
+I joined a follow up meeting at the library of about 2 hours the next day to prepare the document with our project plan as part of the second assignment.
+
+I spent the rest of the week researching about the potential stakeholders; their impact and influence on our platform.

@@ -1,0 +1,14 @@
+## Week 1 - It's the beginning
+
+I had a very exciting first week! Tuesday of this week, I joined my Software Architecture group and met my teammates after the first lecture. Our first discussions were already about the system we would like to develop be we decided to postpone making a decision until Thursday. Furthermore, one aspect we all agreed upon was to work in person as much as possible! That is great news, since I believe communication face-to-face is the best! I am very excited!
+
+On Thursday, we drafted a decent list of potential ideas for the project, but nothing outstanding so far. We were juggling ideas around but the main domains we seemed most interested in were finance and emergency scenarios. However, after more time and consideration was put into these ideas, we decided they were not suitable. Therefore, we had (somewhat of an urgent) team metting and finally decided on a system. We came up with the concept for TravelGo!, an interactive tourist platform, with competitive and educational features. With an idea in mind, all that was left to do was to put into words what this system would imply. We were all very happy by the end of the meeting, and I was very satisfied as well with the outcome! I hope this will be a fun project for all of us!
+
+---
+## Week 2 - Getting into the rythm
+
+Another week, another journal entry! Week 2 started quite nicely. Things are going well, but it is still only the second week. Monday actually was also the day we met our TA. We had such a lovely and helpful conversation. We explained our idea (and discussed our preliminary doubts) and the TA was very supportive! We were encouraged to not jump to coding straight away, but instead to plan the whole process out first and figure out when we target. 
+
+After the TA meeting, we had a quick team meeting as well to discuss the final report structure (as much as we can, inspiring ourselves from our software engineering courses). We drafted a decent table of contents and decided to split some parts of the report. Most of our preliminary ideas about the project might change as we progress, but it is great to not start with a blank canvas. From our list I decided to sign up and descibe the possible user stories, use cases and features. These are usually quite lengthy parts of a report that should be thoroughly analyzed, but I will do my best to sketch the first draft of them!
+
+Finally, this week we met for another 2 hours to write together the project plan for the M1.2 assignment. I unfortunately left most of my work for the weekend, which actually prolonged for the end of the weekend, but I am finally writing my part of the report. It is great that my teammates already wrote potential stakeholders, so my use cases are more suited for them!
