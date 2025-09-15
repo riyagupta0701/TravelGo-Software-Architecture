@@ -105,9 +105,26 @@ Use cases explain how a user works with a system to accomplish certain tasks or 
 outline the steps needed to achieve a set objective and also help define system requirements, derived from
 the user stories.
 
-| Use Case ID | Use Case Description | Relates Tags |
+| Use Case ID | Use Case Description | Relates Requirements |
 |--------------|------------|-------------|
 | UC1          | Automatically display a map of available countries. |          |
-| UC1          | Automatically display a map of available attractions for the selected country. |          |
-| UC1          | For each attraction, offer a selection of questions, weighted in points. The final score increases the user's  |          |
+| UC2          | Automatically display a map of available attractions for the selected country. |          |
+| UC3          | Create a traveling plan for a given number of visitng days. |          |
+| UC4          | Create a sharable link of the traveling plan. |          |
+| UC5          | Allow users to cross-off visited attractions from the plan/bucket-list. |          |
+| UC6          | Offer a selection of questions, weighted in points. The summed points increase the user's daily score for the leaderboard. |          |
+| UC7          | Determine the user's reward based on their score. |          |
+| UC8          | Display pop-up ads for internal and external sponsors. |          |
+| UC9          | Display available discounts for internal and external sponsors. |          |
+| UC10          | Process subscription fee for unlocking premium for the user's account. |          |
+| UC11          | Process shop fee for earned souvenir by the user. |          |
+| UC12          | Maintain a hidden gem list of attractions. |      |
+| UC13          | List various restaurants or outdoors environments for nearby attractions. |          |
+| UC14          | (In case of premius) display a list of available accomodations. |          |
+| UC15          | (In case of premius) Remove pop-up ads and any sort of advertisement. |          |
 
+## Requirements
+
+Requirements are documented descriptions a software system's tasks that it can perform or qualities
+it should possess to fulfill stakeholders’ needs. Furthermore, they also provide key steps for solving
+the user stories. 
