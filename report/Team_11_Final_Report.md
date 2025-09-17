@@ -21,7 +21,7 @@ Travelling is one of those things that everyone loves. Seeing new places, learni
 Another challenge is connecting with other travellers. Tourist, especially solo-travellers, can have difficulty finding like-minded people. Because of this they might not create meaningful connections during their travels, which is unfortunate since exploring a city is even more fun with others!
 
 ### Purpose
-We want to create an interactive digital platform that makes travelling easier and more fun for both group and solo travellers across various countries: TravelGo. Central to the platform is a map with all of the tourist attractions, including hidden spots. The platform aims to enrich cultural engagement with competitive games (for example quiz competitions) with a reward system through leaderboards. To make this competition fun for both inexperienced and experienced travellers, the platform uses a rating system with leagues. Users can aditionally earn points by going to an attraction and thus ticking it off their bucket list. These points can be used to for example get a discount on entry fees or to get an exclusive souvenir.
+We want to create an interactive digital platform that makes travelling easier and more fun for both group and solo travellers across various countries: TravelGo. Central to the platform is a map with all of the tourist attractions, including hidden spots. The platform aims to enrich cultural engagement with competitive games (for example quiz competitions) with a reward system through leaderboards. To make this competition fun for both inexperienced and experienced travellers, the platform uses a rating system with leagues. Users can additionally earn points by going to an attraction and thus ticking it off their bucket list. These points can be used to for example get a discount on entry fees or to get an exclusive souvenir.
 
 Another main part of TravelGo is making it easier for travellers to engage with each other. To encourage tourist interaction, the platform will have a chatroom. This chatroom helps travellers to meet new people that are at the same location. Users can also post new or hidden attractions that they recommend to others. Because of this, tourist will know which attractions they should definitely visit.
 
@@ -48,31 +48,27 @@ Context identification consists of four parts: platform, user and application co
 <!-- Context diagram (c4 model)? -->
 
 #### External risks
-Since many travelling apps have been created ([Existing Solutions](#existing-solutions)), TravelGo does not have a lot of risks. There is a lot of reliable knowledge available. 
+Since many travelling apps have been created ([Market Research](#market-research)), TravelGo does not have a lot of risks. There is a lot of reliable knowledge available. 
 
 The main risks are the following:
-- Correct information: Travelgo depends on information supplied by tourists and organizations. Since the platform will be available in multiple countries, it is difficult to examine all of the information.
+- Correct information: TravelGo depends on information supplied by tourists and organizations. Since the platform will be available in multiple countries, it is difficult to examine all of the information.
 - Privacy: TravelGo has access to the location and personal information of its users.
 - External dependencies: TravelGo makes use of open source software.
 
 ## Market Research
 
-## 1. Project Overview
+### Project Overview
 
 TravelGo is an interactive travel companion platform that combines cultural immersion, social networking, and fun challenges to turn every trip into an adventure.
 
----
-
-## 2. Target Audience
+### Target Audience
 
 - **Backpackers / Solo travellers** who are seeking to be part of a community and want to find off-beat ideas.  
 - **Young professionals / Digital nomads** who are looking for meaningful cultural immersion, not just sightseeing.  
 - **Adventure seekers**, motivated by challenges, exploration, competition.  
 - **Families or groups** looking for activities / side-quests which everyone can enjoy.  
 
----
-
-## 3. Competitor Analysis
+### Competitor Analysis
 
 | Sr No. | Competitor | Strengths | Weaknesses | Opportunity for us |
 |--------|------------|-----------|------------|---------------------|
@@ -83,30 +79,22 @@ TravelGo is an interactive travel companion platform that combines cultural imme
 | 5 | **Komoot** | Expertise in outdoor navigation and route planning | Very niche (outdoors only) | Add cultural challenges with a social community |
 | 6 | **Mapstr** | Save and share favorite places easily | More like a utility app (maps), lacks engagement, no gamification | Build on map sharing, but with interactive quests, culture and competition |
 
----
 
-## 4. Key Insights
+### Key Insights
 
-### Is there demand?  
-Yes. Market trends indicate that travellers increasingly seek experiences over mere sightseeing. Platforms that are interactive and community-driven are especially popular among younger travellers.[^1][^2][^3]  
+#### Is there demand?  
+Yes. Market trends indicate that travellers increasingly seek experiences over mere sightseeing. Platforms that are interactive and community-driven are especially popular among younger travellers.[[2]](#2)[[3]](#3)[[4]](#4)
 
-### What’s missing in current solutions?  
+#### What’s missing in current solutions?  
 - Most travel apps focus on either utility (planning, booking) or authenticity (guided tours).  
 - Few apps combine an interactive, culturally immersive experience with community building.  
 - Existing solutions often lack interactivity, offline usability, or gamified side quests.  
 
-### How TravelGo! fills that gap  
+#### How TravelGo! fills that gap  
 - Integrates interactive, culturally immersive experiences with community engagement into a single platform.  
 - Enables users to complete side quests, join challenges, and earn rewards while exploring off-beat locations.  
 - Promotes social discovery by connecting travellers nearby.  
-- Built with an offline-first architecture, considering real traveller needs such as spotty internet and battery constraints.  
-
-[^1]: ResearchGate, 2018. [Millennials and Gamification - A Model Proposal for Gamification Application in Tourism Destination](https://www.researchgate.net/publication/323457721_Millennials_and_Gamification_-_A_Model_Proposal_for_Gamification_Application_in_Tourism_Destination)  
-[^2]: Atlys.com, 2025. [Gen Z Travel Trends](https://www.atlys.com/blog/gen-z-travel-trends)  
-[^3]: CNBC, 2023. [Millennials are turning 40 and they’re changing travel as we know it](https://www.cnbc.com/2023/03/27/millennials-are-turning-40-and-theyre-changing-travel-as-we-know-it.html)
- 
-
----
+- Built with an offline-first architecture, considering real traveller needs such as spotty internet and battery constraints.
 
 
 ## Stakeholders
@@ -117,16 +105,16 @@ Yes. Market trends indicate that travellers increasingly seek experiences over m
   - main users of the platform
   - engage in competitive games, meet like-minded individuals and be interested in cultural enrichment
 - Attraction Sites
-  -  higher footfalls and visitor engagement resulting in an increase in ticketsales
+  -  higher footfalls and visitor engagement resulting in an increase in ticket sales
 -  Local Businesses
    -  advertisments and partnerships will gain more exposure, eliciting profits
    -  support special offers and discounts
 
 ### Secondary Stakeholders
 
-- Goverment and Tourism Boards
+- Government and Tourism Boards
   - boost in tourism while ensuring compliance of the local laws
-  - control the digital platoforms, tourism, and safeguarding the cultural
+  - control the digital platforms, tourism, and safeguarding the cultural
 - Local Communities
   -  cultural representatives who gain from more interactions and business from tourists
   -  might be worried about cultural sensitivity
@@ -138,7 +126,7 @@ Yes. Market trends indicate that travellers increasingly seek experiences over m
 ### Tertiary Stakeholders
 
 - Travel Agencies and Tour Operators
-  - competitors or can be potentail partners
+  - competitors or can be potential partners
 - Online Travel Communities and Influencers
   - increase online engagement and positive word of mouth through social media 
 
@@ -147,50 +135,50 @@ Yes. Market trends indicate that travellers increasingly seek experiences over m
 ![Power / Interest Grid](/img/Power_Interest_Grid.png)
 Figure 1: Power / Interest Grid
 
-## 4. Personas
+## Personas
 
 Personas are defined as fictional representations of users aimed to represent the diverse range of individuals
 interacting with a specific application. They are used in order to observe and simulate a user’s interaction
 with the platform once completed. Ultimately, constructing different personas can help identify weak points
 and edge cases within the platform. In our case, all personas are assumed wto be unfamiliar with any programming knowledge.
 
-### 4.1 Tourist
+### Tourist
 
-This persona represents a typical travel enthusiast, visiting different countries and attractions. Each toursit as a bucket-list with attractions they decide to visit for that country. Tourists interact with each other, with guides, obtain discounts and discover new attractions.
+This persona represents a typical travel enthusiast, visiting different countries and attractions. Each tourist as a bucket-list with attractions they decide to visit for that country. Tourists interact with each other, with guides, obtain discounts and discover new attractions.
 
-### 4.2 Local Business Owner (Internal Sponsor)
+### Local Business Owner (Internal Sponsor)
 
-Since the app features discounts for various restaurants or souvenir shops, this persona represents local shop-owners that wish to improve their business. They process the monetary fee through the platform and in return offer the toursits a discount, voucher or even a free souvenir. Furthermore, the are also considered local sponsors since they ultimately wish for publicity for their business.
+Since the app features discounts for various restaurants or souvenir shops, this persona represents local shop-owners that wish to improve their business. They process the monetary fee through the platform and in return offer the tourists a discount, voucher or even a free souvenir. Furthermore, the are also considered local sponsors since they ultimately wish for publicity for their business.
 
-### 4.4 Travel Agent
+### Travel Agent
 
-This persona represents a travelling expert with extended knwoledge about various attractions. They help clients plan, book, and customize trips by offering professional advice on destinations, accommodations, and experiences.
+This persona represents a travelling expert with extended knowledge about various attractions. They help clients plan, book, and customize trips by offering professional advice on destinations, accommodations, and experiences.
 
-### 4.5 (Potential) External Sponsor
+### (Potential) External Sponsor
 
 A sponsor is typically a brand, or local business which seeks visibility for their product among any individuals. They want to attract and engage individuals through gamified experiences and offered promotions in exchange for brand exposure.
 
-## 5. Epics
+## Epics
 
 In this section, we list the epics, along with the corresponding description. Each epic has its features, which
 further contribute to the User Stories. <span style="color:red">TBA later when further developed</span>.
 
-## 6. Features
+## Features
 
 | Feature ID | Feature Description | Relates User Stories |
 |-----------|------------|-------------|
-| F1         | Maintain an individual user bicket-list of attractions.          |        |
+| F1         | Maintain an individual user bucket-list of attractions.          |        |
 | F2         | Display a map with available countries and available attractions in each country.       |        |
 | F2         | Maintain a community chatroom for attraction discoveries and user interactions.       |        |
 | F3         | Display pop-up ads.          |        |
 | F4         | <span style="color:red">have easter eggs (maybe/somehow)</span>          |        |
-| F5         | Allow for premium features. (Let the user know when there are discounts for accomodation)        |        |
-| F6         | Kepp track of the user's daily quiz score and their placement in the leaderboard. |        |
-| F7         | Reward the top competitiors of the leaderboard with discounts, vouchers or free souvenirs. |        |
+| F5         | Allow for premium features. (Let the user know when there are discounts for accommodation)        |        |
+| F6         | Keep track of the user's daily quiz score and their placement in the leaderboard. |        |
+| F7         | Reward the top competitors of the leaderboard with discounts, vouchers or free souvenirs. |        |
 
-## 7. User Stories
+## User Stories
 
-A user story is a brief description of a feature that a persona requires in the system. Furthernirem, the overall benefit of this feature for the system’s development is also presented.
+A user story is a brief description of a feature that a persona requires in the system. Furthermore, the overall benefit of this feature for the system’s development is also presented.
 
 | User Story ID | User Story | Relates Tags |
 |--------------|------------|-------------|
@@ -202,18 +190,18 @@ A user story is a brief description of a feature that a persona requires in the 
 | US6           | As a Tourist, I wish to be able mark attractions as visited and cross them from my bucket-list. |          |
 | US7           | As a Tourist, I want the platform to create a traveling plan for me, which I then will be able to export the external map applications. |          |
 | US8           | As a Tourist, I want the platform to suggest nice local and traditional restaurants and open-area places when I am nearby and attraction. |          |
-| US9           | As a Tourist, I want to pay extra for this platform to suggest me available accomodations near my current attraction that are also not crowded. |          |
+| US9           | As a Tourist, I want to pay extra for this platform to suggest me available accommodations near my current attraction that are also not crowded. |          |
 | US10           | As a Tourist, I want to pay extra to remove pop-up ads. |          |
 | US11           | As a Local Business Owner, I want the platform to recommend my business through pop-up ads. |          |
 | US12           | As a Local Business Owner and Sponsor, I want the platform to offer 5% discounts for all platform users to increase publicity. |          |
 | US13           | As a Local Business Owner, I want the free earned souvenir to have a representative picture on the platform. |          |
-| US14           | As a Local French Restaurant Owner, I want the platform to recommend my business at the end of the quizes for traditional places. |          |
+| US14           | As a Local French Restaurant Owner, I want the platform to recommend my business at the end of the quizzes for traditional places. |          |
 | US15           | As a Travel Agent, I want offer city tours through TravelGo, for my clients to play along and for me to stand out from standard booking platforms. |          |
 | US16           | As a Travel Agent, I want the platform to highlight premium guided tours or special events in collaboration with my agency in order to promote my business. |          |
 | US17           | As an External Sponsor, I wish to financially support the platform's development in exchange for exposure. |          |
 
 
-## 8. Use Cases
+## Use Cases
 
 Use cases explain how a user works with a system to accomplish certain tasks or objectives. They
 outline the steps needed to achieve a set objective and also help define system requirements, derived from
@@ -223,7 +211,7 @@ the user stories.
 |--------------|------------|-------------|
 | UC1          | Automatically display a map of available countries. |          |
 | UC2          | Automatically display a map of available attractions for the selected country. |          |
-| UC3          | Create a traveling plan for a given number of visitng days. |          |
+| UC3          | Create a traveling plan for a given number of visiting days. |          |
 | UC4          | Create a sharable link of the traveling plan. |          |
 | UC5          | Allow users to cross-off visited attractions from the plan/bucket-list. |          |
 | UC6          | Offer a selection of questions, weighted in points. The summed points increase the user's daily score for the leaderboard. |          |
@@ -234,8 +222,8 @@ the user stories.
 | UC11          | Process shop fee for earned souvenir by the user. |          |
 | UC12          | Maintain a hidden gem list of attractions. |      |
 | UC13          | List various restaurants or outdoors environments for nearby attractions. |          |
-| UC14          | (In case of premius) display a list of available accomodations. |          |
-| UC15          | (In case of premius) Remove pop-up ads and any sort of advertisement. |          |
+| UC14          | (In case of premium) display a list of available accommodations. |          |
+| UC15          | (In case of premium) Remove pop-up ads and any sort of advertisement. |          |
 
 ## Requirements
 
@@ -275,12 +263,18 @@ Text here
 
 ## Roadmap
 
-<!--
-Text here
--->
+![Roadmap](/img/Roadmap.png)
+Figure 2: Roadmap
 
 ## Bibliography
 <a id="1">[1]</a>
 Bedjeti, Adriatik; Lago, Patricia; Lewis, Grace A.; De Boer, Remco D.; Hilliard, Rich (1968).
 *Modeling Context with an Architecture Viewpoint*.
 IEEE International Conference on Software Architecture (ICSA).
+<br><a id="2">[2]</a>
+Alčaković, S., Pavlović, D., & Popesku, J. (2017). Millennials and gamification: A model proposal for gamification application in tourism destination. Marketing, 48(4), 207–214. https://doi.org/10.5937/markt1704207a 
+<br><a id="3">[3]</a>
+Gen Z Travel Trends: Statistics, Insights and what it all means for the industry [2025]. (n.d.). Atlys. https://www.atlys.com/blog/gen-z-travel-trends
+<br><a id="4">[4]</a> 
+Pitrelli, M. (2023, March 27). More millennials are turning 40 — and they’re changing travel as we know it. CNBC. https://www.cnbc.com/2023/03/27/millennials-are-turning-40-and-theyre-changing-travel-as-we-know-it.html
+ 
