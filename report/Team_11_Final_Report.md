@@ -243,6 +243,42 @@ Requirements are documented descriptions a software system's tasks that it can p
 it should possess to fulfill stakeholders’ needs. Furthermore, they also provide key steps for solving
 the user stories. 
 
+## Challenges
+
+<!--
+Text here
+-->
+
+## Wardley Map
+
+<!--
+Text here
+-->
+
+## Scenarios
+
+<!--
+Text here
+-->
+
+## Quality Attributes
+
+<!--
+Text here
+-->
+
+## System Context Diagram
+
+<!--
+Text here
+-->
+
+## Roadmap
+
+<!--
+Text here
+-->
+
 ## Bibliography
 <a id="1">[1]</a>
 Bedjeti, Adriatik; Lago, Patricia; Lewis, Grace A.; De Boer, Remco D.; Hilliard, Rich (1968).
