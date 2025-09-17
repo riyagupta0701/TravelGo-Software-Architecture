@@ -107,7 +107,7 @@ Yes. Market trends indicate that travellers increasingly seek experiences over m
 - Attraction Sites
   -  higher footfalls and visitor engagement resulting in an increase in ticket sales
 -  Local Businesses
-   -  advertisments and partnerships will gain more exposure, eliciting profits
+   -  advertisements and partnerships will gain more exposure, eliciting profits
    -  support special offers and discounts
 
 ### Secondary Stakeholders
@@ -121,7 +121,7 @@ Yes. Market trends indicate that travellers increasingly seek experiences over m
 -  Developers and Designers
    -  responsible for creating, maintaining and upgrading the platform
 -  Investors and Sponsors
-   -  support financially and expecting returns in the form of partnerships, advertisments, subscriptions, and even positive publicity
+   -  support financially and expecting returns in the form of partnerships, advertisements, subscriptions, and even positive publicity
   
 ### Tertiary Stakeholders
 
