@@ -229,20 +229,77 @@ the user stories.
 
 Requirements are documented descriptions a software system's tasks that it can perform or qualities
 it should possess to fulfill stakeholders’ needs. Furthermore, they also provide key steps for solving
-the user stories. 
+the user stories.
 
 ## Challenges
 
-<!--
-Text here
--->
+**1. Data Privacy & Trust** : TravelGo collects personal data like name, location, travel history. Mishandling of this data will lead to legal problems and loss of trust from customers.
+
+* Ambiguity sources:
+    1. How much data should be collected?
+    2. How to balance personalization with privacy?
+    3. How to handle cross-border compliance?
+
+* Architectural implications:
+    1. Must implement data minimization by only collecting necessary data.
+    2. Needs strong consent management.
+    3. Secure data storage & transmission.
+    4. Potential need for regional data hosting.
+
+**2. Cultural Sensitivity & Representation** : TravelGo promotes cultural quests and hidden gems. But what one person calls a “hidden gem” may be a sacred site or sensitive local tradition. Misrepresentation could cause backlash or even legal issues.
+
+* Ambiguity sources:
+    1. Who decides what is “authentic” enough to feature? 
+    2. How do you avoid cultural appropriation or trivialization ?
+
+* Architectural implications:
+    1. Content vetting workflows: TravelGo might need local validators or an approval pipeline for sensitive submissions.
+    2. Metadata tagging for cultural content for example, sensitive, sacred or family-friendly, requires flexible data models.
+    3. May need regional customisation.
+
+**3. Technical Constraints** : Travellers often have unreliable connectivity. But TravelGo’s core features like locating pins, chat and quests may depend on online services.
+
+* Ambiguity sources:
+    1. Which features should work offline? 
+    2. How much data caching is feasible on a device without killing storage and battery?
+
+* Architectural implications:
+    1. May requires offline-first design.
+    2. GPS tracking without internet would depend on OS support and API of offline maps.
+
+**4. Community Moderation & Safety** : TravelGo’s chatrooms and commenting features are central to the social experience, but community spaces online are magnets for spam, harassment, scams, or inappropriate content.
+
+* Ambiguity sources:
+    1. Should moderation be automated using AI or keyword blocking, or human-led by moderators?
+    2. How do you enforce rules across different cultures and languages?
+    3. Should moderation be centralized or distributed?
+
+* Architectural implications:
+    1. Need for scalable content moderation pipelines.
+    2. Storage and processing of flagged content would introduce compliance and legal liability.
+    3. Balancing low latency (real-time chat) with content filtering can be technically tricky.
+
+**5. Ecosystem Dependencies** : TravelGo will make use of third party APIs for functionalities like the map or login.
+
+* Ambiguity sources:
+    1. What happens if a provider changes pricing or kills an API?
+    2. What if services are unavailable in some regions?
+    3. Should you design for multi-provider fallback or lock-in with one provider?
+
+* Architectural implications:
+    1. Need abstraction layers and not hardcode to any single API.
+    2. Consider vendor diversity.
+    3. Monitor latency and reliability across providers.
 
 ## Wardley Map
+The Wardley map for TravelGo highlights how the platform combines innovative, custom feautures with standardized, commodity services.
+![WardleyMap](/img/WardleyMap.png)
+<p style="text-align:center;">Figure 2 : Wardley map</p>
 
-<!--
-Text here
--->
-
+**Genesis** : This space contains novel, experimental features like side quests, cultural quizes and souvenir based rewards which are not yet mainstream in the travel tech domain. They provide differentiation, but also present a high risk of adoption and design.
+**Custom Built**: Features like leaderboards and points system are placed here. While interactive platforms are popluar in other domains like fitness and education, applying it specifically to cultural travel remains relatively bespoke. These features distinguish TravelGo from commodity travel apps but are less risky than Genesis elements.
+**Product Stage**: More well known features such as community chatrooms and posting comments fall under this category. These are standard capabilities available in many social or booking apps, but TravelGo customizes them for cultural travel contexts. They are visible to users but do not offer radical innovation.
+**Commodity Stage**: Underlying infrastructure such as digital maps, location pinning, user accounts and APIs are considered commodity. They are invisible to end-users and widely available through third-party providers like Google Maps. TravelGo does not attempt to innovate here but instead rely on stable, low-cost services.
 ## Scenarios
 
 <!--
@@ -264,7 +321,7 @@ Text here
 ## Roadmap
 
 ![Roadmap](/img/Roadmap.png)
-Figure 2: Roadmap
+Figure 3: Roadmap
 
 ## Bibliography
 <a id="1">[1]</a>
