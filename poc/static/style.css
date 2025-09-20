@@ -9,7 +9,7 @@ nav {
 }
 
 nav a {
-    color: white;
+    color: #ffffff;
     margin-right: 15px;
     text-decoration: none;
 }
@@ -22,7 +22,6 @@ nav a:hover {
     padding: 20px;
 }
 
-/* Map styling */
 #map {
     height: 500px;
     width: 100%;
