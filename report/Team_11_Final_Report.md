@@ -229,20 +229,77 @@ the user stories.
 
 Requirements are documented descriptions a software system's tasks that it can perform or qualities
 it should possess to fulfill stakeholders’ needs. Furthermore, they also provide key steps for solving
-the user stories. 
+the user stories.
 
 ## Challenges
 
-<!--
-Text here
--->
+**1. Data Privacy & Trust** : TravelGo collects personal data like name, location, travel history. Mishandling of this data will lead to legal problems and loss of trust from customers.
+
+* Ambiguity sources:
+    1. How much data should be collected?
+    2. How to balance personalization with privacy?
+    3. How to handle cross-border compliance?
+
+* Architectural implications:
+    1. Must implement data minimization by only collecting necessary data.
+    2. Needs strong consent management.
+    3. Secure data storage & transmission.
+    4. Potential need for regional data hosting.
+
+**2. Cultural Sensitivity & Representation** : TravelGo promotes cultural quests and hidden gems. But what one person calls a “hidden gem” may be a sacred site or sensitive local tradition. Misrepresentation could cause backlash or even legal issues.
+
+* Ambiguity sources:
+    1. Who decides what is “authentic” enough to feature? 
+    2. How do you avoid cultural appropriation or trivialization ?
+
+* Architectural implications:
+    1. Content vetting workflows: TravelGo might need local validators or an approval pipeline for sensitive submissions.
+    2. Metadata tagging for cultural content for example, sensitive, sacred or family-friendly, requires flexible data models.
+    3. May need regional customisation.
+
+**3. Technical Constraints** : Travellers often have unreliable connectivity. But TravelGo’s core features like locating pins, chat and quests may depend on online services.
+
+* Ambiguity sources:
+    1. Which features should work offline? 
+    2. How much data caching is feasible on a device without killing storage and battery?
+
+* Architectural implications:
+    1. May requires offline-first design.
+    2. GPS tracking without internet would depend on OS support and API of offline maps.
+
+**4. Community Moderation & Safety** : TravelGo’s chatrooms and commenting features are central to the social experience, but community spaces online are magnets for spam, harassment, scams, or inappropriate content.
+
+* Ambiguity sources:
+    1. Should moderation be automated using AI or keyword blocking, or human-led by moderators?
+    2. How do you enforce rules across different cultures and languages?
+    3. Should moderation be centralized or distributed?
+
+* Architectural implications:
+    1. Need for scalable content moderation pipelines.
+    2. Storage and processing of flagged content would introduce compliance and legal liability.
+    3. Balancing low latency (real-time chat) with content filtering can be technically tricky.
+
+**5. Ecosystem Dependencies** : TravelGo will make use of third party APIs for functionalities like the map or login.
+
+* Ambiguity sources:
+    1. What happens if a provider changes pricing or kills an API?
+    2. What if services are unavailable in some regions?
+    3. Should you design for multi-provider fallback or lock-in with one provider?
+
+* Architectural implications:
+    1. Need abstraction layers and not hardcode to any single API.
+    2. Consider vendor diversity.
+    3. Monitor latency and reliability across providers.
 
 ## Wardley Map
+The Wardley map for TravelGo highlights how the platform combines innovative, custom feautures with standardized, commodity services.
+![WardleyMap](/img/WardleyMap.png)
+<p style="text-align:center;">Figure 2 : Wardley map</p>
 
-<!--
-Text here
--->
-
+**Genesis** : This space contains novel, experimental features like side quests, cultural quizes and souvenir based rewards which are not yet mainstream in the travel tech domain. They provide differentiation, but also present a high risk of adoption and design.
+**Custom Built**: Features like leaderboards and points system are placed here. While interactive platforms are popluar in other domains like fitness and education, applying it specifically to cultural travel remains relatively bespoke. These features distinguish TravelGo from commodity travel apps but are less risky than Genesis elements.
+**Product Stage**: More well known features such as community chatrooms and posting comments fall under this category. These are standard capabilities available in many social or booking apps, but TravelGo customizes them for cultural travel contexts. They are visible to users but do not offer radical innovation.
+**Commodity Stage**: Underlying infrastructure such as digital maps, location pinning, user accounts and APIs are considered commodity. They are invisible to end-users and widely available through third-party providers like Google Maps. TravelGo does not attempt to innovate here but instead rely on stable, low-cost services.
 ## Scenarios
 
 <!--
@@ -250,10 +307,55 @@ Text here
 -->
 
 ## Quality Attributes
+The following quality attributes are the most fundamental for TravelGo:
 
-<!--
-Text here
--->
+**Time to market**: It is essential to release our product at the right time. Most people travel around the summertime, therefore the app should be on the market before summer. TravelGo could also be released while it is still imperfect. In that case, since it would be possible to get feedback from users, it would be easier to see which features people like. We could then fine-tune and build on those features and discard the ones that people did not use much.
+\
+\
+ **Modularity**: Since the app will have distributed deployment, TravelGo needs to use modules. Modularity is also important for parallel development and incrementally building. 
+\
+\
+**Performance**: TravelGo should not take a long time to respond, since this will annoy users and might make them not want to use the app. We also want the system to be able to take many requests at the same time.
+\
+\
+**Scalability**: At first, TravelGo will not have a lot of users. Of course we hope to increase this amount over time. Because of this, the architecture should be designed for growth.
+\
+\
+**Usability**: The user interface should be very convenient and intuitive to use. It should be easy to learn for first-time users and memorable for returning users. Since the app will be available in many different countries, it should be convenient to use in all those countries, including different language options.
+\
+\
+**Serviceability**: The system should be easy to maintain. A lot of new tourist attractions will be added over time, and the user should not have to update the app every time an attraction is added. Since the app is intended for users all around the world, there is always a timezone that suffers if we do maintenance work. Therefore we want to have to do as little maintenance as possible.
+\
+\
+**Availability**: The system should be functioning correctly 24/7, since our users are in many different timezones, which means that the app is always in use.
+\
+\
+ **Defensibility**: Since we work with our users personal data and have a chatroom functionality, we need to be certain that the system is protected from malicious attacks. Additionally, we need to ensure that no malicious content is posted in the chatroom. It is also important that our data for the tourist attractions is correct, since tourist are more likely to fall for scams.
+ \
+ \
+ **Privacy**: Because TravelGo has access to users' names, locations, and personal conversations in the chatroom, it is important to ensure that our users' personal data is secret and protected.
+\
+\
+**Adaptability**: It is important that our system is extensible, because we want to add new features as the app becomes more successful. We also want our system to be modifiable, so that the implemented functionality can be changed if needed and we can remove less successful features.
+\
+\
+**Portability**: We want our app to be available for both android and ios. If we make the app portable, we can save a lot of costs and effort.
+\
+\
+**Sustainability**: We need to ensure that our product does not become irrelevant in the future, both in technical and economical terms. It is also important to make sure that the app grows from the start.
+
+### Trade-offs
+**Time to market vs usability**: TravelGo needs to be up and running before summer. This might mean that there are some functionalities that are not implemented before this deadline, which can have a serious impact on the usability of the app. 
+\
+\
+**Usability vs privacy**: We want our users' data to be private. However, this might have some impact on the usability of the app. For example, TravelGo uses the location of its users. Some users might not want to share their location. Because of this, some main features (for example the map) will not work for those users.
+\
+\
+**Time to market vs serviceability**: If we want to release TravelGo as soon as possible, some features may not be entirely implemented before the release. This can have an impact on the serviceability of the app. Since some features need to be perfected or even added after the release of the app, maintenance and updates will be required.
+\
+\
+**Scalability vs performance**: We want TravelGo to have as many users as possible. However, with more users, the performance of the app might go down, especially if the users are from all around the world. 
+
 
 ## System Context Diagram
 
@@ -264,7 +366,7 @@ Text here
 ## Roadmap
 
 ![Roadmap](/img/Roadmap.png)
-Figure 2: Roadmap
+Figure 3: Roadmap
 
 ## Bibliography
 <a id="1">[1]</a>
