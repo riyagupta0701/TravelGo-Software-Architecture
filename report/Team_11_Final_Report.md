@@ -307,10 +307,55 @@ Text here
 -->
 
 ## Quality Attributes
+The following quality attributes are the most fundamental for TravelGo:
 
-<!--
-Text here
--->
+**Time to market**: It is essential to release our product at the right time. Most people travel around the summertime, therefore the app should be on the market before summer. TravelGo could also be released while it is still imperfect. In that case, since it would be possible to get feedback from users, it would be easier to see which features people like. We could then fine-tune and build on those features and discard the ones that people did not use much.
+\
+\
+ **Modularity**: Since the app will have distributed deployment, TravelGo needs to use modules. Modularity is also important for parallel development and incrementally building. 
+\
+\
+**Performance**: TravelGo should not take a long time to respond, since this will annoy users and might make them not want to use the app. We also want the system to be able to take many requests at the same time.
+\
+\
+**Scalability**: At first, TravelGo will not have a lot of users. Of course we hope to increase this amount over time. Because of this, the architecture should be designed for growth.
+\
+\
+**Usability**: The user interface should be very convenient and intuitive to use. It should be easy to learn for first-time users and memorable for returning users. Since the app will be available in many different countries, it should be convenient to use in all those countries, including different language options.
+\
+\
+**Serviceability**: The system should be easy to maintain. A lot of new tourist attractions will be added over time, and the user should not have to update the app every time an attraction is added. Since the app is intended for users all around the world, there is always a timezone that suffers if we do maintenance work. Therefore we want to have to do as little maintenance as possible.
+\
+\
+**Availability**: The system should be functioning correctly 24/7, since our users are in many different timezones, which means that the app is always in use.
+\
+\
+ **Defensibility**: Since we work with our users personal data and have a chatroom functionality, we need to be certain that the system is protected from malicious attacks. Additionally, we need to ensure that no malicious content is posted in the chatroom. It is also important that our data for the tourist attractions is correct, since tourist are more likely to fall for scams.
+ \
+ \
+ **Privacy**: Because TravelGo has access to users' names, locations, and personal conversations in the chatroom, it is important to ensure that our users' personal data is secret and protected.
+\
+\
+**Adaptability**: It is important that our system is extensible, because we want to add new features as the app becomes more successful. We also want our system to be modifiable, so that the implemented functionality can be changed if needed and we can remove less successful features.
+\
+\
+**Portability**: We want our app to be available for both android and ios. If we make the app portable, we can save a lot of costs and effort.
+\
+\
+**Sustainability**: We need to ensure that our product does not become irrelevant in the future, both in technical and economical terms. It is also important to make sure that the app grows from the start.
+
+### Trade-offs
+**Time to market vs usability**: TravelGo needs to be up and running before summer. This might mean that there are some functionalities that are not implemented before this deadline, which can have a serious impact on the usability of the app. 
+\
+\
+**Usability vs privacy**: We want our users' data to be private. However, this might have some impact on the usability of the app. For example, TravelGo uses the location of its users. Some users might not want to share their location. Because of this, some main features (for example the map) will not work for those users.
+\
+\
+**Time to market vs serviceability**: If we want to release TravelGo as soon as possible, some features may not be entirely implemented before the release. This can have an impact on the serviceability of the app. Since some features need to be perfected or even added after the release of the app, maintenance and updates will be required.
+\
+\
+**Scalability vs performance**: We want TravelGo to have as many users as possible. However, with more users, the performance of the app might go down, especially if the users are from all around the world. 
+
 
 ## System Context Diagram
 
