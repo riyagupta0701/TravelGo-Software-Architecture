@@ -101,39 +101,41 @@ Yes. Market trends indicate that travellers increasingly seek experiences over m
 
 ### Primary Stakeholders
 
-- Tourists
-  - main users of the platform
-  - engage in competitive games, meet like-minded individuals and be interested in cultural enrichment
+- Tourists and Travellers
+  - Main users of the platform
+  - Engage in competitive games, meet like-minded individuals and be interested in cultural enrichment
 - Attraction Sites
-  -  higher footfalls and visitor engagement resulting in an increase in ticket sales
+  -  Higher footfalls and visitor engagement resulting in an increase in ticket sales
 -  Local Businesses
-   -  advertisements and partnerships will gain more exposure, eliciting profits
-   -  support special offers and discounts
+   -  Advertisements and partnerships will gain more exposure, eliciting profits
+   -  Support special offers and discounts
 
 ### Secondary Stakeholders
 
 - Government and Tourism Boards
-  - boost in tourism while ensuring compliance of the local laws
-  - control the digital platforms, tourism, and safeguarding the cultural
+  - Boost in tourism while ensuring compliance of the local laws
+  - Control the digital platforms, tourism, and safeguarding the cultural
 - Local Communities
-  -  cultural representatives who gain from more interactions and business from tourists
-  -  might be worried about cultural sensitivity
+  -  Cultural representatives who gain from more interactions and business from tourists
+  -  Might be worried about cultural sensitivity
 -  Developers and Designers
-   -  responsible for creating, maintaining and upgrading the platform
+   - Responsible for creating, maintaining and upgrading the platform
 -  Investors and Sponsors
-   -  support financially and expecting returns in the form of partnerships, advertisements, subscriptions, and even positive publicity
+   -  Support financially and expecting returns in the form of partnerships, advertisements, subscriptions, and even positive publicity
   
 ### Tertiary Stakeholders
 
 - Travel Agencies and Tour Operators
-  - competitors or can be potential partners
+  - Competitors or can be potential partners
 - Online Travel Communities and Influencers
-  - increase online engagement and positive word of mouth through social media 
+  - Increase online engagement and positive word of mouth through social media 
 
 <br>
 
-![Power / Interest Grid](/img/Power_Interest_Grid.png)
-Figure 1: Power / Interest Grid
+The power/interest grid is used to classify stakeholders according to their influence and level of engagement. High-power, high-interest stakeholders such as travellers and attraction owners are closely managed since they are the core users. Tourism boards and regulators have high power but lower day-to-day interest, requiring consultation occasionally. Communities, influencers, and competitors have lower power but varying levels of interest, monitored for promotion and market positioning.
+
+![Power / Interest Grid](/img/PowerInterestGrid.png)
+<p style="text-align: center;"> Figure 1: Power / Interest Grid </p>
 
 ## Personas
 
@@ -294,7 +296,7 @@ the user stories.
 ## Wardley Map
 The Wardley map for TravelGo highlights how the platform combines innovative, custom feautures with standardized, commodity services.
 ![WardleyMap](/img/WardleyMap.png)
-<p style="text-align:center;">Figure 2 : Wardley map</p>
+<p style="text-align: center;">Figure 2 : Wardley map</p>
 
 **Genesis** : This space contains novel, experimental features like side quests, cultural quizes and souvenir based rewards which are not yet mainstream in the travel tech domain. They provide differentiation, but also present a high risk of adoption and design.
 **Custom Built**: Features like leaderboards and points system are placed here. While interactive platforms are popluar in other domains like fitness and education, applying it specifically to cultural travel remains relatively bespoke. These features distinguish TravelGo from commodity travel apps but are less risky than Genesis elements.
@@ -378,17 +380,21 @@ The following quality attributes are the most fundamental for TravelGo:
 \
 **Scalability vs performance**: We want TravelGo to have as many users as possible. However, with more users, the performance of the app might go down, especially if the users are from all around the world. 
 
+## Proof of Concept
 
-## System Context Diagram
+The proof of concept demonstrates how the platform can bring together travellers and tourism industry workers in one ecosystem. It validates core features such as interactive maps, attraction discovery, user-generated content, and gamification elements like leaderboards. By integrating with external systems (e.g., map services, tourism datasets), the POC shows the feasibility of delivering real-time, location-based recommendations while ensuring engagement through posts, ratings, and rewards.
 
-<!--
-Text here
--->
+### System Context Diagram
+
+The C4 System Context Diagram highlights TravelGo’s role within its environment. It shows the platform as the central system interacting with travellers, attraction owners, and several external systems such as map providers, tourism boards, influencers, and competitors. The diagram illustrates key flows of information (e.g. travellers providing personal information, owners submitting attractions, the platform requesting maps) and helps define clear system boundaries and dependencies.
+
+![Context Diagram](/img/ContextDiagram.png)
+<p style="text-align: center;">Figure 3: Context Diagram</p>
 
 ## Roadmap
 
 ![Roadmap](/img/Roadmap.png)
-Figure 3: Roadmap
+<p style="text-align: center;">Figure 4: Roadmap</p>
 
 ## Bibliography
 <a id="1">[1]</a>
