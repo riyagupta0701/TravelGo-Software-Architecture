@@ -57,40 +57,29 @@ The main risks are the following:
 
 ## Market Research
 
-### Project Overview
+To identify opportunities for innovation, it is useful to examine the existing players in the travel tech market. The table below presents a comparative analysis of these competitors, outlining their strengths, weaknesses, and potential gaps.
 
-TravelGo is an interactive travel companion platform that combines cultural immersion, social networking, and fun challenges to turn every trip into an adventure.
-
-### Target Audience
-
-- **Backpackers / Solo travellers** who are seeking to be part of a community and want to find off-beat ideas.  
-- **Young professionals / Digital nomads** who are looking for meaningful cultural immersion, not just sightseeing.  
-- **Adventure seekers**, motivated by challenges, exploration, competition.  
-- **Families or groups** looking for activities / side-quests which everyone can enjoy.  
-
-### Competitor Analysis
-
-| Sr No. | Competitor | Strengths | Weaknesses | Opportunity for us |
+| Serial No. | Competitor | Strengths | Weaknesses | Opportunity for us |
 |--------|------------|-----------|------------|---------------------|
 | 1 | **TripRanger** | Gamifies travel, fun challenges | Limited user base, not mainstream, focus mostly on gamification rather than deep cultural immersion | We can combine interactivity and cultural depth, making it more meaningful |
 | 2 | **Polarsteps** | Very popular, creates a visual travel journal, great for reliving your travel experiences. Helps share trips with friends and family | Mostly passive (recording, not interacting); limited social engagement beyond sharing | We add interactivity, side quests, community building |
 | 3 | **Withlocals** | Popular; focused on authentic cultural experiences by connecting with locals/guides | Paid/expensive; depends heavily on guide availability; no gamification or community | Make authentic culture accessible and community driven |
-| 4 | **Viator** | Huge catalog of tours & activities | Overly commercial and not personalized,lacks interactive features | Focus on personalized, fun challenges and cultural immersion rather than generic tours |
+| 4 | **Viator** | Huge catalog of tours & activities | Overly commercial and not personalized, lacks interactive features | Focus on personalized, fun challenges and cultural immersion rather than generic tours |
 | 5 | **Komoot** | Expertise in outdoor navigation and route planning | Very niche (outdoors only) | Add cultural challenges with a social community |
-| 6 | **Mapstr** | Save and share favorite places easily | More like a utility app (maps), lacks engagement, no gamification | Build on map sharing, but with interactive quests, culture and competition |
-
+| 6 | **Mapstr** | Save and share favorite places easily | More like a utility app (maps), lacks engagement, no gamification | Build on map sharing, but with interactive quests, culture and competition | <br>
+<p style="text-align:center;">Table 1 : Competitor Analysis</p>
 
 ### Key Insights
 
 #### Is there demand?  
-Yes. Market trends indicate that travellers increasingly seek experiences over mere sightseeing. Platforms that are interactive and community-driven are especially popular among younger travellers.[[2]](#2)[[3]](#3)[[4]](#4)
+Market trends indicate that travellers increasingly seek experiences over mere sightseeing. Therefore, platforms that are interactive and community-driven are especially popular among younger travellers nowadays.[[2]](#2)[[3]](#3)[[4]](#4)
 
 #### What’s missing in current solutions?  
 - Most travel apps focus on either utility (planning, booking) or authenticity (guided tours).  
 - Few apps combine an interactive, culturally immersive experience with community building.  
 - Existing solutions often lack interactivity, offline usability, or gamified side quests.  
 
-#### How TravelGo! fills that gap  
+#### How TravelGo fills that gap  
 - Integrates interactive, culturally immersive experiences with community engagement into a single platform.  
 - Enables users to complete side quests, join challenges, and earn rewards while exploring off-beat locations.  
 - Promotes social discovery by connecting travellers nearby.  
@@ -235,73 +224,73 @@ the user stories.
 
 ## Challenges
 
-**1. Data Privacy & Trust** : TravelGo collects personal data like name, location, travel history. Mishandling of this data will lead to legal problems and loss of trust from customers.
+**1. Data Privacy & Trust** : TravelGo collects personal data like name, location, travel history etc. Mishandling of this data will lead to legal problems and loss of trust from customers.
 
 * Ambiguity sources:
-    1. How much data should be collected?
-    2. How to balance personalization with privacy?
-    3. How to handle cross-border compliance?
+    - How much data should be collected?
+    - How to balance personalization with privacy?
+    - How to handle cross-border compliance?
 
 * Architectural implications:
-    1. Must implement data minimization by only collecting necessary data.
-    2. Needs strong consent management.
-    3. Secure data storage & transmission.
-    4. Potential need for regional data hosting.
+    - Must implement data minimization by only collecting necessary data.
+    - Needs strong consent management.
+    - Secure data storage & transmission.
+    - Potential need for regional data hosting.
 
 **2. Cultural Sensitivity & Representation** : TravelGo promotes cultural quests and hidden gems. But what one person calls a “hidden gem” may be a sacred site or sensitive local tradition. Misrepresentation could cause backlash or even legal issues.
 
 * Ambiguity sources:
-    1. Who decides what is “authentic” enough to feature? 
-    2. How do you avoid cultural appropriation or trivialization ?
+    - Who decides what is “authentic” enough to feature? 
+    - How do you avoid cultural appropriation or trivialization ?
 
 * Architectural implications:
-    1. Content vetting workflows: TravelGo might need local validators or an approval pipeline for sensitive submissions.
-    2. Metadata tagging for cultural content for example, sensitive, sacred or family-friendly, requires flexible data models.
-    3. May need regional customisation.
+    - Content vetting workflows: TravelGo might need local validators or an approval pipeline for sensitive submissions.
+    - Metadata tagging for cultural content for example, sensitive, sacred or family-friendly, requires flexible data models.
+    - May need regional customisation.
 
 **3. Technical Constraints** : Travellers often have unreliable connectivity. But TravelGo’s core features like locating pins, chat and quests may depend on online services.
 
 * Ambiguity sources:
-    1. Which features should work offline? 
-    2. How much data caching is feasible on a device without killing storage and battery?
+    - Which features should work offline? 
+    - How much data caching is feasible on a device without killing storage and battery?
 
 * Architectural implications:
-    1. May requires offline-first design.
-    2. GPS tracking without internet would depend on OS support and API of offline maps.
+    - May requires offline-first design.
+    - GPS tracking without internet would depend on OS support and API of offline maps.
 
 **4. Community Moderation & Safety** : TravelGo’s chatrooms and commenting features are central to the social experience, but community spaces online are magnets for spam, harassment, scams, or inappropriate content.
 
 * Ambiguity sources:
-    1. Should moderation be automated using AI or keyword blocking, or human-led by moderators?
-    2. How do you enforce rules across different cultures and languages?
-    3. Should moderation be centralized or distributed?
+    - Should moderation be automated using AI or keyword blocking, or human-led by moderators?
+    - How do you enforce rules across different cultures and languages?
+    - Should moderation be centralized or distributed?
 
 * Architectural implications:
-    1. Need for scalable content moderation pipelines.
-    2. Storage and processing of flagged content would introduce compliance and legal liability.
-    3. Balancing low latency (real-time chat) with content filtering can be technically tricky.
+    - Need for scalable content moderation pipelines.
+    - Storage and processing of flagged content would introduce compliance and legal liability.
+    - Balancing low latency (real-time chat) with content filtering can be technically tricky.
 
 **5. Ecosystem Dependencies** : TravelGo will make use of third party APIs for functionalities like the map or login.
 
 * Ambiguity sources:
-    1. What happens if a provider changes pricing or kills an API?
-    2. What if services are unavailable in some regions?
-    3. Should you design for multi-provider fallback or lock-in with one provider?
+    - What happens if a provider changes pricing or kills an API?
+    - What if services are unavailable in some regions?
+    - Should you design for multi-provider fallback or lock-in with one provider?
 
 * Architectural implications:
-    1. Need abstraction layers and not hardcode to any single API.
-    2. Consider vendor diversity.
-    3. Monitor latency and reliability across providers.
+    - Need abstraction layers and not hardcode to any single API.
+    - Consider vendor diversity.
+    - Monitor latency and reliability across providers.
 
 ## Wardley Map
-The Wardley map for TravelGo highlights how the platform combines innovative, custom feautures with standardized, commodity services.
+A wardley map is a visual tool that shows the components of a system along two dimensions: visibility to the user (value chain) and evolution over time from Genesis → Custom → Product → Commodity. It helps identify where innovation lies, what can be standardized, and how components depend on one another. This makes it useful for aligning architectural decisions with strategic priorities. The wardley map for TravelGo highlights how the platform combines innovative, custom feautures with standardized, commodity services.
 ![WardleyMap](/img/WardleyMap.png)
 <p style="text-align: center;">Figure 2 : Wardley map</p>
 
-**Genesis** : This space contains novel, experimental features like side quests, cultural quizes and souvenir based rewards which are not yet mainstream in the travel tech domain. They provide differentiation, but also present a high risk of adoption and design.
-**Custom Built**: Features like leaderboards and points system are placed here. While interactive platforms are popluar in other domains like fitness and education, applying it specifically to cultural travel remains relatively bespoke. These features distinguish TravelGo from commodity travel apps but are less risky than Genesis elements.
-**Product Stage**: More well known features such as community chatrooms and posting comments fall under this category. These are standard capabilities available in many social or booking apps, but TravelGo customizes them for cultural travel contexts. They are visible to users but do not offer radical innovation.
-**Commodity Stage**: Underlying infrastructure such as digital maps, location pinning, user accounts and APIs are considered commodity. They are invisible to end-users and widely available through third-party providers like Google Maps. TravelGo does not attempt to innovate here but instead rely on stable, low-cost services.
+**Genesis** : This space contains novel, experimental features like side quests, cultural quizes and souvenir based rewards which are not yet mainstream in the travel tech domain. They provide differentiation, but also present a high risk of adoption and design. <br>
+**Custom Built**: Features like leaderboards and points system are placed here. While interactive platforms are popluar in other domains like fitness and education, applying it specifically to cultural travel remains relatively bespoke. These features distinguish TravelGo from commodity travel apps but are less risky than Genesis elements. <br>
+**Product Stage**: More well known features such as community chatrooms and posting comments fall under this category. These are standard capabilities available in many social or booking apps, but TravelGo customizes them for cultural travel contexts. They are visible to users but do not offer radical innovation. <br>
+**Commodity Stage**: Underlying infrastructure such as digital maps, location pinning, user accounts and APIs are considered commodity. They are invisible to end-users and widely available through third-party providers like Google Maps. TravelGo does not attempt to innovate here but instead rely on stable, low-cost services. <br>
 
 ## Revenue Model
 
