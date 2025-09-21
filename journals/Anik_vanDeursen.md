@@ -11,3 +11,8 @@ On Monday we had our first meeting with the TA. Afterwards, we discussed this me
 On Tuesday, we had a team meeting that lasted for about two hours to write our project plan.
 
 The rest of the week I did research some research and then wrote the introduction.
+
+## Week 3
+In the past week, we finalized our report for the finch stage. 
+
+On Wednesday, we had a team meeting. The main things that we did were creating the roadmap and assigning tasks for the week. My task was to write the quality attributes. Thursday I did research about quality attributes, and I spent Friday and Saturday writing the section. On Saturday we also had another team meeting, to read through our entire report together to see what needed to be changed and what was still missing. On Sunday, I implemented the discussed changes to the introduction (problem statement, context & purpose) and quality attributes.
