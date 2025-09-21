@@ -20,40 +20,10 @@ Travelling is one of those things that everyone loves. Seeing new places, learni
 
 Another challenge is connecting with other travellers. Tourist, especially solo-travellers, can have difficulty finding like-minded people. Because of this they might not create meaningful connections during their travels, which is unfortunate since exploring a city is even more fun with others!
 
-### Purpose
+### Context & purpose
 We want to create an interactive digital platform that makes travelling easier and more fun for both group and solo travellers across various countries: TravelGo. Central to the platform is a map with all of the tourist attractions, including hidden spots. The platform aims to enrich cultural engagement with competitive games (for example quiz competitions) with a reward system through leaderboards. To make this competition fun for both inexperienced and experienced travellers, the platform uses a rating system with leagues. Users can additionally earn points by going to an attraction and thus ticking it off their bucket list. These points can be used to for example get a discount on entry fees or to get an exclusive souvenir.
 
 Another main part of TravelGo is making it easier for travellers to engage with each other. To encourage tourist interaction, the platform will have a chatroom. This chatroom helps travellers to meet new people that are at the same location. Users can also post new or hidden attractions that they recommend to others. Because of this, tourist will know which attractions they should definitely visit.
-
-### Context
-TravelGo is mainly of value for travellers and tourism industry workers: for example attraction or restaurant owners.
-The following information is needed from the environment:
-- An up-to-date map
-- Data about tourist attractions
-  - Well known attractions
-  - Lesser known attractions provided by owners and tourists
-
-\
-Context identification consists of four parts: platform, user and application context [[1]](#1).
-- Platform: TravelGo will be a mobile app, available on apple and android. Users need to be connected to the internet to use TravelGo.
-- User context: TravelGo uses personal information (name, interests) and the location of users.
-<!-- TODO: DEPENDENCIES: Application context
-  - External software context
-  - External service context
-  - Infrastructure context
-  - External Systems context
-  - Physical context -->
-- Organizational context: discussed in chapter [Stakeholders](#stakeholders).
-
-<!-- Context diagram (c4 model)? -->
-
-#### External risks
-Since many travelling apps have been created ([Market Research](#market-research)), TravelGo does not have a lot of risks. There is a lot of reliable knowledge available. 
-
-The main risks are the following:
-- Correct information: TravelGo depends on information supplied by tourists and organizations. Since the platform will be available in multiple countries, it is difficult to examine all of the information.
-- Privacy: TravelGo has access to the location and personal information of its users.
-- External dependencies: TravelGo makes use of open source software.
 
 ## Market Research
 
@@ -331,12 +301,13 @@ At launch, most of the platform content should remain free to access to build th
 The platform relies on several external dependencies to function effectively. Some core services include maps and geolocation APIs (e.g., Google Maps) for navigation, routing, and location tracking. Furthermore, with respect to monetization, the platform depends on payment processors (IDEAL, PayPal, etc). On the technical side, the use of cloud hosting and databases would provide scalability and performance. Additionally, authentication services (Google, Facebook, etc) and communication tools (email/SMS providers) would also be employed to support user management.
 
 ## Quality Attributes
-The following quality attributes are the most fundamental for TravelGo:
+Quality attributes describe desirable properties of a system.
+For creating TravelGo we want to consider the following elements:
 
-**Time to market**: It is essential to release our product at the right time. Most people travel around the summertime, therefore the app should be on the market before summer. TravelGo could also be released while it is still imperfect. In that case, since it would be possible to get feedback from users, it would be easier to see which features people like. We could then fine-tune and build on those features and discard the ones that people did not use much.
+**Time to market**: It is essential to release our product at the right time. Most people travel around the summertime, therefore the platform should be on the market before summer. TravelGo could also be released while it is still imperfect. In that case, since it would be possible to get feedback from users, it would be easier to see which features people like. We could then fine-tune and build on those features and discard the ones that people did not use much.
 \
 \
- **Modularity**: Since the app will have distributed deployment, TravelGo needs to use modules. Modularity is also important for parallel development and incrementally building. 
+ **Modularity**: Since the platform will have distributed deployment, TravelGo needs to use modules. Modularity is also important for parallel development and incrementally building. 
 \
 \
 **Performance**: TravelGo should not take a long time to respond, since this will annoy users and might make them not want to use the app. We also want the system to be able to take many requests at the same time.
@@ -345,13 +316,13 @@ The following quality attributes are the most fundamental for TravelGo:
 **Scalability**: At first, TravelGo will not have a lot of users. Of course we hope to increase this amount over time. Because of this, the architecture should be designed for growth.
 \
 \
-**Usability**: The user interface should be very convenient and intuitive to use. It should be easy to learn for first-time users and memorable for returning users. Since the app will be available in many different countries, it should be convenient to use in all those countries, including different language options.
+**Usability**: The user interface should be very convenient and intuitive to use. It should be easy to learn for first-time users and memorable for returning users. Since the platform will be available in many different countries, it should be convenient to use in all those countries, including different language options.
 \
 \
-**Serviceability**: The system should be easy to maintain. A lot of new tourist attractions will be added over time, and the user should not have to update the app every time an attraction is added. Since the app is intended for users all around the world, there is always a timezone that suffers if we do maintenance work. Therefore we want to have to do as little maintenance as possible.
+**Serviceability**: The system should be easy to maintain. A lot of new tourist attractions will be added over time, and the user should not have to update the app every time an attraction is added. Since the platform is intended for users all around the world, there is always a timezone that suffers if we do maintenance work. Therefore we want to have to do as little maintenance as possible.
 \
 \
-**Availability**: The system should be functioning correctly 24/7, since our users are in many different timezones, which means that the app is always in use.
+**Availability**: The system should be functioning correctly 24/7, since our users are in many different timezones, which means that the platform is always in use.
 \
 \
  **Defensibility**: Since we work with our users personal data and have a chatroom functionality, we need to be certain that the system is protected from malicious attacks. Additionally, we need to ensure that no malicious content is posted in the chatroom. It is also important that our data for the tourist attractions is correct, since tourist are more likely to fall for scams.
@@ -360,25 +331,31 @@ The following quality attributes are the most fundamental for TravelGo:
  **Privacy**: Because TravelGo has access to users' names, locations, and personal conversations in the chatroom, it is important to ensure that our users' personal data is secret and protected.
 \
 \
-**Adaptability**: It is important that our system is extensible, because we want to add new features as the app becomes more successful. We also want our system to be modifiable, so that the implemented functionality can be changed if needed and we can remove less successful features.
+**Adaptability**: It is important that our system is extensible, because we want to add new features as the platform becomes more successful. We also want our system to be modifiable, so that the implemented functionality can be changed if needed and we can remove less successful features.
 \
 \
-**Portability**: We want our app to be available for both android and ios. If we make the app portable, we can save a lot of costs and effort.
+**Portability**: We want our platform to be available for all systems. If we make the app portable, we can save a lot of costs and effort.
 \
 \
-**Sustainability**: We need to ensure that our product does not become irrelevant in the future, both in technical and economical terms. It is also important to make sure that the app grows from the start.
+**Sustainability**: We need to ensure that our product does not become irrelevant in the future, both in technical and economical terms. It is also important to make sure that the platform grows from the start.
+\
+\
+The quality attributes that we primarily want to focus on are **availability**, **performance** and **scalability**.
 
 ### Trade-offs
-**Time to market vs usability**: TravelGo needs to be up and running before summer. This might mean that there are some functionalities that are not implemented before this deadline, which can have a serious impact on the usability of the app. 
+For the main quality attributes, there are some trade-offs that we should keep in mind while designing the system:
+
+**Availability vs privacy**: We always want our system to be available for every user. However, this might have impact on the privacy of users. For example, TravelGo utilizes the location of its users. Some users may not want to share their location, which means that certain functionalities of TravelGo would not work for them.
 \
 \
-**Usability vs privacy**: We want our users' data to be private. However, this might have some impact on the usability of the app. For example, TravelGo uses the location of its users. Some users might not want to share their location. Because of this, some main features (for example the map) will not work for those users.
+**Performance vs time to market**: If we want to release TravelGo as soon as possible, it may be difficult to optimize the performance of the platform before the deadline. 
 \
 \
-**Time to market vs serviceability**: If we want to release TravelGo as soon as possible, some features may not be entirely implemented before the release. This can have an impact on the serviceability of the app. Since some features need to be perfected or even added after the release of the app, maintenance and updates will be required.
+**Scalability vs defensibility**: TravelGo should be designed for growth of user-base. However, a large user-base all around the world could have an impact on defensibility. For example, if we have a lot of posts in the chatroom, it is more difficult to monitor for malicious intent.
 \
 \
 **Scalability vs performance**: We want TravelGo to have as many users as possible. However, with more users, the performance of the app might go down, especially if the users are from all around the world. 
+
 
 ## Proof of Concept
 
