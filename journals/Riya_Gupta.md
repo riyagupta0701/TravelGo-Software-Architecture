@@ -14,3 +14,12 @@ On Monday, 8th September, we had a meeting with our assigned TA for 30 minutes. 
 I joined a follow up meeting at the library of about 2 hours the next day to prepare the document with our project plan as part of the second assignment.
 
 I spent the rest of the week researching about the potential stakeholders; their impact and influence on our platform.
+
+---
+## Week 3
+
+On Wednesday, we had an in-person team meeting for about 2 hours where we analysed the current report and discussed new sections to add, and implementation for the POC. We also created the roadmap for the whole project. While dividing up the work for the week, I took upon creating the base for the POC as well as the context diagram.
+
+I spent Thursday researching about how to begin with the POC and pushed the base files. Friday and Saturday, I spent laid the foundation for the POC by dividing it up into pages and doing some preliminary work. On Saturday I also worked on the Context Diagram.
+
+We had an online team meeting on Saturday evening for 3 hours, where we went through the report and POC together and gave feedback to each other while also setting up a flow to the report. I worked on the feedback I had received and pushed my changes by the next day.
