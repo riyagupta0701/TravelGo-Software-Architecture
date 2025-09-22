@@ -308,6 +308,8 @@ The proof of concept demonstrates how the platform can bring together travellers
 
 The platform relies on several external dependencies to function effectively. Some core services include maps and geolocation APIs (e.g., Google Maps) for navigation, routing, and location tracking. Furthermore, with respect to monetization, the platform depends on payment processors (IDEAL, PayPal, etc). On the technical side, the use of cloud hosting and databases would provide scalability and performance. Additionally, authentication services (Google, Facebook, etc) and communication tools (email/SMS providers) would also be employed to support user management.
 
+For the current proof of concept implementation, we made use of [Leaflet](leafletjs.com) and [openstreetmap](https://www.openstreetmap.org/#map=6/46.45/2.21) to develop the interactive map.
+x
 ### 10.2 System Context Diagram
 
 The C4 System Context Diagram highlights TravelGo’s role within its environment. It shows the platform as the central system interacting with travellers, attraction owners, and several external systems such as map providers, tourism boards, influencers, and competitors. The diagram illustrates key flows of information (e.g. travellers providing personal information, owners submitting attractions, the platform requesting maps) and helps define clear system boundaries and dependencies.
