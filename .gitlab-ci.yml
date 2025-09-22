@@ -5,7 +5,9 @@ build-pdf:
     stage: build
     image: pandoc/latex:latest
     script:
-        - pandoc report/Team_11_Final_Report.md -o report/Team_11_Finch_Report.pdf
+        - ls -R report
+        - mkdir -p report
+        - pandoc report/Team_11_Final_Report.md --resource-path=report -f -o report/Team_11_Finch_Report.pdf
     artifacts:
         paths:
             - report/Team_11_Finch_Report.pdf
