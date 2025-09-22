@@ -6,7 +6,6 @@ build-pdf:
     image: pandoc/latex:latest
     script:
         - ls -R report
-        - mkdir -p report
         - pandoc report/Team_11_Final_Report.md --resource-path=report -f markdown -o report/Team_11_Final_Report.pdf
     artifacts:
         paths:
