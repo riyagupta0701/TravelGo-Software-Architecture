@@ -103,13 +103,13 @@ interacting with a specific application. They are used in order to observe and s
 with the platform once completed. Ultimately, constructing different personas can help identify weak points
 and edge cases within the platform. In our case, all personas are assumed wto be unfamiliar with any programming knowledge.
 
-### Tourist
+### Tourist/Traveller
 
 This persona represents a typical travel enthusiast, visiting different countries and attractions. Each tourist as a bucket-list with attractions they decide to visit for that country. Tourists interact with each other, with guides, obtain discounts and discover new attractions.
 
-### Local Business Owner (Internal Sponsor)
+### Local Business Owner (Sponsor/Business Partner)
 
-Since the app features discounts for various restaurants or souvenir shops, this persona represents local shop-owners that wish to improve their business. They process the monetary fee through the platform and in return offer the tourists a discount, voucher or even a free souvenir. Furthermore, the are also considered local sponsors since they ultimately wish for publicity for their business.
+Since the app features discounts for various restaurants or souvenir shops, this persona represents local shop-owners that wish to improve their business. They process the monetary fee through the platform and in return offer the tourists a discount, voucher or even a free souvenir. Furthermore, they are also considered local sponsors since they ultimately wish for publicity for their business.
 
 ### Travel Agent
 
@@ -119,79 +119,61 @@ This persona represents a travelling expert with extended knowledge about variou
 
 A sponsor is typically a brand, or local business which seeks visibility for their product among any individuals. They want to attract and engage individuals through gamified experiences and offered promotions in exchange for brand exposure.
 
+<!---
 ## Epics
 
 In this section, we list the epics, along with the corresponding description. Each epic has its features, which
 further contribute to the User Stories. <span style="color:red">TBA later when further developed</span>.
 
+--->
+
 ## Features
 
-| Feature ID | Feature Description | Relates User Stories |
-|-----------|------------|-------------|
-| F1         | Maintain an individual user bucket-list of attractions.          |        |
-| F2         | Display a map with available countries and available attractions in each country.       |        |
-| F2         | Maintain a community chatroom for attraction discoveries and user interactions.       |        |
-| F3         | Display pop-up ads.          |        |
-| F4         | <span style="color:red">have easter eggs (maybe/somehow)</span>          |        |
-| F5         | Allow for premium features. (Let the user know when there are discounts for accommodation)        |        |
-| F6         | Keep track of the user's daily quiz score and their placement in the leaderboard. |        |
-| F7         | Reward the top competitors of the leaderboard with discounts, vouchers or free souvenirs. |        |
+Features are distinct pieces of functionality that deliver value to users. They define what the software can do and are often used to plan and develop the product throughout its lifecycle.
 
-## User Stories
-
-A user story is a brief description of a feature that a persona requires in the system. Furthermore, the overall benefit of this feature for the system’s development is also presented.
-
-| User Story ID | User Story | Relates Tags |
-|--------------|------------|-------------|
-| US1           | As a Tourist, I wish to be able to see information for each attraction. |          |
-| US2           | As a Tourist, I wish to be able to answer cultural questions about an attraction to improve my knowledge and receive points for completing a quiz per attraction. |          |
-| US3           | As a Tourist, I wish to be able to participate in a country's league for the ultimate traveling champion. |          |
-| US4           | As a Tourist, I want to engage with other travellers through a community platform. |          |
-| US5           | As a Tourist, I want to be able to suggest new attractions in a country and earn points if my suggestion is validated. |          |
-| US6           | As a Tourist, I wish to be able mark attractions as visited and cross them from my bucket-list. |          |
-| US7           | As a Tourist, I want the platform to create a traveling plan for me, which I then will be able to export the external map applications. |          |
-| US8           | As a Tourist, I want the platform to suggest nice local and traditional restaurants and open-area places when I am nearby and attraction. |          |
-| US9           | As a Tourist, I want to pay extra for this platform to suggest me available accommodations near my current attraction that are also not crowded. |          |
-| US10           | As a Tourist, I want to pay extra to remove pop-up ads. |          |
-| US11           | As a Local Business Owner, I want the platform to recommend my business through pop-up ads. |          |
-| US12           | As a Local Business Owner and Sponsor, I want the platform to offer 5% discounts for all platform users to increase publicity. |          |
-| US13           | As a Local Business Owner, I want the free earned souvenir to have a representative picture on the platform. |          |
-| US14           | As a Local French Restaurant Owner, I want the platform to recommend my business at the end of the quizzes for traditional places. |          |
-| US15           | As a Travel Agent, I want offer city tours through TravelGo, for my clients to play along and for me to stand out from standard booking platforms. |          |
-| US16           | As a Travel Agent, I want the platform to highlight premium guided tours or special events in collaboration with my agency in order to promote my business. |          |
-| US17           | As an External Sponsor, I wish to financially support the platform's development in exchange for exposure. |          |
-
+| Feature ID | Feature Description|
+|-----------|------------|
+| F1         | Maintain an individual user bucket-list of attractions.          |        
+| F2         | Display a map with available countries and available attractions in each country.       |        
+| F3         | Maintain a community chatroom for attraction discoveries and user interactions.       |        
+| F4         | Display advertisements.          |              
+| F5         | Allow for premium features. (Let the user know when there are discounts for accommodation)        |        
+| F6         | Keep track of the user's daily quiz score and their placement in the leaderboard. |        
+| F7         | Reward the top competitors of the leaderboard with discounts, vouchers or free souvenirs.         |
+Table 1: List of features that will be implemented for the final product.
 
 ## Use Case Scenarios
 
-Use cases explain how a user works with a system to accomplish certain tasks or objectives. They
+Use case scenarios explain how a user works with a system to accomplish certain tasks or objectives. They
 outline the steps needed to achieve a set objective and also help define system requirements, derived from
-the user stories.
+the user stories, which can be found in the Appendix A.
 
-| Use Case ID | Use Case Description | Relates Requirements |
-|--------------|------------|-------------|
-| UC1          | Automatically display a map of available countries. |          |
-| UC2          | Automatically display a map of available attractions for the selected country. |          |
-| UC3          | Create a traveling plan for a given number of visiting days. |          |
-| UC4          | Create a sharable link of the traveling plan. |          |
-| UC5          | Allow users to cross-off visited attractions from the plan/bucket-list. |          |
-| UC6          | Offer a selection of questions, weighted in points. The summed points increase the user's daily score for the leaderboard. |          |
-| UC7          | Determine the user's reward based on their score. |          |
-| UC8          | Display pop-up ads for internal and external sponsors. |          |
-| UC9          | Display available discounts for internal and external sponsors. |          |
-| UC10          | Process subscription fee for unlocking premium for the user's account. |          |
-| UC11          | Process shop fee for earned souvenir by the user. |          |
-| UC12          | Maintain a hidden gem list of attractions. |      |
-| UC13          | List various restaurants or outdoors environments for nearby attractions. |          |
-| UC14          | (In case of premium) display a list of available accommodations. |          |
-| UC15          | (In case of premium) Remove pop-up ads and any sort of advertisement. |          |
+| Use Case ID | Use Case Description |
+|--------------|------------|
+| UC1          | Automatically display a map of available countries. |          
+| UC2          | Automatically display a map of available attractions for the selected country. |          
+| UC3          | Create a traveling plan for a given number of visiting days. |          
+| UC4          | Create a sharable link of the traveling plan. |          
+| UC5          | Allow users to cross-off visited attractions from the plan/bucket-list. |          
+| UC6          | In the case of quizes, the platform must offer a selection of questions, weighted in points. The summed points increase the user's daily score for the leaderboard. |          
+| UC7          | Determine the user's reward based on their score. |          
+| UC8          | Display advertisements for internal and external sponsors. |          
+| UC9          | Display available discounts for internal and external sponsors. |                   
+| UC10          | Process shop fee for earned souvenir by the user. |          
+| UC11          | Maintain a hidden gem list of attractions. |      
+| UC12          | List various restaurants or outdoors environments for nearby attractions. | 
+| UC13          | (In case of premium) Process subscription fee for unlocking premium for the user's account. |          
+| UC14          | (In case of premium) display a list of available accommodations. |          
+| UC15          | (In case of premium) Remove advertisements and any sort of advertisement. |          
+Table 2: List of use case scenarios that will be implemented for the final product.
 
+<!---
 ## Requirements
 
 Requirements are documented descriptions a software system's tasks that it can perform or qualities
 it should possess to fulfill stakeholders’ needs. Furthermore, they also provide key steps for solving
 the user stories.
-
+--->
 ## Challenges
 
 **1. Data Privacy & Trust** : TravelGo collects personal data like name, location, travel history etc. Mishandling of this data will lead to legal problems and loss of trust from customers.
@@ -274,7 +256,9 @@ The platform can be supported by income from multiple combined streams presented
 | -------------------------------- |-------- | --------- | ----------|
 | Free Content / Subscription | Free tier with core features; premium tier unlocks exclusive content | Predictable recurring income; encourages retention   | Requires adequate premium features to justify the cost |
 | In-App Purchases  | Cosmetic items, location-based boosts, hints, custom avatars | Transaction-based revenue resulting in immediate revenue from passionate users   | High risk of warping user perception and turning the platform into "pay-to-win" if not balanced |
-| Advertising & Sponsorships | Through pop-up ads, local businesses sponsor the discounts, souveniers and/or events | Transaction-based revenue for non-premium users; Immediate income from sponsors | The advertising cannot be excessive in order to not degrade user experience   |
+| Advertising & Sponsorships | Through advertisements, local businesses sponsor the discounts, souveniers and/or events | Transaction-based revenue for non-premium users; Immediate income from sponsors | The advertising cannot be excessive in order to not degrade user experience   |
+Table 3: List of viable revenue streams.
+
 
 Furthermore, since the platform is newly developed, the revenue model should be implemented in progressive stages.
 At launch, most of the platform content should remain free to access to build the user base. Additionally, basic in-app purchases for cosmetic reasons can be included. During the next stage, the relation with local business owners would be established, and the platform would begin featuring sponsored restaurants and souvenir shops, as well as custom maps and affiliation with tourist companies in the premium version. Lastly, the final stage could envision production of large-scale events, partnerships with museums from bigger cities and metropolises and potential merch sales.
