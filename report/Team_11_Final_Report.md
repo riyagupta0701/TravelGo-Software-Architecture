@@ -1,5 +1,5 @@
 <h1 align = "center">TravelGo!</h1>
-<h3 align = "center">Team 11 <br> Aník van Deursen,Riya Gupta,Radha Mujumdar,Diana Todoran</h3>
+<h3 align = "center">Team 11 <br> Aník van Deursen, Riya Gupta, Radha Mujumdar, Diana Todoran</h3>
 
 ## 1 Introduction
 <!-- 
