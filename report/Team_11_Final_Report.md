@@ -93,7 +93,7 @@ Market trends indicate that travellers increasingly seek experiences over mere s
 
 The power/interest grid is used to classify stakeholders according to their influence and level of engagement. High-power, high-interest stakeholders such as travellers and attraction owners are closely managed since they are the core users. Tourism boards and regulators have high power but lower day-to-day interest, requiring consultation occasionally. Communities, influencers, and competitors have lower power but varying levels of interest, monitored for promotion and market positioning.
 
-![Power / Interest Grid](/img/PowerInterestGrid.png)
+![Power / Interest Grid](/report/img/PowerInterestGrid.png)
 <p style="text-align: center;"> Figure 1: Power / Interest Grid </p>
 
 ## Personas
@@ -254,7 +254,7 @@ the user stories.
 
 ## Wardley Map
 A wardley map is a visual tool that shows the components of a system along two dimensions: visibility to the user (value chain) and evolution over time from Genesis → Custom → Product → Commodity. It helps identify where innovation lies, what can be standardized, and how components depend on one another. This makes it useful for aligning architectural decisions with strategic priorities. The wardley map for TravelGo highlights how the platform combines innovative, custom feautures with standardized, commodity services.
-![WardleyMap](/img/WardleyMap.png)
+![WardleyMap](/report/img/WardleyMap.png)
 <p style="text-align: center;">Figure 2 : Wardley map</p>
 
 **Genesis** : This space contains novel, experimental features like side quests, cultural quizes and souvenir based rewards which are not yet mainstream in the travel tech domain. They provide differentiation, but also present a high risk of adoption and design. <br>
@@ -354,12 +354,12 @@ The proof of concept demonstrates how the platform can bring together travellers
 
 The C4 System Context Diagram highlights TravelGo’s role within its environment. It shows the platform as the central system interacting with travellers, attraction owners, and several external systems such as map providers, tourism boards, influencers, and competitors. The diagram illustrates key flows of information (e.g. travellers providing personal information, owners submitting attractions, the platform requesting maps) and helps define clear system boundaries and dependencies.
 
-![Context Diagram](/img/ContextDiagram.png)
+![Context Diagram](/report/img/ContextDiagram.png)
 <p style="text-align: center;">Figure 3: Context Diagram</p>
 
 ## Roadmap
 
-![Roadmap](/img/Roadmap.png)
+![Roadmap](/report/img/Roadmap.png)
 <p style="text-align: center;">Figure 4: Roadmap</p>
 
 ## Bibliography
