@@ -5,8 +5,7 @@ build-pdf:
     stage: build
     image: pandoc/latex:latest
     script:
-        - cd report
-        - pandoc Team_11_Final_Release.md -o Team_11_Finch_Release.pdf
+        - pandoc report/Team_11_Final_Release.md -o report/Team_11_Finch_Release.pdf
     artifacts:
         paths:
-            - report/Team_11_Final_Release.pdf
+            - report/Team_11_Finch_Release.pdf
