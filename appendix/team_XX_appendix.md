@@ -1,5 +1,4 @@
-
-## User Stories
+## 13 Appendix A: User Stories
 
 A user story is a brief description of a feature that a persona requires in the system. Furthermore, the overall benefit of this feature for the system’s development is also presented.
 
