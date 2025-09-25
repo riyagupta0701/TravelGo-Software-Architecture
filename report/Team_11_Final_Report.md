@@ -125,6 +125,8 @@ Market trends indicate that travellers increasingly seek experiences over mere s
 
 ## 5 Stakeholders
 
+Travellers create demand by seeking personalisation and meaningful connections, gravitating toward the cultural, recreational, and community-driven offerings available on the platform. They engage with attraction sites and redeem discounts at local businesses, boosting visitor numbers and generating higher revenue for these stakeholders while promoting their trade. Management works closely with regulatory authorities and tourism boards to ensure compliance and safety. Strengthening the platform’s visibility, travel communities and influencers amplify positive experiences through information sharing and marketing. Together, TravelGo delivers reliable, user-centric travel solutions while balancing the needs of customers, local communities, and the broader ecosystem.
+
 ### 5.1 Primary Stakeholders
 
 - Tourists and Travellers
@@ -144,8 +146,6 @@ Market trends indicate that travellers increasingly seek experiences over mere s
 - Local Communities
   -  Cultural representatives who gain from more interactions and business from tourists
   -  Might be worried about cultural sensitivity
--  Developers and Designers
-   - Responsible for creating, maintaining and upgrading the platform
 -  Investors and Sponsors
    -  Support financially and expecting returns in the form of partnerships, advertisements, subscriptions, and even positive publicity
   
