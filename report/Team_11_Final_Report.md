@@ -63,63 +63,15 @@ Market trends indicate that travellers increasingly seek experiences over mere s
 
 ## 4 Challenges
 
-**I. Data Privacy & Trust** : TravelGo collects personal data like name, location, travel history etc. Mishandling of this data will lead to legal problems and loss of trust from customers.
+**I. Data Privacy & Trust** : Data privacy and trust are critical concerns for TravelGo, as the platform collects personal information such as names, locations, and travel history. Mishandling this data could result in legal issues and a loss of customer trust. However, several ambiguities arise, such as determining how much data should be collected, finding the right balance between personalization and privacy, and managing cross-border compliance. From an architectural perspective, the system must implement data minimization by collecting only what is necessary, incorporate strong consent management, and ensure secure data storage and transmission. Additionally, regional data hosting may be required to meet compliance regulations.
 
-* Ambiguity sources:
-    - How much data should be collected?
-    - How to balance personalization with privacy?
-    - How to handle cross-border compliance?
+**II. Cultural Sensitivity & Representation** : TravelGo promotes cultural quests and hidden gems, but what one traveler considers a “hidden gem” could, in fact, be a sacred site or a sensitive local tradition. Such misrepresentation risks community backlash and even legal consequences. This raises ambiguities around who decides what is “authentic” enough to feature and how to avoid cultural appropriation or trivialization. Architecturally, the platform may require robust content vetting workflows, potentially involving local validators or approval pipelines for sensitive submissions. Flexible data models will also be needed to support metadata tagging of cultural content such as marking items as sensitive, sacred, or family-friendly, along with the ability to enable regional customization where necessary.
 
-* Architectural implications:
-    - Must implement data minimization by only collecting necessary data.
-    - Needs strong consent management.
-    - Secure data storage & transmission.
-    - Potential need for regional data hosting.
+**III. Technical Constraints** : Travelers often face unreliable connectivity, yet TravelGo’s core features such as locating pins, chat, and quests may rely heavily on online services. This raises ambiguities around which features should remain functional offline and how much data can reasonably be cached on a device without draining storage or battery. Through an architectural lens, the system may need to adopt an offline-first design, ensuring that critical functions remain usable without constant connectivity. In particular, GPS tracking without internet access would depend on operating system support and offline map APIs.
 
-**II. Cultural Sensitivity & Representation** : TravelGo promotes cultural quests and hidden gems. But what one person calls a “hidden gem” may be a sacred site or sensitive local tradition. Misrepresentation could cause backlash or even legal issues.
+**IV. Community Moderation & Safety** : TravelGo’s chatrooms and commenting features are central to its social experience, but like most online community spaces, they can quickly become targets for spam, harassment, scams, or inappropriate content. This introduces ambiguities around whether moderation should rely on AI and keyword blocking or be led by human moderators, how to enforce community rules across diverse cultures and languages, and whether moderation should be centralized or distributed.From a design point of view, this creates the need for scalable content moderation pipelines, along with careful handling of flagged content since its storage and processing bring compliance and legal liabilities. At the same time, balancing low latency for real-time chat with effective filtering poses significant technical challenges.
 
-* Ambiguity sources:
-    - Who decides what is “authentic” enough to feature? 
-    - How do you avoid cultural appropriation or trivialization ?
-
-* Architectural implications:
-    - Content vetting workflows: TravelGo might need local validators or an approval pipeline for sensitive submissions.
-    - Metadata tagging for cultural content for example, sensitive, sacred or family-friendly, requires flexible data models.
-    - May need regional customisation.
-
-**III. Technical Constraints** : Travellers often have unreliable connectivity. But TravelGo’s core features like locating pins, chat and quests may depend on online services.
-
-* Ambiguity sources:
-    - Which features should work offline? 
-    - How much data caching is feasible on a device without killing storage and battery?
-
-* Architectural implications:
-    - May requires offline-first design.
-    - GPS tracking without internet would depend on OS support and API of offline maps.
-
-**IV. Community Moderation & Safety** : TravelGo’s chatrooms and commenting features are central to the social experience, but community spaces online are magnets for spam, harassment, scams, or inappropriate content.
-
-* Ambiguity sources:
-    - Should moderation be automated using AI or keyword blocking, or human-led by moderators?
-    - How do you enforce rules across different cultures and languages?
-    - Should moderation be centralized or distributed?
-
-* Architectural implications:
-    - Need for scalable content moderation pipelines.
-    - Storage and processing of flagged content would introduce compliance and legal liability.
-    - Balancing low latency (real-time chat) with content filtering can be technically tricky.
-
-**V. Ecosystem Dependencies** : TravelGo will make use of third party APIs for functionalities like the map or login.
-
-* Ambiguity sources:
-    - What happens if a provider changes pricing or kills an API?
-    - What if services are unavailable in some regions?
-    - Should you design for multi-provider fallback or lock-in with one provider?
-
-* Architectural implications:
-    - Need abstraction layers and not hardcode to any single API.
-    - Consider vendor diversity.
-    - Monitor latency and reliability across providers.
+**V. Ecosystem Dependencies** : TravelGo relies on third-party APIs for critical functionalities such as maps and login, but this dependency introduces several uncertainties. Providers may change pricing models, discontinue services, or have limited availability in certain regions. This raises the question of whether to design for multi-provider fallback or accept the risks of locking into a single provider. From an architectural standpoint, it becomes important to introduce abstraction layers rather than hardcoding to any one API, consider vendor diversity to reduce reliance on a single source, and actively monitor latency and reliability across providers to ensure a consistent user experience.
 
 
 ## 5 Stakeholders
