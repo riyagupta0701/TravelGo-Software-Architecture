@@ -43,6 +43,7 @@ To identify opportunities for innovation, it is useful to examine the existing p
 | 4 | **Viator** | Huge catalog of tours & activities | Overly commercial and not personalized, lacks interactive features | Focus on personalized, fun challenges and cultural immersion rather than generic tours |
 | 5 | **Komoot** | Expertise in outdoor navigation and route planning | Very niche (outdoors only) | Add cultural challenges with a social community |
 | 6 | **Mapstr** | Save and share favorite places easily | More like a utility app (maps), lacks engagement, no gamification | Build on map sharing, but with interactive quests, culture and competition | <br>
+| 7 | **Google Maps** | Massively popular for navigation, locating places | Lacks the interactive aspect | We add interactivity and culutral immersion | <br>
 <p style="text-align:center;">Table 3.1 : Competitor Analysis</p>
 
 ### 3.1 Key Insights
