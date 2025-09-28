@@ -20,4 +20,10 @@ This week we are preparing for our first milestone: The Finch release. We are do
 Saturday evening we had an online meeting for about 3 hours where we assessed the current stage of the report and gave feedback to each other while also setting up a flow to the report. 
 We had an online team meeting on Saturday evening for 3 hours, where we went through the report and POC together and gave feedback to each other while also setting up a flow to the report. I worked on the feedback I had received and pushed my changes by the next day. After that, I fixed my individual sections and polished the report before the deadline.
 
-## Week 4 - Away
+## Week 4 - Far Away
+
+This week I was out of the country for some health check-ups. Everything turned out great, but I now have glasses. I feel like a true computer scientist now. In any case, the week began with the final touchups for the finch report and upcoming presentation. We paired up with team 22, and our TA meeting took place on Wednesday. Our presentation was a success! Team 22 and the TA seemed to like our design so far, and gave us some very constructive feedback. We indeed prioritized the features of our platform and that was the backbone of the architecture so far. I am quite excited to formalize it now from a deeper perspective and think of the communication between containers and components.
+
+Other than that, the progress this week was a bit slower since we just passed a bigger milestone with the project, but I supported my team as much as I could through online meetings and updating my parts. Sunday afternoon we had a short 30-minute meeting to refine our slides for the M2.1 deadline. I am excited to come back to the Netherlands next week, nail down the architecture (hopefully) and contribute more.
+
+## Week 5
