@@ -16,3 +16,8 @@ The rest of the week I did research some research and then wrote the introductio
 In the past week, we finalized our report for the finch stage. 
 
 On Wednesday, we had a team meeting. The main things that we did were creating the roadmap and assigning tasks for the week. My task was to write the quality attributes. Thursday I did research about quality attributes, and I spent Friday and Saturday writing the section. On Saturday we also had another team meeting, to read through our entire report together to see what needed to be changed and what was still missing. On Sunday, I implemented the discussed changes to the introduction (problem statement, context & purpose) and quality attributes.
+
+## Week 4
+This week, I followed both of the lectures (I also attended both of them last week but I forgot to mention it). 
+
+On Monday, we met online with the team to try to submit our report for the finch stage, which was a hassle, but we did manage to do it. On Tuesday, we had another team meeting, to create the presentation slides. The next day, we had our presentation, and we received and gave feedback to team 22. Then finally, on Sunday, we had another team meeting to discuss and adept our presentation slides with the feedback we received after the presentation and during the second lecture. 
