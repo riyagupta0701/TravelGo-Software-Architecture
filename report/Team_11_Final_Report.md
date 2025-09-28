@@ -23,7 +23,6 @@ We want to create an interactive digital platform that makes travelling easier a
 Another main part of TravelGo is making it easier for travellers to engage with each other. To encourage tourist interaction, the platform will have a chatroom. This chatroom helps travellers to meet new people that are at the same location. Users can also post new or hidden attractions that they recommend to others. Because of this, tourist will know which attractions they should definitely visit.
 
 ## 2 Wardley Map
-A wardley map is a visual tool that shows the components of a system along two dimensions: visibility to the user (value chain) and evolution over time from Genesis → Custom → Product → Commodity. It helps identify where innovation lies, what can be standardized, and how components depend on one another. This makes it useful for aligning architectural decisions with strategic priorities. The wardley map for TravelGo highlights how the platform combines innovative, custom feautures with standardized, commodity services.
 ![](WardleyMap.png)
 <p style="text-align: center;">Figure 2.1 : Wardley map</p>
 
