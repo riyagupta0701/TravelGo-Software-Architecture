@@ -23,3 +23,12 @@ On Wednesday, we had an in-person team meeting for about 2 hours where we analys
 I spent Thursday researching about how to begin with the POC and pushed the base files. Friday and Saturday, I spent laid the foundation for the POC by dividing it up into pages and doing some preliminary work. On Saturday I also worked on the Context Diagram.
 
 We had an online team meeting on Saturday evening for 3 hours, where we went through the report and POC together and gave feedback to each other while also setting up a flow to the report. I worked on the feedback I had received and pushed my changes by the next day.
+
+---
+## Week 4
+
+On Monday, we submitted the report and POC for the Finch release. We had a meeting to create our presentation for the peer review meeting.
+
+We had the respective meeting on Wednesday, where after our presentation, we took a note of the feedback and broke it down into sections to work on. 
+
+During the lecture, the professor provided insights on some aspects we could update in our report, so taking them into consideration, we spent the following days implementing the feedback and creating the refinement presentation.
