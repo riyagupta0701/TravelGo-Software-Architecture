@@ -26,8 +26,8 @@ Another main part of TravelGo is making it easier for travellers to engage with 
 ![](WardleyMap.png)
 <p style="text-align: center;">Figure 2.1 : Wardley map</p>
 
-**Genesis** : This space contains novel, experimental features like side quests, cultural quizes and souvenir based rewards which are not yet mainstream in the travel tech domain. They provide differentiation, but also present a high risk of adoption and design. <br>
-**Custom Built**: Features like leaderboards and points system are placed here. While interactive platforms are popluar in other domains like fitness and education, applying it specifically to cultural travel remains relatively bespoke. These features distinguish TravelGo from commodity travel apps but are less risky than Genesis elements. <br>
+**Genesis** : This space contains novel, experimental features like side quests, cultural quizzes and souvenir based rewards which are not yet mainstream in the travel tech domain. They provide differentiation, but also present a high risk of adoption and design. <br>
+**Custom Built**: Features like leaderboards and points system are placed here. While interactive platforms are popular in other domains like fitness and education, applying it specifically to cultural travel remains relatively bespoke. These features distinguish TravelGo from commodity travel apps but are less risky than Genesis elements. <br>
 **Product Stage**: More well known features such as community chatrooms and posting comments fall under this category. These are standard capabilities available in many social or booking apps, but TravelGo customizes them for cultural travel contexts. They are visible to users but do not offer radical innovation. <br>
 **Commodity Stage**: Underlying infrastructure such as digital maps, location pinning, user accounts and APIs are considered commodity. They are invisible to end-users and widely available through third-party providers like Google Maps. TravelGo does not attempt to innovate here but instead rely on stable, low-cost services. <br>
 
@@ -43,7 +43,7 @@ To identify opportunities for innovation, it is useful to examine the existing p
 | 4 | **Viator** | Huge catalog of tours & activities | Overly commercial and not personalized, lacks interactive features | Focus on personalized, fun challenges and cultural immersion rather than generic tours |
 | 5 | **Komoot** | Expertise in outdoor navigation and route planning | Very niche (outdoors only) | Add cultural challenges with a social community |
 | 6 | **Mapstr** | Save and share favorite places easily | More like a utility app (maps), lacks engagement, no gamification | Build on map sharing, but with interactive quests, culture and competition | <br>
-| 7 | **Google Maps** | Massively popular for navigation, locating places | Lacks the interactive aspect | We add interactivity and culutral immersion | <br>
+| 7 | **Google Maps** | Massively popular for navigation, locating places | Lacks the interactive aspect | We add interactivity and cultural immersion | <br>
 <p style="text-align:center;">Table 3.1 : Competitor Analysis</p>
 
 ### 3.1 Key Insights
@@ -115,7 +115,6 @@ The power/interest grid is used to classify stakeholders according to their infl
 ![](PowerInterestGrid.png) 
 <p style="text-align: center;"> Figure 5.1: Power / Interest Grid </p>
 
-
 ## 6 Personas
 
 Personas are defined as fictional representations of users aimed to represent the diverse range of individuals
@@ -176,7 +175,7 @@ the user stories, which can be found in the Appendix A.
 | UC3          | Create a traveling plan for a given number of visiting days. |          
 | UC4          | Create a sharable link of the traveling plan. |          
 | UC5          | Allow users to cross-off visited attractions from the plan/bucket-list. |          
-| UC6          | In the case of quizes, the platform must offer a selection of questions, weighted in points. The summed points increase the user's daily score for the leaderboard. |          
+| UC6          | In the case of quizzes, the platform must offer a selection of questions, weighted in points. The summed points increase the user's daily score for the leaderboard. |          
 | UC7          | Determine the user's reward based on their score. |          
 | UC8          | Display advertisements for internal and external sponsors. |          
 | UC9          | Display available discounts for internal and external sponsors. |                   
@@ -252,29 +251,67 @@ For the main quality attributes, there are some trade-offs that we should keep i
 \
 **Scalability vs performance**: We want TravelGo to have as many users as possible. However, with more users, the performance of the app might go down, especially if the users are from all around the world. 
 
-## 10 Proof of Concept
+## 10 Architecture Design
 
-The proof of concept demonstrates how the platform can bring together travellers and tourism industry workers in one ecosystem. It validates core features such as interactive maps, attraction discovery, user-generated content, and gamification elements like leaderboards. By integrating with external systems (e.g., map services, tourism datasets), the POC shows the feasibility of delivering real-time, location-based recommendations while ensuring engagement through posts, ratings, and rewards.
+<!-- Text here -->
 
-### 10.1 External Dependencies
+### 10.1 Architectural Styles
 
-The platform relies on several external dependencies to function effectively. Some core services include maps and geolocation APIs (e.g., Google Maps) for navigation, routing, and location tracking. Furthermore, with respect to monetization, the platform depends on payment processors (IDEAL, PayPal, etc). On the technical side, the use of cloud hosting and databases would provide scalability and performance. Additionally, authentication services (Google, Facebook, etc) and communication tools (email/SMS providers) would also be employed to support user management.
+<!-- Text here -->
 
-For the current proof of concept implementation, we made use of [Leaflet](leafletjs.com) and [openstreetmap](https://www.openstreetmap.org/#map=6/46.45/2.21) to develop the interactive map.
-x
-### 10.2 System Context Diagram
+#### 10.1.1 Monolithic Architecture
+
+<!-- Text here -->
+
+#### 10.1.2 Microkernel Architecture
+
+<!-- Text here -->
+
+#### 10.1.3 Serverless Architecture
+
+<!-- Text here -->
+
+#### 10.1.4 Microservices Architecture
+
+<!-- Text here -->
+
+#### 10.1.5 Trade-Off Analysis for Architectural Styles
+
+### 10.2 Architectural Views
+
+<!-- Text here -->
+
+#### 10.2.1 Context View
 
 The C4 System Context Diagram highlights TravelGo’s role within its environment. It shows the platform as the central system interacting with travellers, attraction owners, and several external systems such as map providers, tourism boards, influencers, and competitors. The diagram illustrates key flows of information (e.g. travellers providing personal information, owners submitting attractions, the platform requesting maps) and helps define clear system boundaries and dependencies.
 
 ![](ContextDiagram.png)
 <p style="text-align: center;">Figure 10.2.1: Context Diagram</p>
 
+#### 10.2.2 Container View
 
-## 11 Revenue Model
+#### 10.2.3 Component View
+
+#### 10.2.4 Code View
+
+### 10.3 Architectural & Design Patterns
+
+
+## 11 Proof of Concept
+
+The proof of concept demonstrates how the platform can bring together travellers and tourism industry workers in one ecosystem. It validates core features such as interactive maps, attraction discovery, user-generated content, and gamification elements like leaderboards. By integrating with external systems (e.g., map services, tourism datasets), the POC shows the feasibility of delivering real-time, location-based recommendations while ensuring engagement through posts, ratings, and rewards.
+
+### 11.1 External Dependencies
+
+The platform relies on several external dependencies to function effectively. Some core services include maps and geolocation APIs (e.g., Google Maps) for navigation, routing, and location tracking. Furthermore, with respect to monetization, the platform depends on payment processors (IDEAL, PayPal, etc). On the technical side, the use of cloud hosting and databases would provide scalability and performance. Additionally, authentication services (Google, Facebook, etc) and communication tools (email/SMS providers) would also be employed to support user management.
+
+For the current proof of concept implementation, we made use of [Leaflet](leafletjs.com) and [openstreetmap](https://www.openstreetmap.org/#map=6/46.45/2.21) to develop the interactive map.
+
+## 12 Revenue Model
 
 In order to ensure long-term success for a platform, a sustainable revenue model is essential. The presented system would blend reality exploration with competitive gaming, meaning it can attract tourism-focused partnerships, as well as game-industry monetization.
 
-### 11.1 Revenue Streams
+### 12.1 Revenue Streams
 
 The platform can be supported by income from multiple combined streams presented in the table below.
 
@@ -282,25 +319,25 @@ The platform can be supported by income from multiple combined streams presented
 | -------------------------------- |-------- | --------- | ----------|
 | Free Content / Subscription | Free tier with core features; premium tier unlocks exclusive content | Predictable recurring income; encourages retention   | Requires adequate premium features to justify the cost |
 | In-App Purchases  | Cosmetic items, location-based boosts, hints, custom avatars | Transaction-based revenue resulting in immediate revenue from passionate users   | High risk of warping user perception and turning the platform into "pay-to-win" if not balanced |
-| Advertising & Sponsorships | Through advertisements, local businesses sponsor the discounts, souveniers and/or events | Transaction-based revenue for non-premium users; Immediate income from sponsors | The advertising cannot be excessive in order to not degrade user experience   |
-<p style="text-align: center;">Table 11.1.1: List of viable revenue streams.</p>
+| Advertising & Sponsorships | Through advertisements, local businesses sponsor the discounts, souvenirs and/or events | Transaction-based revenue for non-premium users; Immediate income from sponsors | The advertising cannot be excessive in order to not degrade user experience   |
+<p style="text-align: center;">Table 12.1.1: List of viable revenue streams.</p>
 
 
 Furthermore, since the platform is newly developed, the revenue model should be implemented in progressive stages.
-At launch, most of the platform content should remain free to access to build the user base. Additionally, basic in-app purchases for cosmetic reasons can be included. During the next stage, the relation with local business owners would be established, and the platform would begin featuring sponsored restaurants and souvenir shops, as well as custom maps and affiliation with tourist companies in the premium version. Lastly, the final stage could envision production of large-scale events, partnerships with museums from bigger cities and metropolises and potential merch sales.
+At launch, most of the platform content should remain free to access to build the user base. Additionally, basic in-app purchases for cosmetic reasons can be included. During the next stage, the relation with local business owners would be established, and the platform would begin featuring sponsored restaurants and souvenir shops, as well as custom maps and affiliation with tourist companies in the premium version. Lastly, the final stage could envision production of large-scale events, partnerships with museums from bigger cities and metropolises and potential merchandise sales.
 
-### 11.2 Risks and Considerations
+### 12.2 Risks and Considerations
 
 - User Experience: Excessive monetization risks pushing tourists away, therefore, the free version must remain engaging.
 - Fairness: Competitive features must avoid "pay-to-win" dynamics.
 - Scalability: Each additional revenue stream increases system complexity. As such, the platform should be built in a modular way so features can be added independently without interfering with existing ones.
 
 
-## 12 Roadmap
+## 13 Roadmap
 The stages in which the project is carried out can be seen in the roadmap below.
 
 ![](Roadmap.png)
-<p style="text-align: center;">Figure 12.1: Roadmap</p>
+<p style="text-align: center;">Figure 13.1: Roadmap</p>
 
 ## Bibliography
 <a id="1">[1]</a>
