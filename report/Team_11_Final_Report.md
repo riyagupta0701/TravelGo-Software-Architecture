@@ -290,7 +290,13 @@ The C4 System Context Diagram highlights TravelGo’s role within its environmen
 
 #### 10.2.2 Container View
 
+![](ContainerDiagram.png)
+<p style="text-align: center;">Figure 10.2.2: Container Diagram</p>
+
 #### 10.2.3 Component View
+
+![](ComponentDiagram.png)
+<p style="text-align: center;">Figure 10.2.3: Component Diagram</p>
 
 #### 10.2.4 Code View
 
