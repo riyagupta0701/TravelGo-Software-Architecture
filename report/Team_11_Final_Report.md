@@ -265,7 +265,7 @@ For the main quality attributes, there are some trade-offs that we should keep i
 
 #### 10.1.2 Microkernel Architecture
 
-<!-- Text here -->
+Microkernel architecture will provide the platform with a lightweight and stable core while allowing the features to be added as independent plug-ins. This modularity will make it easier to expand and maintain the system, ensuring that failures in one module do not affect the entire platform. However, the platform relies heavily on high-performance interactions with external systems like map services and tourism boards and live community interaction through chats and posts. A microkernel has a high performance overhead due to the constant communication between the core and plug-ins, which could degrade user experience during peak usage. Additionally, it also increases the development time and cost of designing and maintaining interfaces between the kernel and multiple modules.
 
 #### 10.1.3 Serverless Architecture
 
