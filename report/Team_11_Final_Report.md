@@ -260,8 +260,17 @@ For the main quality attributes, there are some trade-offs that we should keep i
 <!-- Text here -->
 
 #### 10.1.1 Monolithic Architecture
+The monolithic architecture [[1]](#1) mainly has disadvantages for our system. For two of our most important quality attributes, modularity and scalability, the monolithic architecture is a poor choice. The disadvantages are explained in table 10.1. However, the monolithic architecture has one advantage: it might be easier to secure, since it has fewer communication points. This could have a positive impact on the confidentiality and integrity of the system.
 
-<!-- Text here -->
+|                                 | **Disadvantages**                                                                                                                                                                                                  | **Advantages**            |
+| ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------- |
+| **Modularity**                  | The system cannot be distributed.                                                                                                                                                                                  |  X                        |
+|                                 | Deployment in the cloud is very expensive.                                                                                                                                                                         |  X                         |
+|                                 | If one thing does not work the rest does not work either. Since our system has many functionalities, this is not ideal, because if one function does not work all of the other functionalities do not work either. |   X                        |
+|                                 | If you change one thing in the monolith, everything has to be rebuild. Since there will be many changes on the platform, this is would be difficult. Tourist attractions will be added and removed all the time.            |    X                       |
+| **Scalability**                 | Existing code cannot be reused. This means that if we want to use part of our existing code, we would have to reuse all of the code of our monolith, even the parts that we do not need.                           |  X                        |
+| **Confidentiality / integrity** | X                                                                                                                                                                                                                  | Might be easier to secure |
+<p style="text-align: center;">Table 10.1: Advantages and disadvantages of the monolithic architecture</p>
 
 #### 10.1.2 Microkernel Architecture
 
@@ -341,9 +350,7 @@ The stages in which the project is carried out can be seen in the roadmap below.
 
 ## Bibliography
 <a id="1">[1]</a>
-Bedjeti, Adriatik; Lago, Patricia; Lewis, Grace A.; De Boer, Remco D.; Hilliard, Rich (1968).
-*Modeling Context with an Architecture Viewpoint*.
-IEEE International Conference on Software Architecture (ICSA).
+Pautasso, C. (2020). Software Architecture: visual lecture notes. LeanPub. https://leanpub.com/software-architecture/
 <br><a id="2">[2]</a>
 Alčaković, S., Pavlović, D., & Popesku, J. (2017). Millennials and gamification: A model proposal for gamification application in tourism destination. Marketing, 48(4), 207–214. https://doi.org/10.5937/markt1704207a 
 <br><a id="3">[3]</a>
