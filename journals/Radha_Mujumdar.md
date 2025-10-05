@@ -18,3 +18,9 @@ On Monday, 8th September, we scheduled a meeting with the TA to discuss our syst
 - On Wednesday from 4 to 5 pm, we had our peer to peer feedback meeting along with the TA. We recieved some feedback from the other team with regards to our market research, stakeholders, quality attributes. We also gave the other team some feedback about their revenue stream 
 - On Friday, during lecture we met with the professor to ask if he had any suggestions and thoughts aboit our report. He suggested to make the report more concise and avoid using generic info
 - During the weekend, we had an online meeting again to discuss the feedback and make the refinement presentation. I worked on implementing the feedback and making the necessary changes. I also plan to study more about different architectural styles to reconsider the quality attributes and their tradeoffs as suggested by the other team.
+
+## Week 5
+- On Tuesday, 30th September, we met on google meet to discuss architectural styles and also reconsider our quality attributes. I read up on the sample report provided on brightspace. We divided different architectural styles amongst ourselves to explore and research to see which ones would fit our system the best. I looked up microservices one.
+- On Wednesday, we had a team meeting at Aula between 4 to 6pm. We presented the designated architectural design to each other. After brainstorming for quite some time, we decided to go with the microservices architectural design. We then decided to look up different patterns under microservices. I researched about different patterns.
+- On Friday, we had an online google meet to discuss and finalise our design pattern.  We decided to go with microservices using event driven comminication.  We also made a presentation for the TA meeting.
+-I worked on my sections in the report on the weekend and explore ideas on how we will implement the poc.

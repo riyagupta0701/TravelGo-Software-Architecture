@@ -281,8 +281,12 @@ Microkernel architecture will provide the platform with a lightweight and stable
 Serverless architecture enables the platform to be scaled automatically based on user demand and reduces the need for managing servers by developer since cloud providers manage it [[5]](#5). This architecture allows platforms to simplify deployment and improves operational efficiency. However, TravelGo would heavily rely on real-time interactions such as leaderboards, competitive quizzes, and user engagement based on location. Therefore, even though serverless systems are highly scalable and stateless by nature, it can lead to more overhead in terms of response time and cost when handling large number of complex processes. Furthermore, it implies less control on the server side which could breach confidentiality and security protocols.
 
 #### 10.1.4 Microservices Architecture
+**Scalability:** TravelGo will serve a diverse user base with travelers from around the world. Microservices can be deployed across multiple regions, closer to where users are, which reduces latency and ensures a seamless experience globally. Since each service can scale independently, TravelGo can easily handle spikes in usage,  for example, scaling the chatroom service during travel seasons without affecting payments or recommendations. <br>
+**Modularity:** TravelGo offers a variety of features like community interactions, cultural content, side quests,  and plans to add even more in the future. Microservices naturally support modularity by dividing the system into small, loosely coupled services, each built around a specific business capability. This allows TravelGo to implement, test, and deploy new features independently, without slowing down the rest of the system. For instance, a new “local quiz” module could be rolled out without touching the existing leaderboard or chat functionality. <br>
+**Integrity:** Because TravelGo collects sensitive personal data such as names, payment details, and location information, integrity and security are critical. Microservices help here by isolating services and containing failures. If one service is compromised, others remain unaffected, protecting the majority of user data. While microservices do increase the number of potential entry points into the system, these risks can be managed with event-driven communication, strong authentication, and encryption. This ensures that TravelGo maintains user trust by preserving data security and system reliability. <br>
 
-<!-- Text here -->
+![](Microservices.png)
+<p style="text-align: center;">Figure 10.2.1: Microservices architecture of the system</p>
 
 #### 10.1.5 Trade-Off Analysis for Architectural Styles
 
@@ -310,6 +314,11 @@ The C4 System Context Diagram highlights TravelGo’s role within its environmen
 #### 10.2.4 Code View
 
 ### 10.3 Architectural & Design Patterns
+#### 10.3.1 Event Driven
+**Scalability:** Event-driven communication allows TravelGo to handle a large and diverse user base more efficiently. Instead of services constantly calling each other through direct APIs, they publish and subscribe to events via a broker. This reduces coupling and lets multiple services consume the same event without adding system strain. For instance, when a QuestCompleted event is published, the Leaderboard Service, Notification Service can all react independently. This enables TravelGo to scale individual services as demand grows, ensuring smooth performance during travel season spikes or viral content moments. <br>
+**Modularity:** TravelGo has distinct features such as the community chatroom, cultural side quests and league based competition, that all evolve at different speeds. Event-driven design supports loose coupling, meaning each service can be developed, deployed, and maintained independently. Adding new features is straightforward, a new service just subscribes to relevant events without disrupting existing ones. Introducing a new module only requires subscribing to its related events, avoiding changes to other services. <br>
+**Integrity:** Events provide a structured, controlled way of sharing only the necessary data between services, improving data integrity and security. Sensitive data can be filtered at the broker, while services only receive the minimum required data needed, for instance, user IDs rather than full profiles. Moreover, event logs create an auditable trail of what happened and when, which strengthens TravelGo’s reliability and accountability. If inconsistencies like leaderboard manipulation arise, events can be traced back to verify the source of truth. <br>
+
 
 
 ## 11 Proof of Concept
