@@ -199,9 +199,6 @@ the user stories.
 Quality attributes describe desirable properties of a system.
 For creating TravelGo we want to consider the following elements:
 
-**Time to market**: It is essential to release our product at the right time. Most people travel around the summertime, therefore the platform should be on the market before summer. TravelGo could also be released while it is still imperfect. In that case, since it would be possible to get feedback from users, it would be easier to see which features people like. We could then fine-tune and build on those features and discard the ones that people did not use much.
-\
-\
  **Modularity**: Since the platform will have distributed deployment, TravelGo needs to use modules. Modularity is also important for parallel development and incrementally building. 
 \
 \
@@ -211,19 +208,16 @@ For creating TravelGo we want to consider the following elements:
 **Scalability**: At first, TravelGo will not have a lot of users. Of course we hope to increase this amount over time. Because of this, the architecture should be designed for growth.
 \
 \
-**Usability**: The user interface should be very convenient and intuitive to use. It should be easy to learn for first-time users and memorable for returning users. Since the platform will be available in many different countries, it should be convenient to use in all those countries, including different language options.
+**Availability**: The system should be functioning correctly 24/7, since our users are in many different timezones, which means that the platform is always in use. We also want the platform to be partially available when users are not connected to the internet, which happens often when traveling.
 \
 \
-**Serviceability**: The system should be easy to maintain. A lot of new tourist attractions will be added over time, and the user should not have to update the app every time an attraction is added. Since the platform is intended for users all around the world, there is always a timezone that suffers if we do maintenance work. Therefore we want to have to do as little maintenance as possible.
+ **Authentication**: Because users can buy a premium subscription that unlocks features, we need to be confirm their identity.
 \
 \
-**Availability**: The system should be functioning correctly 24/7, since our users are in many different timezones, which means that the platform is always in use.
+**Integrity**: We need to be certain that all information on the platform is authentic, trustworthy and cannot be tampered with. It is also important that companies are paid for their services, and users get access to the additional features if they purchase the premium subscription.
 \
 \
- **Defensibility**: Since we work with our users personal data and have a chatroom functionality, we need to be certain that the system is protected from malicious attacks. Additionally, we need to ensure that no malicious content is posted in the chatroom. It is also important that our data for the tourist attractions is correct, since tourist are more likely to fall for scams.
- \
- \
- **Privacy**: Because TravelGo has access to users' names, locations, and personal conversations in the chatroom, it is important to ensure that our users' personal data is secret and protected.
+**Confidentiality**: Since we work with our users' and companies' personal data and have a chatroom functionality, we need to be certain that this sensitive data is not leaked or shared.
 \
 \
 **Adaptability**: It is important that our system is extensible, because we want to add new features as the platform becomes more successful. We also want our system to be modifiable, so that the implemented functionality can be changed if needed and we can remove less successful features.
@@ -232,24 +226,44 @@ For creating TravelGo we want to consider the following elements:
 **Portability**: We want our platform to be available for all systems. If we make the app portable, we can save a lot of costs and effort.
 \
 \
-**Sustainability**: We need to ensure that our product does not become irrelevant in the future, both in technical and economical terms. It is also important to make sure that the platform grows from the start.
-\
-\
-The quality attributes that we primarily want to focus on are **availability**, **performance** and **scalability**.
+The quality attributes that we primarily want to focus on are **scalability**, **modularity**, **confidentiality** and **integrity**.
 
 ### 9.1 Trade-offs
 For the main quality attributes, there are some trade-offs that we should keep in mind while designing the system:
 
-**Availability vs privacy**: We always want our system to be available for every user. However, this might have impact on the privacy of users. For example, TravelGo utilizes the location of its users. Some users may not want to share their location, which means that certain functionalities of TravelGo would not work for them.
+**Scalability vs Integrity**: TravelGo should be designed for growth. However, a large user-base all around the world could have an impact on integrity. For example, with more tourist attractions, it might be more difficult to assure that all the information on the platform is authentic and trustworthy.
 \
 \
-**Performance vs time to market**: If we want to release TravelGo as soon as possible, it may be difficult to optimize the performance of the platform before the deadline. 
+**Scalability vs Performance**: We want TravelGo to have as many users as possible. Having said that, with more users the performance of the app might go down, especially since the users will be from all around the world. 
 \
 \
-**Scalability vs defensibility**: TravelGo should be designed for growth of user-base. However, a large user-base all around the world could have an impact on defensibility. For example, if we have a lot of posts in the chatroom, it is more difficult to monitor for malicious intent.
+**Modularity vs Performance**: If the system is designed to be modular, the performance of the app might be worse. This is the case because the modules have to communicate with each other, which may cause delays.
 \
 \
-**Scalability vs performance**: We want TravelGo to have as many users as possible. However, with more users, the performance of the app might go down, especially if the users are from all around the world. 
+**Confidentiality vs Modularity**: Confidentiality and modularity are both very important for most of our stakeholders. However, if the system is designed to be modular, it is harder to secure our system, since there will be multiple communication points between the modules.
+
+
+### 9.2 Important quality attributes for stakeholders
+Different stakeholders have different reasoning why certain quality attributes are the most important. This is shown in table 9.2.
+
+| Quality Attribute | Expectation                                                                                                                                               | Stakeholders                                                                                    |
+|-------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|
+| Scalability       | - System should be able to scale to support peak tourist seasons                                                                                          | - Governments & Tourism Boards                                                                  |
+|                   | - The system should be capable of displaying all attraction sites                                                                                         | - Attraction Sites                                                                              |
+|                   | - System should recommend my business when planning a trip without being influenced by the user's current location                                        | - Local Businesses<br>- Investors & Sponsors                                                    |
+|                   | - Communities would want to grow without the app slowing down, from a handful of members to thousands                                                     | - Travel Communities & Influencers                                                              |
+|                   | - System should scale for multiple users exploring community resources                                                                                    | - Local Communities                                                                             |
+|                   | - System should be fast and easily understandable even when multiple users are utilizing the app or when multiple leagues are run for different countries | - Tourists and Travellers                                                                       |
+| Modularity        | - System should include the attraction site in all features, new and old                                                                                  | - Attraction Sites                                                                              |
+|                   | - System should be able to integrate new features seamlessly                                                                                              | - Travel Communities & Influencers<br>- Governments & Tourism Boards<br>- Local Communities     |
+| Integrity         | - System should be reliable such that users can trust it and companies want to collaborate with it                                                        | - Governments & Tourism Boards                                                                  |
+|                   | - If I pay for a partnership, advertisement, subscription or positive publicity, I must get what I payed for                                              | - Investors & Sponsors                                                                          |
+|                   | - The system should offer compensation for my service before advertising on the platform                                                                  | - Local Businesses<br>- Attraction Sites                                                        |
+|                   | -  All the information on the platform must be authentic and trustworthy                                                                                  | - Travel Communities & Influencers<br>- Tourists and Travellers<br>- Local Communities          |
+|                   | - System should provide advertised features if the premium subscription is paid for                                                                       | - Tourists and Travellers                                                                       |
+|                   | - System should reward a winner from leagues. In the case of equal scores, alternative solutions must be implemented                                      | - Tourists and Travellers                                                                       |
+| Confidentiality   | - Sensitive data should not be leaked or shared                                                                                                           | - Investors & Sponsors<br>- Attraction Sites<br>- Local Businesses<br>- Tourists and Travellers |
+<p style="text-align: center;">Table 9.2: Table with reasoning why certain quality attributes are important to stakeholders </p>
 
 ## 10 Architecture Design
 
