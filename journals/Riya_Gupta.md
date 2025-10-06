@@ -32,3 +32,12 @@ On Monday, we submitted the report and POC for the Finch release. We had a meeti
 We had the respective meeting on Wednesday, where after our presentation, we took a note of the feedback and broke it down into sections to work on. 
 
 During the lecture, the professor provided insights on some aspects we could update in our report, so taking them into consideration, we spent the following days implementing the feedback and creating the refinement presentation.
+
+---
+## Week 5
+
+After submitting the refinement presentation on Monday, we discussed on the different architecture styles for our platform on Wednesday.
+
+I read up about Microkernel architecture and deduced that it was not a good fit for our platform. Later in the week, I went through the book to understand the different kind of design patterns. We had a meeting on Friday evening to decide on the best fit for our platform and how to divide up the further work. I also contributed to the presentation for the review meeting with the TA in the following week.
+
+Besides the report, I started implementing the POC with respect to microservices and understanding how to integrate the events.
