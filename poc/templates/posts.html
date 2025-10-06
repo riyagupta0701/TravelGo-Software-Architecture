@@ -12,6 +12,13 @@
 
     <form method="POST">
         <p>User ID: <input type="number" name="user_id" required></p>
+        <p>Attraction:
+      <select name="attraction" required>
+        {% for a in attractions %}
+          <option value="{{ a.name }}">{{ a.name }}</option>
+        {% endfor %}
+      </select>
+    </p>
         <p>Experience: <input type="text" name="content" required></p>
         <button type="submit">Post</button>
     </form>
@@ -19,7 +26,7 @@
     <h2>Recent Posts</h2>
     <ul>
         {% for p in posts %}
-        <li>User {{ p.user_id }}: {{ p.content }}</li>
+        <li><b>User {{ p.user_id }}</b> at <i>{{ p.attraction }}</i>: {{ p.content }}</li>
         {% endfor %}
     </ul>
 </body>

@@ -22,7 +22,7 @@ def create_post():
     return requests.post(f"{POST_SERVICE}/posts", json=request.json).json()
 
 @app.route("/posts", methods=["GET"])
-def list_posts():
+def get_posts():
     return requests.get(f"{POST_SERVICE}/posts").json()
 
 @app.route("/leaderboard", methods=["GET"])
