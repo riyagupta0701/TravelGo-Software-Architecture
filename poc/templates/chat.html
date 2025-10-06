@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
-<head><title>TravelGo - Posts</title></head>
+<head><title>TravelGo - Chat</title></head>
 <body>
-    <h1>Travel Experiences</h1>
+    <h1>Chat Forum</h1>
     <nav>
         <a href="/">Home</a> | 
         <a href="/posts">Posts</a> | 
@@ -12,14 +12,14 @@
 
     <form method="POST">
         <p>User ID: <input type="number" name="user_id" required></p>
-        <p>Experience: <input type="text" name="content" required></p>
-        <button type="submit">Post</button>
+        <p>Message: <input type="text" name="message" required></p>
+        <button type="submit">Send</button>
     </form>
 
-    <h2>Recent Posts</h2>
+    <h2>Messages</h2>
     <ul>
-        {% for p in posts %}
-        <li>User {{ p.user_id }}: {{ p.content }}</li>
+        {% for msg in messages %}
+        <li>{{ msg }}</li>
         {% endfor %}
     </ul>
 </body>

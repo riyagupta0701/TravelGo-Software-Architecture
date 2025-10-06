@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TravelGo - Map</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <style>
+    #map {
+      height: 500px;
+      width: 100%;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+    <h1>TravelGo</h1>
+    <nav>
+        <a href="/">Home</a> | 
+        <a href="/posts">Posts</a> | 
+        <a href="/leaderboard">Leaderboard</a> | 
+        <a href="/chat">Chat Forum</a>
+    </nav>
+    <h1>Explore</h1>
+  <div id="map"></div>
+
+  <script>
+    const map = L.map('map').setView([52.3676, 4.9041], 12); // Amsterdam
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 18,
+    }).addTo(map);
+
+    attractions.forEach(attraction => {
+      L.marker([attraction.lat, attraction.lng])
+        .addTo(map)
+        .bindPopup(`<b>${attraction.name}</b><br>${attraction.description}`);
+    });
+  </script>
+</body>
+</html>
