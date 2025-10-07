@@ -340,7 +340,13 @@ Implementing CQRS would be beneficial for TravelGo, since it improves scalabilit
 Although SAGA is a widely used design pattern for microservices, we do not believe it to be advantageous for our system. There are two main reasons for this. First of all, SAGA might cause increased latency, since services have to coordinate with each other. Because of this, the performance of our system might decrease.
 Second of all, SAGA is difficult to implement, and hard to debug. We do not believe that the advantages of SAGA outweigh these disadvantages.
 
+#### 10.3.4 API Gateway
 
+The API Gateway acts as the central entry point for all client requests. Instead of the frontend or mobile application communicating directly with each individual microservice (like posts, chat, map, or leaderboard), all interactions first go through the API Gateway. It routes these requests to the correct service, aggregates data when needed, and returns a unified response to the user.
+
+This design greatly simplifies communication between the frontend and backend systems. For example, when a traveller views the map, submits a post, or checks the leaderboard, the frontend sends requests only to the gateway. The gateway then coordinates with the relevant microservices such as the Map Service, Post Service, and Leaderboard Service, and compiles the response efficiently.
+
+The API Gateway helps TravelGo scale horizontally by decoupling client interactions from the underlying microservices. Each service can be deployed, replicated, and scaled independently without affecting others. By isolating each service behind the API Gateway, TravelGo’s architecture remains modular. All communication passes through the gateway as it is the central control point. The gateway can manage user authentication, enforce authorization, and apply HTTPS encryption to secure data in transit. This ensures that sensitive user information remains protected and that only authorized users can access specific features.
 
 ## 11 Proof of Concept
 
