@@ -1,3 +1,7 @@
+import sys
+import os
+
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from flask import Flask, jsonify
 from events import event_bus
 
@@ -14,3 +18,6 @@ event_bus.subscribe("post_created", handle_new_post)
 def get_leaderboard():
     sorted_lb = sorted(leaderboard.items(), key=lambda x: x[1], reverse=True)
     return jsonify([{"user_id": uid, "points": pts} for uid, pts in sorted_lb])
+
+if __name__ == "__main__":
+    app.run(port=5003)

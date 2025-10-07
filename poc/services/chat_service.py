@@ -1,3 +1,7 @@
+import sys
+import os
+
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from flask import Flask, request, jsonify
 from events import event_bus
 
@@ -19,3 +23,6 @@ def send_message():
 @app.route("/chat", methods=["GET"])
 def get_messages():
     return jsonify(messages)
+
+if __name__ == "__main__":
+    app.run(port=5004)

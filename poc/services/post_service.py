@@ -1,3 +1,7 @@
+import sys
+import os
+
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from flask import Flask, request, jsonify
 from events import event_bus
 
@@ -18,3 +22,6 @@ def create_post():
 @app.route("/posts", methods=["GET"])
 def get_posts():
     return jsonify(posts)
+
+if __name__ == "__main__":
+    app.run(port=5002)

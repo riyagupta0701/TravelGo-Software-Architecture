@@ -9,3 +9,6 @@ def publish(event_type, data):
     if event_type in subscribers:
         for handler in subscribers[event_type]:
             handler(data)
+
+if __name__ == "__main__":
+    app.run(port=6000)

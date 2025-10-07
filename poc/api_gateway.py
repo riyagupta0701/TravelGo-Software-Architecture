@@ -40,3 +40,6 @@ def get_chat():
 @app.route("/map", methods=["GET"])
 def get_map():
     return requests.get(f"{MAP_SERVICE}/map").json()
+
+if __name__ == "__main__":
+    app.run(port=5000)
