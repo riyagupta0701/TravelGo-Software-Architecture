@@ -1,20 +1,33 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
+<html>
+<head><title>TravelGo - Posts</title></head>
+<body>
+    <h1>Travel Experiences</h1>
+    <nav>
+        <a href="/">Home</a> | 
+        <a href="/posts">Posts</a> | 
+        <a href="/leaderboard">Leaderboard</a> | 
+        <a href="/chat">Chat Forum</a>
+    </nav>
 
-{% block content %}
-<h1>Share Your Experience</h1>
-<form method="POST" action="{{ url_for('add_post') }}">
-    <input type="text" name="title" placeholder="Attraction Title" required><br><br>
-    <textarea name="description" placeholder="Describe your experience"></textarea><br><br>
-    <button type="submit">Post</button>
-</form>
+    <form method="POST">
+        <p>User ID: <input type="number" name="user_id" required></p>
+        <p>Attraction:
+      <select name="attraction" required>
+        {% for a in attractions %}
+          <option value="{{ a.name }}">{{ a.name }}</option>
+        {% endfor %}
+      </select>
+    </p>
+        <p>Experience: <input type="text" name="content" required></p>
+        <button type="submit">Post</button>
+    </form>
 
-<h2>Recent Posts</h2>
-{% for post in posts %}
-  <div>
-    <h3>{{ post.title }}</h3>
-    <p>{{ post.description }}</p>
-  </div>
-{% else %}
-  <p>No posts yet.</p>
-{% endfor %}
-{% endblock %}
+    <h2>Recent Posts</h2>
+    <ul>
+        {% for p in posts %}
+        <li><b>User {{ p.user_id }}</b> at <i>{{ p.attraction }}</i>: {{ p.content }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

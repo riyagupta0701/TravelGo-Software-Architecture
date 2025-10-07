@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head><title>TravelGo - Chat</title></head>
+<body>
+    <h1>Chat Forum</h1>
+    <nav>
+        <a href="/">Home</a> | 
+        <a href="/posts">Posts</a> | 
+        <a href="/leaderboard">Leaderboard</a> | 
+        <a href="/chat">Chat Forum</a>
+    </nav>
+
+    <form method="POST">
+        <p>User ID: <input type="number" name="user_id" required></p>
+        <p>Message: <input type="text" name="message" required></p>
+        <button type="submit">Send</button>
+    </form>
+
+    <h2>Messages</h2>
+    <ul>
+        {% for msg in messages %}
+        <li>{{ msg }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
