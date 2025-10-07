@@ -10,9 +10,17 @@ cd poc
 ```
 
 ### Create virtual environment
+For mac
 ```
-python3 -m venv venv
+python -m venv venv
 source venv/bin/activate
+```
+
+For windows
+```
+pip install virtualenv
+python -m virtualenv vEnv
+vEnv\Scripts\activate
 ```
 
 ### Install dependencies
@@ -24,33 +32,40 @@ pip install -r requirements.txt
 Run all the microservices in separate terminals:
 
 ```
-export FLASK_APP=services.user_service.py && flask run -p 5001
+python services/user_service.py
 ```
 ```
-export FLASK_APP=services.post_service.py && flask run -p 5002
+python services/post_service.py
 ```
 ```
-export FLASK_APP=services.leaderboard_service.py && flask run -p 5003
+python services/leaderboard_service.py
 ```
 ```
-export FLASK_APP=services.chat_service.py && flask run -p 5004
+python services/chat_service.py
 ```
 ```
-export FLASK_APP=services.map_service.py && flask run -p 5005
+python services/map_service.py
+```
+
+### Run the event bus
+In a new terminal:
+
+```
+python events/event_bus.py
 ```
 
 ### Run the API gateway
 In a new terminal:
 
 ```
-export FLASK_APP=api_gateway.py && flask run -p 5000
+python api_gateway.py
 ```
 
 ### Run the frontend service
 In a new terminal:
 
 ```
-export FLASK_APP=services/frontend_service.py && flask run -p 5008
+python services/frontend_service.py
 ```
 
 ### To access the SQLite database

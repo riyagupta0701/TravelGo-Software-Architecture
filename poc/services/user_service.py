@@ -1,3 +1,7 @@
+import sys
+import os
+
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from flask import Flask, request, jsonify
 
 app = Flask(__name__)
@@ -13,3 +17,6 @@ def create_user():
 @app.route("/users/{user_id}", methods=["GET"])
 def get_user(user_id):
     return jsonify(users.get(user_id, {}))
+
+if __name__ == "__main__":
+    app.run(port=5001)

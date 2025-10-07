@@ -40,3 +40,6 @@ def chat():
         return redirect(url_for("chat"))
     messages = requests.get(f"{API_GATEWAY}/chat").json()
     return render_template("chat.html", messages=messages)
+
+if __name__ == "__main__":
+    app.run(port=5008)

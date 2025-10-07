@@ -1,3 +1,7 @@
+import sys
+import os
+
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from flask import Flask, jsonify
 
 app = Flask(__name__)
@@ -12,3 +16,6 @@ attractions = [
 @app.route("/map", methods=["GET"])
 def get_map():
     return jsonify(attractions)
+
+if __name__ == "__main__":
+    app.run(port=5005)
