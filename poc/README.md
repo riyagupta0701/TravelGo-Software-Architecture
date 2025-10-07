@@ -10,9 +10,17 @@ cd poc
 ```
 
 ### Create virtual environment
+For mac
 ```
 python3 -m venv venv
 source venv/bin/activate
+```
+
+For windows
+```
+pip install virtualenv
+python -m virtualenv vEnv
+vEnv\Scripts\activate
 ```
 
 ### Install dependencies
