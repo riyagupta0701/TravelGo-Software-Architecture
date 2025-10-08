@@ -1,11 +1,11 @@
-## Week 1 - It's the beginning
+## Week 1 - It's the Beginning
 
 I had a very exciting first week! Tuesday of this week, I joined my Software Architecture group and met my teammates after the first lecture. Our first discussions were already about the system we would like to develop be we decided to postpone making a decision until Thursday. Furthermore, one aspect we all agreed upon was to work in person as much as possible! That is great news, since I believe communication face-to-face is the best! I am very excited!
 
 On Thursday, we drafted a decent list of potential ideas for the project, but nothing outstanding so far. We were juggling ideas around but the main domains we seemed most interested in were finance and emergency scenarios. However, after more time and consideration was put into these ideas, we decided they were not suitable. Therefore, we had (somewhat of an urgent) team metting and finally decided on a system. We came up with the concept for TravelGo!, an interactive tourist platform, with competitive and educational features. With an idea in mind, all that was left to do was to put into words what this system would imply. We were all very happy by the end of the meeting, and I was very satisfied as well with the outcome! I hope this will be a fun project for all of us!
 
 ---
-## Week 2 - Getting into the rythm
+## Week 2 - Getting Into the Rhythm
 
 Another week, another journal entry! Week 2 started quite nicely. Things are going well, but it is still only the second week. Monday actually was also the day we met our TA. We had such a lovely and helpful conversation. We explained our idea (and discussed our preliminary doubts) and the TA was very supportive! We were encouraged to not jump to coding straight away, but instead to plan the whole process out first and figure out when we target. 
 
@@ -13,7 +13,7 @@ After the TA meeting, we had a quick team meeting as well to discuss the final r
 
 Finally, this week we met for another 2 hours to write together the project plan for the M1.2 assignment. I unfortunately left most of my work for the weekend, which actually prolonged for the end of the weekend, but I am finally writing my part of the report. It is great that my teammates already wrote potential stakeholders, so my use cases are more suited for them!
 
-## Week 3 - The calm before the storm
+## Week 3 - The Calm Before the Storm
 
 This week we are preparing for our first milestone: The Finch release. We are doing pretty good in terms of report writing with only a few sections left. Wednesday, we met for about 2 hours to discuss what the report is still missing and together we established our roadmap. I took upon myself to research the scenarios, current and potential external dependencies and make the revenue model. 
 
@@ -26,4 +26,12 @@ This week I was out of the country for some health check-ups. Everything turned 
 
 Other than that, the progress this week was a bit slower since we just passed a bigger milestone with the project, but I supported my team as much as I could through online meetings and updating my parts. Sunday afternoon we had a short 30-minute meeting to refine our slides for the M2.1 deadline. I am excited to come back to the Netherlands next week, nail down the architecture (hopefully) and contribute more.
 
-## Week 5
+## Week 5 - Layers upon Layers; from Monoliths to Microservices! 
+
+This week has been all about designing! I had a lot of fun thinking about the structure of the project and I proposed a new adaptation of the system context view. I also wanted to advance into the next layers of the C4 structure and designed the container and component view. I presented the diagrams to my teammates during our Wednesday meeting (and they really liked it, yay!). However we were not so sure how to properly represent the payment interactions with the local businesses. As a business owner if you offer some free souvenir you would expect to be paid beforehand by the company that owns the platform, but the platform processes subscription fees and charges sponsors through an external payment system... so would local businesses have their independent payment system...? Maybe this is too grainy and not so relevant from an implementation perspective, so we decided to asked the TA during our next meeting. I am looking forward to it!
+
+Later on, we started assessing what the report is still missing and we researched various architectures and architectural patterns. I was tasked to look into the compatibility of a serverless architecture considering our system (but we ultimately agreed microservices would be the best fit). I found it especially curious during the research phase how microservices can be implemented together with serverless architecture procedures. Towards the end of the week, on Friday, we met online again and discussed suitable architectural patterns. I was tasked to describe in the report the Circuit Breaker and the Retry Patterns. 
+
+## Week 6 - 
+- circuit breaker & retry patterns
+- 
