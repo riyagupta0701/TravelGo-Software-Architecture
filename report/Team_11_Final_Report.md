@@ -23,6 +23,7 @@ We want to create an interactive digital platform that makes travelling easier a
 Another main part of TravelGo is making it easier for travellers to engage with each other. To encourage tourist interaction, the platform will have a chatroom. This chatroom helps travellers to meet new people that are at the same location. Users can also post new or hidden attractions that they recommend to others. Because of this, tourist will know which attractions they should definitely visit.
 
 ## 2 Wardley Map
+Building on the system’s vision and context, the Wardley Map highlights how TravelGo blends innovation with open source or standardized solutions.
 ![](WardleyMap.png)
 <p style="text-align: center;">Figure 2.1 : Wardley map</p>
 
