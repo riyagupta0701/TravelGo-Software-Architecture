@@ -386,7 +386,7 @@ At launch, most of the platform content should remain free to access to build th
 
 
 ## 13 Roadmap
-The stages in which the project is carried out can be seen in the roadmap below.
+The stages in which the proposed system will be implememented can be seen in the roadmap below.
 
 ![](Roadmap.png)
 <p style="text-align: center;">Figure 13.1: Roadmap</p>
