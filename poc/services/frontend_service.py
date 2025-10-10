@@ -5,7 +5,7 @@ import os
 template_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'templates')
 app = Flask(__name__, template_folder=template_dir)
 
-API_GATEWAY = "http://127.0.0.1:5000"
+API_GATEWAY = os.getenv("API_GATEWAY_URL", "http://127.0.0.1:5000")
 
 @app.route("/")
 def home():
@@ -14,17 +14,18 @@ def home():
 
 @app.route("/posts", methods=["GET", "POST"])
 def posts():
-    attractions = requests.get(f"{API_GATEWAY}/map").json()
     if request.method == "POST":
-        data = {
-            "user_id": int(request.form["user_id"]),
-            "attraction": request.form["attraction"],
-            "content": request.form["content"]
-        }
-        requests.post(f"{API_GATEWAY}/posts", json=data)
+        user_id = request.form["user_id"]
+        attraction = request.form["attraction"]
+        content = request.form["content"]
+        requests.post(f"{API_GATEWAY}/posts", json={
+            "user_id": int(user_id),
+            "attraction": attraction,
+            "content": content
+        })
         return redirect(url_for("posts"))
     posts = requests.get(f"{API_GATEWAY}/posts").json()
-    return render_template("posts.html", posts=posts, attractions=attractions)
+    return render_template("posts.html", posts=posts)
 
 @app.route("/leaderboard")
 def leaderboard():
@@ -42,4 +43,4 @@ def chat():
     return render_template("chat.html", messages=messages)
 
 if __name__ == "__main__":
-    app.run(port=5008)
+    app.run(host="0.0.0.0", port=5008)

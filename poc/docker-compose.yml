@@ -1,0 +1,70 @@
+version: "3.9"
+services:
+  api_gateway:
+    build: .
+    command: python api_gateway.py
+    environment:
+      USER_SERVICE_URL: http://user_service:5001
+      POST_SERVICE_URL: http://post_service:5002
+      LEADERBOARD_SERVICE_URL: http://leaderboard_service:5003
+      CHAT_SERVICE_URL: http://chat_service:5004
+      MAP_SERVICE_URL: http://map_service:5005
+    ports:
+      - "5000:5000"
+    depends_on:
+      - user_service
+      - post_service
+      - leaderboard_service
+      - chat_service
+      - map_service
+
+  frontend_service:
+    build: .
+    command: python services/frontend_service.py
+    environment:
+      API_GATEWAY_URL: http://api_gateway:5000
+    ports:
+      - "5008:5008"
+    depends_on:
+      - api_gateway
+
+  user_service:
+    build: .
+    command: python services/user_service.py
+    ports:
+      - "5001:5001"
+
+  post_service:
+    build: .
+    command: python services/post_service.py
+    ports:
+      - "5002:5002"
+    depends_on:
+      - user_service
+
+  leaderboard_service:
+    build: .
+    command: python services/leaderboard_service.py
+    ports:
+      - "5003:5003"
+    depends_on:
+      - post_service
+
+  chat_service:
+    build: .
+    command: python services/chat_service.py
+    ports:
+      - "5004:5004"
+    depends_on:
+      - post_service
+
+  map_service:
+    build: .
+    command: python services/map_service.py
+    ports:
+      - "5005:5005"
+
+# Persist the instance/ DB folder (if used later)
+volumes:
+  instance_data:
+    driver: local
