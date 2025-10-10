@@ -20,4 +20,4 @@ def get_leaderboard():
     return jsonify([{"user_id": uid, "points": pts} for uid, pts in sorted_lb])
 
 if __name__ == "__main__":
-    app.run(port=5003)
+    app.run(host="0.0.0.0",port=5003)

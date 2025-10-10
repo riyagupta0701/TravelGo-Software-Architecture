@@ -28,6 +28,12 @@ vEnv\Scripts\activate
 pip install -r requirements.txt
 ```
 
+### Run the application using docker
+Once you navigate to the poc folder, run the command:
+```
+docker compose up --build
+```
+
 ### Run the microservices
 Run all the microservices in separate terminals:
 
