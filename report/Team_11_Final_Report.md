@@ -391,6 +391,9 @@ The stages in which the proposed system will be implememented can be seen in the
 ![](Roadmap.png)
 <p style="text-align: center;">Figure 13.1: Roadmap</p>
 
+## 14 Open Source
+To safe on time, cost and effort, we will make use of open source software. This does come with some risks: open source software might lead to compatibility issues, lack of support and potential security vulnerabilities. To mitigate these risks, all open source software must be carefully evaluated before usage. In some cases, open source tools might have to be adapted to fit our system better. For our POC, we already made use of several open source tools: more information can be found in section 11.1. 
+
 ## Bibliography
 <a id="1">[1]</a>
 Pautasso, C. (2020). Software Architecture: visual lecture notes. LeanPub. https://leanpub.com/software-architecture/
