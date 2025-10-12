@@ -285,21 +285,27 @@ Serverless architecture enables the platform to be scaled automatically based on
 
 ### 9.2 Architectural Views
 
-<!-- Text here -->
+The C4 model [[6]](#6) presents are a set of diagrams used to visualize the architecture of a software architecture at different levels of detail. Together, these views help communicate clearly to stakeholders how a system fits into its environment, how it’s structured internally, and how its parts interact.
 
 #### 9.2.1 Context View
 
-The C4 System Context Diagram highlights TravelGo’s role within its environment. It shows the platform as the central system interacting with travellers, attraction owners, and several external systems such as map providers, tourism boards, influencers, and competitors. The diagram illustrates key flows of information (e.g. travellers providing personal information, owners submitting attractions, the platform requesting maps) and helps define clear system boundaries and dependencies.
+The System Context Diagram highlights TravelGo’s role within its environment. It shows the platform as the central system interacting with travellers, attraction owners, and several external systems such as map providers, tourism boards, influencers, and competitors. The diagram illustrates key flows of information (e.g. travellers providing personal information, owners submitting attractions, the platform requesting maps) and helps define clear system boundaries and dependencies.
 
 ![](ContextDiagram.png)
 <p style="text-align: center;">Figure 10.2.1: Context Diagram</p>
 
 #### 9.2.2 Container View
 
+The next view depicts all parts from the context view further elaborated into containers. As you can see in Figure 10.2.2 below, the TravelGo System, Local Business Owners, Tourism Boards and External Dependencies now showcase more details about their inner workings.  
+
+The system’s core container is the App, which interacts with the Tourist and utilizes internal databases to manage user data, as well as external databases to interact with the Tourism Boards. Furthermore, the connection with the External Dependencies is carried out through 2 connections between the Payment System for processing user subscription and the Third-Party Map API. Lastly, the Local Businesses contain the Rewards and the functional relation is presented.
+
 ![](ContainerDiagram.png)
 <p style="text-align: center;">Figure 10.2.2: Container Diagram</p>
 
 #### 9.2.3 Component View
+
+The Component view bridges the gap between the system’s high-level structure and its implementation details, gradually revealing how each container’s functionality is realized. As can be seen from the Figure 10.2.3 below, the system's App will contain the presented components, which will later be described in the Code View.
 
 ![](ComponentDiagram.png)
 <p style="text-align: center;">Figure 10.2.3: Component Diagram</p>
@@ -364,7 +370,7 @@ At launch, most of the platform content should remain free to access to build th
 
 
 ## 12 Roadmap
-The stages in which the proposed system will be implememented can be seen in the roadmap below.
+The stages in which the proposed system will be implemented can be seen in the roadmap below.
 
 ![](Roadmap.png)
 <p style="text-align: center;">Figure 13.1: Roadmap</p>
@@ -378,8 +384,10 @@ Alčaković, S., Pavlović, D., & Popesku, J. (2017). Millennials and gamificati
 Gen Z Travel Trends: Statistics, Insights and what it all means for the industry [2025]. (n.d.). Atlys. https://www.atlys.com/blog/gen-z-travel-trends
 <br><a id="4">[4]</a> 
 Pitrelli, M. (2023, March 27). More millennials are turning 40 — and they’re changing travel as we know it. CNBC. https://www.cnbc.com/2023/03/27/millennials-are-turning-40-and-theyre-changing-travel-as-we-know-it.html
-<br><a id="1">[5]</a>
+<br><a id="5">[5]</a>
 Artug, E., & Fateh, D. (2025, March 28). Serverless and microservices: A tale of two architectures. Contentful. https://www.contentful.com/blog/serverless-vs-microservices/ (Date Accessed - October 2025)
+<br><a id="6">[6]</a>
+Brown, S. (n.d.). The C4 model for visualising software architecture. C4 Model. Retrieved October 12, 2025, from https://c4model.com/ (Date Accessed - October 2025)
  
 ## 13 Appendices:
 
