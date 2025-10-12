@@ -116,29 +116,7 @@ The power/interest grid is used to classify stakeholders according to their infl
 ![](PowerInterestGrid.png) 
 <p style="text-align: center;"> Figure 5.1: Power / Interest Grid </p>
 
-## 6 Personas
-
-Personas are defined as fictional representations of users aimed to represent the diverse range of individuals
-interacting with a specific application. They are used in order to observe and simulate a user’s interaction
-with the platform once completed. Ultimately, constructing different personas can help identify weak points
-and edge cases within the platform. In our case, all personas are assumed wto be unfamiliar with any programming knowledge.
-
-### 6.1 Tourist/Traveller
-
-This persona represents a typical travel enthusiast, visiting different countries and attractions. Each tourist as a bucket-list with attractions they decide to visit for that country. Tourists interact with each other, with guides, obtain discounts and discover new attractions.
-
-### 6.2 Local Business Owner (Sponsor/Business Partner)
-
-Since the app features discounts for various restaurants or souvenir shops, this persona represents local shop-owners that wish to improve their business. They process the monetary fee through the platform and in return offer the tourists a discount, voucher or even a free souvenir. Furthermore, they are also considered local sponsors since they ultimately wish for publicity for their business.
-
-### 6.3 Travel Agent
-
-This persona represents a travelling expert with extended knowledge about various attractions. They help clients plan, book, and customize trips by offering professional advice on destinations, accommodations, and experiences.
-
-### 6.4 (Potential) External Sponsor
-
-A sponsor is typically a brand, or local business which seeks visibility for their product among any individuals. They want to attract and engage individuals through gamified experiences and offered promotions in exchange for brand exposure.
-
+## mention something about personas here
 
 <!---
 ## Epics
@@ -148,7 +126,7 @@ further contribute to the User Stories. <span style="color:red">TBA later when f
 
 --->
 
-## 7 Features
+## 6 Features
 
 Features are distinct pieces of functionality that deliver value to users. They define what the software can do and are often used to plan and develop the product throughout its lifecycle.
 
@@ -163,7 +141,7 @@ Features are distinct pieces of functionality that deliver value to users. They 
 | F7         | Reward the top competitors of the leaderboard with discounts, vouchers or free souvenirs.         |
 <p style="text-align: center;">Table 7.1: List of features that will be implemented for the final product.</p>
 
-## 8 Use Case Scenarios
+## 7 Use Case Scenarios
 
 Use case scenarios explain how a user works with a system to accomplish certain tasks or objectives. They
 outline the steps needed to achieve a set objective and also help define system requirements, derived from
@@ -196,7 +174,7 @@ it should possess to fulfill stakeholders’ needs. Furthermore, they also provi
 the user stories.
 --->
 
-## 9 Quality Attributes
+## 8 Quality Attributes
 Quality attributes describe desirable properties of a system.
 For creating TravelGo we want to consider the following elements:
 
@@ -229,7 +207,7 @@ For creating TravelGo we want to consider the following elements:
 \
 The quality attributes that we primarily want to focus on are **scalability**, **modularity**, **confidentiality** and **integrity**.
 
-### 9.1 Trade-offs
+### 8.1 Trade-offs
 For the main quality attributes, there are some trade-offs that we should keep in mind while designing the system:
 
 **Scalability vs Integrity**: TravelGo should be designed for growth. However, a large user-base all around the world could have an impact on integrity. For example, with more tourist attractions, it might be more difficult to assure that all the information on the platform is authentic and trustworthy.
@@ -244,7 +222,7 @@ For the main quality attributes, there are some trade-offs that we should keep i
 **Confidentiality vs Modularity**: Confidentiality and modularity are both very important for most of our stakeholders. However, if the system is designed to be modular, it is harder to secure our system, since there will be multiple communication points between the modules.
 
 
-### 9.2 Important quality attributes for stakeholders
+### 8.2 Important quality attributes for stakeholders
 Different stakeholders have different reasoning why certain quality attributes are the most important. This is shown in table 9.2.
 
 | Quality Attribute | Expectation                                                                                                                                               | Stakeholders                                                                                    |
@@ -266,15 +244,15 @@ Different stakeholders have different reasoning why certain quality attributes a
 | Confidentiality   | - Sensitive data should not be leaked or shared                                                                                                           | - Investors & Sponsors<br>- Attraction Sites<br>- Local Businesses<br>- Tourists and Travellers |
 <p style="text-align: center;">Table 9.2: Table with reasoning why certain quality attributes are important to stakeholders </p>
 
-## 10 Architecture Design
+## 9 Architecture Design
 
 <!-- Text here -->
 
-### 10.1 Architectural Styles
+### 9.1 Architectural Styles
 
 <!-- Text here -->
 
-#### 10.1.1 Monolithic Architecture
+#### 9.1.1 Monolithic Architecture
 The monolithic architecture [[1]](#1) mainly has disadvantages for our system. For two of our most important quality attributes, modularity and scalability, the monolithic architecture is a poor choice. The disadvantages are explained in table 10.1. However, the monolithic architecture has one advantage: it might be easier to secure, since it has fewer communication points. This could have a positive impact on the confidentiality and integrity of the system.
 
 |                                 | **Disadvantages**                                                                                                                                                                                                  | **Advantages**            |
@@ -287,15 +265,15 @@ The monolithic architecture [[1]](#1) mainly has disadvantages for our system. F
 | **Confidentiality / integrity** | X                                                                                                                                                                                                                  | Might be easier to secure |
 <p style="text-align: center;">Table 10.1: Advantages and disadvantages of the monolithic architecture</p>
 
-#### 10.1.2 Microkernel Architecture
+#### 9.1.2 Microkernel Architecture
 
 Microkernel architecture will provide the platform with a lightweight and stable core while allowing the features to be added as independent plug-ins. This modularity will make it easier to expand and maintain the system, ensuring that failures in one module do not affect the entire platform. However, the platform relies heavily on high-performance interactions with external systems like map services and tourism boards and live community interaction through chats and posts. A microkernel has a high performance overhead due to the constant communication between the core and plug-ins, which could degrade user experience during peak usage. Additionally, it also increases the development time and cost of designing and maintaining interfaces between the kernel and multiple modules.
 
-#### 10.1.3 Serverless Architecture
+#### 9.1.3 Serverless Architecture
 
 Serverless architecture enables the platform to be scaled automatically based on user demand and reduces the need for managing servers by developer since cloud providers manage it [[5]](#5). This architecture allows platforms to simplify deployment and improves operational efficiency. However, TravelGo would heavily rely on real-time interactions such as leaderboards, competitive quizzes, and user engagement based on location. Therefore, even though serverless systems are highly scalable and stateless by nature, it can lead to more overhead in terms of response time and cost when handling large number of complex processes. Furthermore, it implies less control on the server side which could breach confidentiality and security protocols.
 
-#### 10.1.4 Microservices Architecture
+#### 9.1.4 Microservices Architecture
 **Scalability:** TravelGo will serve a diverse user base with travelers from around the world. Microservices can be deployed across multiple regions, closer to where users are, which reduces latency and ensures a seamless experience globally. Since each service can scale independently, TravelGo can easily handle spikes in usage,  for example, scaling the chatroom service during travel seasons without affecting payments or recommendations. <br>
 **Modularity:** TravelGo offers a variety of features like community interactions, cultural content, side quests,  and plans to add even more in the future. Microservices naturally support modularity by dividing the system into small, loosely coupled services, each built around a specific business capability. This allows TravelGo to implement, test, and deploy new features independently, without slowing down the rest of the system. For instance, a new “local quiz” module could be rolled out without touching the existing leaderboard or chat functionality. <br>
 **Integrity:** Because TravelGo collects sensitive personal data such as names, payment details, and location information, integrity and security are critical. Microservices help here by isolating services and containing failures. If one service is compromised, others remain unaffected, protecting the majority of user data. While microservices do increase the number of potential entry points into the system, these risks can be managed with event-driven communication, strong authentication, and encryption. This ensures that TravelGo maintains user trust by preserving data security and system reliability. <br>
@@ -303,45 +281,45 @@ Serverless architecture enables the platform to be scaled automatically based on
 ![](Microservices.png)
 <p style="text-align: center;">Figure 10.2.1: Microservices architecture of the system</p>
 
-#### 10.1.5 Trade-Off Analysis for Architectural Styles
+#### 9.1.5 Trade-Off Analysis for Architectural Styles
 
-### 10.2 Architectural Views
+### 9.2 Architectural Views
 
 <!-- Text here -->
 
-#### 10.2.1 Context View
+#### 9.2.1 Context View
 
 The C4 System Context Diagram highlights TravelGo’s role within its environment. It shows the platform as the central system interacting with travellers, attraction owners, and several external systems such as map providers, tourism boards, influencers, and competitors. The diagram illustrates key flows of information (e.g. travellers providing personal information, owners submitting attractions, the platform requesting maps) and helps define clear system boundaries and dependencies.
 
 ![](ContextDiagram.png)
 <p style="text-align: center;">Figure 10.2.1: Context Diagram</p>
 
-#### 10.2.2 Container View
+#### 9.2.2 Container View
 
 ![](ContainerDiagram.png)
 <p style="text-align: center;">Figure 10.2.2: Container Diagram</p>
 
-#### 10.2.3 Component View
+#### 9.2.3 Component View
 
 ![](ComponentDiagram.png)
 <p style="text-align: center;">Figure 10.2.3: Component Diagram</p>
 
-#### 10.2.4 Code View
+#### 9.2.4 Code View
 
-### 10.3 Architectural & Design Patterns
-#### 10.3.1 Event Driven
+### 9.3 Architectural & Design Patterns
+#### 9.3.1 Event Driven
 **Scalability:** Event-driven communication allows TravelGo to handle a large and diverse user base more efficiently. Instead of services constantly calling each other through direct APIs, they publish and subscribe to events via a broker. This reduces coupling and lets multiple services consume the same event without adding system strain. For instance, when a QuestCompleted event is published, the Leaderboard Service, Notification Service can all react independently. This enables TravelGo to scale individual services as demand grows, ensuring smooth performance during travel season spikes or viral content moments. <br>
 **Modularity:** TravelGo has distinct features such as the community chatroom, cultural side quests and league based competition, that all evolve at different speeds. Event-driven design supports loose coupling, meaning each service can be developed, deployed, and maintained independently. Adding new features is straightforward, a new service just subscribes to relevant events without disrupting existing ones. Introducing a new module only requires subscribing to its related events, avoiding changes to other services. <br>
 **Integrity:** Events provide a structured, controlled way of sharing only the necessary data between services, improving data integrity and security. Sensitive data can be filtered at the broker, while services only receive the minimum required data needed, for instance, user IDs rather than full profiles. Moreover, event logs create an auditable trail of what happened and when, which strengthens TravelGo’s reliability and accountability. If inconsistencies like leaderboard manipulation arise, events can be traced back to verify the source of truth. <br>
 
-#### 10.3.2 CQRS (Command Query Responsibility Segregation)
+#### 9.3.2 CQRS (Command Query Responsibility Segregation)
 Implementing CQRS would be beneficial for TravelGo, since it improves scalability, modularity and performance. Because the write side of the system would be separated from the read side, we can use a different model for the reads, which makes the read side a lot faster. This is advantageous since our system will have far more reads than writes, since our users will mainly use the map feature with all of the tourist attractions. It is also a lot easier to scale the read and write sides when they are independent from each other. Another benefit is that the data is easier to update, which improves the modularity of the system. This is especially important since we often have to add or change the data of the tourist attractions. Lastly, CQRS fits really well with event driven communication, especially event sourcing, which we plan to use.
 
-#### 10.3.3 SAGA Pattern
+#### 9.3.3 SAGA Pattern
 Although SAGA is a widely used design pattern for microservices, we do not believe it to be advantageous for our system. There are two main reasons for this. First of all, SAGA might cause increased latency, since services have to coordinate with each other. Because of this, the performance of our system might decrease.
 Second of all, SAGA is difficult to implement, and hard to debug. We do not believe that the advantages of SAGA outweigh these disadvantages.
 
-#### 10.3.4 API Gateway
+#### 9.3.4 API Gateway
 
 The API Gateway acts as the central entry point for all client requests. Instead of the frontend or mobile application communicating directly with each individual microservice (like posts, chat, map, or leaderboard), all interactions first go through the API Gateway. It routes these requests to the correct service, aggregates data when needed, and returns a unified response to the user.
 
@@ -349,21 +327,21 @@ This design greatly simplifies communication between the frontend and backend sy
 
 The API Gateway helps TravelGo scale horizontally by decoupling client interactions from the underlying microservices. Each service can be deployed, replicated, and scaled independently without affecting others. By isolating each service behind the API Gateway, TravelGo’s architecture remains modular. All communication passes through the gateway as it is the central control point. The gateway can manage user authentication, enforce authorization, and apply HTTPS encryption to secure data in transit. This ensures that sensitive user information remains protected and that only authorized users can access specific features.
 
-## 11 Proof of Concept
+## 10 Proof of Concept
 
 The proof of concept demonstrates how the platform can bring together travellers and tourism industry workers in one ecosystem. It validates core features such as interactive maps, attraction discovery, user-generated content, and gamification elements like leaderboards. By integrating with external systems (e.g., map services, tourism datasets), the POC shows the feasibility of delivering real-time, location-based recommendations while ensuring engagement through posts, ratings, and rewards.
 
-### 11.1 External Dependencies
+### 10.1 External Dependencies
 
 The platform relies on several external dependencies to function effectively. Some core services include maps and geolocation APIs (e.g., Google Maps) for navigation, routing, and location tracking. Furthermore, with respect to monetization, the platform depends on payment processors (IDEAL, PayPal, etc). On the technical side, the use of cloud hosting and databases would provide scalability and performance. Additionally, authentication services (Google, Facebook, etc) and communication tools (email/SMS providers) would also be employed to support user management.
 
 For the current proof of concept implementation, we made use of [Leaflet](leafletjs.com) and [openstreetmap](https://www.openstreetmap.org/#map=6/46.45/2.21) to develop the interactive map.
 
-## 12 Revenue Model
+## 11 Revenue Model
 
 In order to ensure long-term success for a platform, a sustainable revenue model is essential. The presented system would blend reality exploration with competitive gaming, meaning it can attract tourism-focused partnerships, as well as game-industry monetization.
 
-### 12.1 Revenue Streams
+### 11.1 Revenue Streams
 
 The platform can be supported by income from multiple combined streams presented in the table below.
 
@@ -378,14 +356,14 @@ The platform can be supported by income from multiple combined streams presented
 Furthermore, since the platform is newly developed, the revenue model should be implemented in progressive stages.
 At launch, most of the platform content should remain free to access to build the user base. Additionally, basic in-app purchases for cosmetic reasons can be included. During the next stage, the relation with local business owners would be established, and the platform would begin featuring sponsored restaurants and souvenir shops, as well as custom maps and affiliation with tourist companies in the premium version. Lastly, the final stage could envision production of large-scale events, partnerships with museums from bigger cities and metropolises and potential merchandise sales.
 
-### 12.2 Risks and Considerations
+### 11.2 Risks and Considerations
 
 - User Experience: Excessive monetization risks pushing tourists away, therefore, the free version must remain engaging.
 - Fairness: Competitive features must avoid "pay-to-win" dynamics.
 - Scalability: Each additional revenue stream increases system complexity. As such, the platform should be built in a modular way so features can be added independently without interfering with existing ones.
 
 
-## 13 Roadmap
+## 12 Roadmap
 The stages in which the proposed system will be implememented can be seen in the roadmap below.
 
 ![](Roadmap.png)
@@ -403,3 +381,52 @@ Pitrelli, M. (2023, March 27). More millennials are turning 40 — and they’re
 <br><a id="1">[5]</a>
 Artug, E., & Fateh, D. (2025, March 28). Serverless and microservices: A tale of two architectures. Contentful. https://www.contentful.com/blog/serverless-vs-microservices/ (Date Accessed - October 2025)
  
+## 13 Appendices:
+
+## Appendix A: Personas
+
+Personas are defined as fictional representations of users aimed to represent the diverse range of individuals
+interacting with a specific application. They are used in order to observe and simulate a user’s interaction
+with the platform once completed. Ultimately, constructing different personas can help identify weak points
+and edge cases within the platform. In our case, all personas are assumed wto be unfamiliar with any programming knowledge.
+
+### A.1 Tourist/Traveller
+
+This persona represents a typical travel enthusiast, visiting different countries and attractions. Each tourist as a bucket-list with attractions they decide to visit for that country. Tourists interact with each other, with guides, obtain discounts and discover new attractions.
+
+### A.2 Local Business Owner (Sponsor/Business Partner)
+
+Since the app features discounts for various restaurants or souvenir shops, this persona represents local shop-owners that wish to improve their business. They process the monetary fee through the platform and in return offer the tourists a discount, voucher or even a free souvenir. Furthermore, they are also considered local sponsors since they ultimately wish for publicity for their business.
+
+### A.3 Travel Agent
+
+This persona represents a travelling expert with extended knowledge about various attractions. They help clients plan, book, and customize trips by offering professional advice on destinations, accommodations, and experiences.
+
+### A.4 (Potential) External Sponsor
+
+A sponsor is typically a brand, or local business which seeks visibility for their product among any individuals. They want to attract and engage individuals through gamified experiences and offered promotions in exchange for brand exposure.
+
+
+## Appendix B: User Stories
+
+A user story is a brief description of a feature that a persona requires in the system. Furthermore, the overall benefit of this feature for the system’s development is also presented.
+
+| User Story ID | User Story |
+|--------------|------------|
+| US1           | As a Tourist, I wish to be able to see information for each attraction. |          
+| US2           | As a Tourist, I wish to be able to answer cultural questions about an attraction to improve my knowledge and receive points for completing a quiz per attraction. |          
+| US3           | As a Tourist, I wish to be able to participate in a country's league for the ultimate traveling champion. |          
+| US4           | As a Tourist, I want to engage with other travellers through a community platform. |          
+| US5           | As a Tourist, I want to be able to suggest new attractions in a country and earn points if my suggestion is validated. |          
+| US6           | As a Tourist, I wish to be able mark attractions as visited and cross them from my bucket-list. |          
+| US7           | As a Tourist, I want the platform to create a traveling plan for me, which I then will be able to export the external map applications. |          
+| US8           | As a Tourist, I want the platform to suggest nice local and traditional restaurants and open-area places when I am nearby and attraction. |          
+| US9           | As a Tourist, I want to pay extra for this platform to suggest me available accommodations near my current attraction that are also not crowded. |          
+| US10           | As a Tourist, I want to pay extra to remove pop-up ads. |          
+| US11           | As a Local Business Owner, I want the platform to recommend my business through pop-up ads. |          
+| US12           | As a Local Business Owner and Sponsor, I want the platform to offer 5% discounts for all platform users to increase publicity. |          
+| US13           | As a Local Business Owner, I want the free earned souvenir to have a representative picture on the platform. |          
+| US14           | As a Local French Restaurant Owner, I want the platform to recommend my business at the end of the quizzes for traditional places. |          
+| US15           | As a Travel Agent, I want offer city tours through TravelGo, for my clients to play along and for me to stand out from standard booking platforms. |          
+| US16           | As a Travel Agent, I want the platform to highlight premium guided tours or special events in collaboration with my agency in order to promote my business. |          
+| US17           | As an External Sponsor, I wish to financially support the platform's development in exchange for exposure. |          
