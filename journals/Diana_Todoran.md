@@ -32,6 +32,10 @@ This week has been all about designing! I had a lot of fun thinking about the st
 
 Later on, we started assessing what the report is still missing and we researched various architectures and architectural patterns. I was tasked to look into the compatibility of a serverless architecture considering our system (but we ultimately agreed microservices would be the best fit). I found it especially curious during the research phase how microservices can be implemented together with serverless architecture procedures. Towards the end of the week, on Friday, we met online again and discussed suitable architectural patterns. I was tasked to describe in the report the Circuit Breaker and the Retry Patterns. 
 
-## Week 6 - 
-- circuit breaker & retry patterns
-- 
+## Week 6 - All puzzle pieces coming together
+
+Fitting with the title of this week's entry, I finished a 1000 pieces puzzle, a very cold and nordic landscape. I am really glad I still find the time to practice one of my favourite hobbies (even though I feel a little behind with exam season approaching). In any case, this week we put together the remaining parts of our report (except the testing section) and prepare for the heron deadline! Our project is coming along quite nicely since the POC is slowly taking shape, and this week I had the task for dockerizing it! It was really fun learning something new!
+
+In other news, we had a lovely meeting with our TA on Tuesday and received some valuable feedback. I do agree with him that making use of Kafka is a smart move for our project, so that is probably our next move! Moreover, my teammates were indeed right to point our the weird connection between the payment systems in the c4 diagrams with the local businesses. I cleaned the diagrams towards the end of the week and now they look polished! I still feel like we need to do a bit more implementation before the code view has a proper shape, so hopefully I will get that done in the coming weeks. We also had one more online team meeting to divide the remaining report sections we still wanted to add. With respect to the report, I would say our most difficult task yet will be subscribing to the word limit... We just love describing new concepts too much! However, I am sure we will manage. For the heron deadline I still needed to add my part for the architectural patterns and I am really happy I also managed to fix our appendices. They may not be crucial for the reader's understanding, but they are honest work and I hope someone will at least take a short look at them! Overall, I would say this was a productive week, fitting for concluding another milestone.
+
+## Week 7 - 
