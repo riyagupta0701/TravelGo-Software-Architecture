@@ -432,8 +432,21 @@ The stages in which the proposed system will be implemented can be seen in the r
 ![](Roadmap.png)
 <p style="text-align: center;">Figure 14.1: Roadmap</p>
 
-## 14 Open Source
+## 15 Open Source
 To safe on time, cost and effort, we will make use of open source software. This does come with some risks: open source software might lead to compatibility issues, lack of support and potential security vulnerabilities. To mitigate these risks, all open source software must be carefully evaluated before usage. In some cases, open source tools might have to be adapted to fit our system better. For our POC, we already made use of several open source tools: more information can be found in section 11.1. 
+
+## 16 Discussion about Cloud
+TravelGo has a global user base and considering it's microservices driven architecture, deploying the system on the cloud offers clear advantages in terms of scalability, flexibility, and integrity. The system aims to reach travelers, local communities, and businesses across the world. Therefore, leveraging cloud infrastructure ensures low latency and seamless accessibility across regions. Cloud providers offer geographically distributed data centers, enabling TravelGo to host its services closer to its users and deliver fast, consistent performance even during high-traffic periods such as holiday seasons or major events. <br>
+
+A public cloud environment such as Amazon Web Services (AWS), Microsoft Azure, or Google Cloud Platform (GCP) will be a goof fit for the system. It provides cost efficiency, elasticity, and rapid deployment without the heavy maintenance required for private infrastructure. However, certain sensitive components, such as payment systems and user data, could also benefit from a hybrid approach, where confidential data is stored in a private cloud or restricted region to comply with regulations such as GDPR, while general application services operate on the public cloud.
+
+In terms of service models, TravelGo would best utilize Platform as a Service (PaaS) or container-based solutions like AWS ECS or Google Kubernetes Engine. These services abstract away low-level infrastructure management while supporting independent deployment of microservices.[[6]](#6) This complements TravelGo’s modular design where each service can be deployed and scaled separately depending on demand. Serverless offerings, such as AWS Lambda or Google Cloud Functions, could also support event-driven features like notifications or leaderboard updates, providing efficient scalability for unpredictable workloads.
+
+Cloud deployment directly supports TravelGo’s key quality attributes by enabling scalability, modularity, and integrity. Through auto-scaling mechanisms, the platform can dynamically adjust resources based on user demand. [[7]](#7) Each microservice can be containerized and managed independently, allowing for isolated updates and seamless feature expansion. Moreover, built-in cloud security measures such as encryption, identity and access management (IAM), and DDoS protection enhance system reliability and secure user data.
+
+Despite its advantages, cloud deployment introduces certain challenges. Vendor lock-in may restrict flexibility in switching providers, while data residency laws, particularly in the EU, require careful configuration to ensure compliance.[[8]](#8) Furthermore, managing a distributed microservices environment in the cloud adds operational complexity. These challenges can be mitigated through the use of cloud-agnostic technologies such as Docker and Kubernetes, and region-specific deployments for user data.
+
+In conclusion, deploying TravelGo on the cloud complements its microservices based design by providing global scalability, modular growth, and secure operations. The cloud not only supports the system’s technical requirements but also aligns with its vision of delivering a smooth, engaging, and reliable travel experience to users worldwide.
 
 ## Bibliography
 <a id="1">[1]</a>
@@ -444,6 +457,12 @@ Alčaković, S., Pavlović, D., & Popesku, J. (2017). Millennials and gamificati
 Gen Z Travel Trends: Statistics, Insights and what it all means for the industry [2025]. (n.d.). Atlys. https://www.atlys.com/blog/gen-z-travel-trends
 <br><a id="4">[4]</a> 
 Pitrelli, M. (2023, March 27). More millennials are turning 40 — and they’re changing travel as we know it. CNBC. https://www.cnbc.com/2023/03/27/millennials-are-turning-40-and-theyre-changing-travel-as-we-know-it.html
-<br><a id="1">[5]</a>
+<br><a id="5">[5]</a>
 Artug, E., & Fateh, D. (2025, March 28). Serverless and microservices: A tale of two architectures. Contentful. https://www.contentful.com/blog/serverless-vs-microservices/ (Date Accessed - October 2025)
+<br><a id="6">[6]</a>
+Types of Cloud Computing. AWS. https://aws.amazon.com/types-of-cloud-computing/
+<br><a id="7">[7]</a>
+Cody Slingerland. (2023). What Is Cloud Scalability? Benefits And Tips For Every Organization. CloudZero. https://www.cloudzero.com/blog/cloud-scalability/
+<br><a id="8">[8]</a>
+Chrystal R. China, & Michael Goodwin (2025). IaaS, PaaS, SaaS: What's the difference? IBM. https://www.ibm.com/think/topics/iaas-paas-saas 
  
