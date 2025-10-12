@@ -107,31 +107,17 @@ The power/interest grid is used to classify stakeholders according to their infl
 ![](PowerInterestGrid.png) 
 <p style="text-align: center;"> Figure 5.1: Power / Interest Grid </p>
 
-## 6 Personas
+## mention something about personas here
 
-Personas are defined as fictional representations of users aimed to represent the diverse range of individuals
-interacting with a specific application. They are used in order to observe and simulate a user’s interaction
-with the platform once completed. Ultimately, constructing different personas can help identify weak points
-and edge cases within the platform. In our case, all personas are assumed wto be unfamiliar with any programming knowledge.
+<!---
+## Epics
 
-### 6.1 Tourist/Traveller
+In this section, we list the epics, along with the corresponding description. Each epic has its features, which
+further contribute to the User Stories. <span style="color:red">TBA later when further developed</span>.
 
-This persona represents a typical travel enthusiast, visiting different countries and attractions. Each tourist as a bucket-list with attractions they decide to visit for that country. Tourists interact with each other, with guides, obtain discounts and discover new attractions.
+--->
 
-### 6.2 Local Business Owner (Sponsor/Business Partner)
-
-Since the app features discounts for various restaurants or souvenir shops, this persona represents local shop-owners that wish to improve their business. They process the monetary fee through the platform and in return offer the tourists a discount, voucher or even a free souvenir. Furthermore, they are also considered local sponsors since they ultimately wish for publicity for their business.
-
-### 6.3 Travel Agent
-
-This persona represents a travelling expert with extended knowledge about various attractions. They help clients plan, book, and customize trips by offering professional advice on destinations, accommodations, and experiences.
-
-### 6.4 (Potential) External Sponsor
-
-A sponsor is typically a brand, or local business which seeks visibility for their product among any individuals. They want to attract and engage individuals through gamified experiences and offered promotions in exchange for brand exposure.
- 
-
-## 7 Features
+## 6 Features
 
 Features are distinct pieces of functionality that deliver value to users. They define what the software can do and are often used to plan and develop the product throughout its lifecycle.
 
@@ -146,7 +132,7 @@ Features are distinct pieces of functionality that deliver value to users. They 
 | F7         | Reward the top competitors of the leaderboard with discounts, vouchers or free souvenirs.         |
 <p style="text-align: center;">Table 7.1: List of features that will be implemented for the final product.</p>
 
-## 8 Use Case Scenarios
+## 7 Use Case Scenarios
 
 Use case scenarios explain how a user works with a system to accomplish certain tasks or objectives. They
 outline the steps needed to achieve a set objective and also help define system requirements, derived from
@@ -338,32 +324,38 @@ The microservice architecture has advantages for all of our main quality attribu
 
 ### 11.2 Architectural Views
 
-<!-- Text here -->
+The C4 model [[6]](#6) presents are a set of diagrams used to visualize the architecture of a software architecture at different levels of detail. Together, these views help communicate clearly to stakeholders how a system fits into its environment, how it’s structured internally, and how its parts interact.
 
 #### 11.2.1 Context View
 
-The C4 System Context Diagram highlights TravelGo’s role within its environment. It shows the platform as the central system interacting with travellers, attraction owners, and several external systems such as map providers, tourism boards, influencers, and competitors. The diagram illustrates key flows of information (e.g. travellers providing personal information, owners submitting attractions, the platform requesting maps) and helps define clear system boundaries and dependencies.
+The System Context Diagram highlights TravelGo’s role within its environment. It shows the platform as the central system interacting with travellers, attraction owners, and several external systems such as map providers, tourism boards, influencers, and competitors. The diagram illustrates key flows of information (e.g. travellers providing personal information, owners submitting attractions, the platform requesting maps) and helps define clear system boundaries and dependencies.
 
 ![](ContextDiagram.png)
 <p style="text-align: center;">Figure 11.2.1: Context Diagram</p>
 
-#### 11.2.2 Container View
+#### 9.2.2 Container View
+
+The next view depicts all parts from the context view further elaborated into containers. As you can see in Figure 10.2.2 below, the TravelGo System, Local Business Owners, Tourism Boards and External Dependencies now showcase more details about their inner workings.  
+
+The system’s core container is the App, which interacts with the Tourist and utilizes internal databases to manage user data, as well as external databases to interact with the Tourism Boards. Furthermore, the connection with the External Dependencies is carried out through 2 connections between the Payment System for processing user subscription and the Third-Party Map API. Lastly, the Local Businesses contain the Rewards and the functional relation is presented.
 
 ![](ContainerDiagram.png)
 <p style="text-align: center;">Figure 11.2.2: Container Diagram</p>
 
-#### 11.2.3 Component View
+#### 9.2.3 Component View
+
+The Component view bridges the gap between the system’s high-level structure and its implementation details, gradually revealing how each container’s functionality is realized. As can be seen from the Figure 10.2.3 below, the system's App will contain the presented components, which will later be described in the Code View.
 
 ![](ComponentDiagram.png)
 <p style="text-align: center;">Figure 11.2.3: Component Diagram</p>
 
 #### 11.2.4 Code View
 
-### 11.3 Architectural & Design Patterns
+### 9.3 Architectural & Design Patterns
 
-<!-- Text here -->
+Considering the proposed architecture and the proposed architectural structure of the TravelGo system, various architectural patterns would be suitable. In the following subsections we will present the primary patterns that should be implemented with respect to the most important quality attributes of the system. Additionally, an overview of all recommended patterns for the implementation of the system can be found in Appendix C
 
-#### 11.3.1 Event Driven
+#### 9.3.1 Event Driven
 **Scalability:** Event-driven communication allows TravelGo to handle a large and diverse user base more efficiently. Instead of services constantly calling each other through direct APIs, they publish and subscribe to events via a broker. This reduces coupling and lets multiple services consume the same event without adding system strain. For instance, when a QuestCompleted event is published, the Leaderboard Service, Notification Service can all react independently. This enables TravelGo to scale individual services as demand grows, ensuring smooth performance during travel season spikes or viral content moments. <br>
 **Modularity:** TravelGo has distinct features such as the community chatroom, cultural side quests and league based competition, that all evolve at different speeds. Event-driven design supports loose coupling, meaning each service can be developed, deployed, and maintained independently. Adding new features is straightforward, a new service just subscribes to relevant events without disrupting existing ones. Introducing a new module only requires subscribing to its related events, avoiding changes to other services. <br>
 **Integrity:** Events provide a structured, controlled way of sharing only the necessary data between services, improving data integrity and security. Sensitive data can be filtered at the broker, while services only receive the minimum required data needed, for instance, user IDs rather than full profiles. Moreover, event logs create an auditable trail of what happened and when, which strengthens TravelGo’s reliability and accountability. If inconsistencies like leaderboard manipulation arise, events can be traced back to verify the source of truth. <br>
@@ -383,7 +375,18 @@ This design greatly simplifies communication between the frontend and backend sy
 
 The API Gateway helps TravelGo scale horizontally by decoupling client interactions from the underlying microservices. Each service can be deployed, replicated, and scaled independently without affecting others. By isolating each service behind the API Gateway, TravelGo’s architecture remains modular. All communication passes through the gateway as it is the central control point. The gateway can manage user authentication, enforce authorization, and apply HTTPS encryption to secure data in transit. This ensures that sensitive user information remains protected and that only authorized users can access specific features.
 
-## 12 Proof of Concept
+#### 9.3.5 Circuit Breaker
+
+In a distributed microservices system, the Circuit Breaker pattern acts like a protective mechanism ensuring that when a service begins failing or unresponsive, the circuit breaker disconnects it from the rest of the infrastructure and stops forwarding further calls. This approach is known as fast, but gracefully failing and it is preferred over waiting or retrying endlessly. While the circuit is open, requests immediately return an error or fallback without following the entire failing service. The pattern thus protects against cascading failures and keeps the resources from being exhausted early.
+
+
+This pattern is a great fit since TravelGo depends on multiple remote services (maps, payments, rewards, tourism/attractions data, leaderboards) and it would mainly be used on the server side between services and third-party APIs. In the case of the rewards or payment systems, for example, if the services are down, the platform detects repeated failures and stops sending more requests to that service.
+
+#### 9.3.6 Retry Pattern
+
+The Retry Pattern is a mechanism that automatically reattempts failed operations after a short delay, sometimes successfully helping the systems recover from temporary issues such as network timeouts. It would be suitable for our system as it will likely face multiple network or connectivity issues or brief spikes from the third-party APIs during high network traffic. Therefore, simply retrying after a short delay would often lead to the service succeeding in these situations.
+
+## 10 Proof of Concept
 
 The proof of concept demonstrates how the platform can bring together travellers and tourism industry workers in one ecosystem. It validates core features such as interactive maps, attraction discovery, user-generated content, and gamification elements like leaderboards. The POC was developed to demonstrate the technical feasibility of the platform’s microservices-based architecture and to validate its core design principles; scalability, modularity, and reliability. The PoC serves as a minimal yet functional version of the TravelGo system, simulating the interaction between key components such as the map service, post service, leaderboard service, and chat service, all coordinated through an API Gateway and an event-driven communication model.
 
@@ -458,6 +461,7 @@ Gen Z Travel Trends: Statistics, Insights and what it all means for the industry
 <br><a id="4">[4]</a> 
 Pitrelli, M. (2023, March 27). More millennials are turning 40 — and they’re changing travel as we know it. CNBC. https://www.cnbc.com/2023/03/27/millennials-are-turning-40-and-theyre-changing-travel-as-we-know-it.html
 <br><a id="5">[5]</a>
+<br><a id="5">[5]</a>
 Artug, E., & Fateh, D. (2025, March 28). Serverless and microservices: A tale of two architectures. Contentful. https://www.contentful.com/blog/serverless-vs-microservices/ (Date Accessed - October 2025)
 <br><a id="6">[6]</a>
 Types of Cloud Computing. AWS. https://aws.amazon.com/types-of-cloud-computing/
@@ -465,4 +469,75 @@ Types of Cloud Computing. AWS. https://aws.amazon.com/types-of-cloud-computing/
 Cody Slingerland. (2023). What Is Cloud Scalability? Benefits And Tips For Every Organization. CloudZero. https://www.cloudzero.com/blog/cloud-scalability/
 <br><a id="8">[8]</a>
 Chrystal R. China, & Michael Goodwin (2025). IaaS, PaaS, SaaS: What's the difference? IBM. https://www.ibm.com/think/topics/iaas-paas-saas 
+<br><a id="6">[6]</a>
+Brown, S. (n.d.). The C4 model for visualising software architecture. C4 Model. Retrieved October 12, 2025, from https://c4model.com/ (Date Accessed - October 2025)
+<br><a id="7">[7]</a>
+Ahmad, A. (2025, August 23). 19 Essential Microservices Patterns for System Design Interviews. Design Gurus. https://www.designgurus.io/blog/19-essential-microservices-patterns-for-system-design-interviews?gad_source=1&gad_campaignid=21052024757&gbraid=0AAAAADME9yrt3rLA-YSrKYswgzdQyBX6D&gclid=Cj0KCQjwovPGBhDxARIsAFhgkwRavr_Fn1z55RbDBcbpqNeaZ_L5WuzKZd0gBhH05Vf0RLmLTqh8ahUaAkCBEALw_wcB  (Date Accessed - October 2025)
  
+## 13 Appendices:
+
+## Appendix A: Personas
+
+Personas are defined as fictional representations of users aimed to represent the diverse range of individuals
+interacting with a specific application. They are used in order to observe and simulate a user’s interaction
+with the platform once completed. Ultimately, constructing different personas can help identify weak points
+and edge cases within the platform. In our case, all personas are assumed wto be unfamiliar with any programming knowledge.
+
+### A.1 Tourist/Traveller
+
+This persona represents a typical travel enthusiast, visiting different countries and attractions. Each tourist as a bucket-list with attractions they decide to visit for that country. Tourists interact with each other, with guides, obtain discounts and discover new attractions.
+
+### A.2 Local Business Owner (Sponsor/Business Partner)
+
+Since the app features discounts for various restaurants or souvenir shops, this persona represents local shop-owners that wish to improve their business. They process the monetary fee through the platform and in return offer the tourists a discount, voucher or even a free souvenir. Furthermore, they are also considered local sponsors since they ultimately wish for publicity for their business.
+
+### A.3 Travel Agent
+
+This persona represents a travelling expert with extended knowledge about various attractions. They help clients plan, book, and customize trips by offering professional advice on destinations, accommodations, and experiences.
+
+### A.4 (Potential) External Sponsor
+
+A sponsor is typically a brand, or local business which seeks visibility for their product among any individuals. They want to attract and engage individuals through gamified experiences and offered promotions in exchange for brand exposure.
+
+
+## Appendix B: User Stories
+
+A user story is a brief description of a feature that a persona requires in the system. Furthermore, the overall benefit of this feature for the system’s development is also presented.
+
+| User Story ID | User Story |
+|--------------|------------|
+| US1           | As a Tourist, I wish to be able to see information for each attraction. |          
+| US2           | As a Tourist, I wish to be able to answer cultural questions about an attraction to improve my knowledge and receive points for completing a quiz per attraction. |          
+| US3           | As a Tourist, I wish to be able to participate in a country's league for the ultimate traveling champion. |          
+| US4           | As a Tourist, I want to engage with other travellers through a community platform. |          
+| US5           | As a Tourist, I want to be able to suggest new attractions in a country and earn points if my suggestion is validated. |          
+| US6           | As a Tourist, I wish to be able mark attractions as visited and cross them from my bucket-list. |          
+| US7           | As a Tourist, I want the platform to create a traveling plan for me, which I then will be able to export the external map applications. |          
+| US8           | As a Tourist, I want the platform to suggest nice local and traditional restaurants and open-area places when I am nearby and attraction. |          
+| US9           | As a Tourist, I want to pay extra for this platform to suggest me available accommodations near my current attraction that are also not crowded. |          
+| US10           | As a Tourist, I want to pay extra to remove pop-up ads. |          
+| US11           | As a Local Business Owner, I want the platform to recommend my business through pop-up ads. |          
+| US12           | As a Local Business Owner and Sponsor, I want the platform to offer 5% discounts for all platform users to increase publicity. |          
+| US13           | As a Local Business Owner, I want the free earned souvenir to have a representative picture on the platform. |          
+| US14           | As a Local French Restaurant Owner, I want the platform to recommend my business at the end of the quizzes for traditional places. |          
+| US15           | As a Travel Agent, I want offer city tours through TravelGo, for my clients to play along and for me to stand out from standard booking platforms. |          
+| US16           | As a Travel Agent, I want the platform to highlight premium guided tours or special events in collaboration with my agency in order to promote my business. |          
+| US17           | As an External Sponsor, I wish to financially support the platform's development in exchange for exposure. |          
+
+## Appendix C: Recommended Architectural Patterns
+
+Below is a table showcasing appropriate architectural patterns for the implementation of the TravelGo system. The research for suitable microservice patterns was heavily relying on Ahmad's article [[7]](#7).
+
+| Pattern Name | Pattern Description |
+|--------------|---------------------|
+| API Gateway           | Serves as a single entry point for client requests, routing them to appropriate microservices and safely manages concerns such as authentication. |          
+| Service Discovery (Service Registry)  | Allows microservices to dynamically find and communicate with each other by registering themselves and maintaining a central registry. |          
+| Circuit Breaker           | Prevents cascading failures such that each service is independently connected and in case of failure the entire system remains running with only the failing one being shut down. |          
+| Retry Pattern      | Automatically retries failed operations in an attempt to fix errors. |          
+| Event Sourcing Pattern   | Stores state changes as a sequence of events which can be replayed to reconstruct the system's state at any point in time. |          
+| Event driven      | Uses events as the primary means of communication between services, allowing for asynchronous actions. |          
+| CQRS           | Separates read and write operations into independent models to optimize performance, scalability, and complexity. |          
+| Sidecar Pattern  | The system deploys auxiliary components alongside their primary service to account for logging or configuration concerns.  |          
+| "Smart Endpoints, Dumb Pipes"  | Ensures that the logic is maintained in the services only and their connections (pipes) remain with little to no complexity implemented. |          
+| Shadow Deployment   | Runs a new version of a service in parallel (a "shadow") without affecting user and or the network's traffic, allowing for easier testing. |          
+| Stateless Services   | Ensures that services do not store the state of client sessions locally, thus enabling them to be scaled and replaced independently. |
