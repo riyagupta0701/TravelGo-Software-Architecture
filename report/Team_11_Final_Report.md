@@ -258,25 +258,16 @@ Different stakeholders have different reasoning why certain quality attributes a
 <p style="text-align: center;">Table 9.2: Table with reasoning why certain quality attributes are important to stakeholders </p>
 
 ## 10 Architecture Design
-
-<!-- Text here -->
+Now that the context of the system has been defined, the next step is to determine the architectural design. This will be based on our main quality attributes: scalability, modularity, integrity and confidentiality.
 
 ### 10.1 Architectural Styles
-
-<!-- Text here -->
+To make sure that the system meets its most important quality attributes, an appropriate architectural style has to be selected. We will consider the following architectures: the monolithic architecture, the microkernel architecture, the serverless architecture and the microservices architecture.
 
 #### 10.1.1 Monolithic Architecture
-The monolithic architecture [[1]](#1) mainly has disadvantages for our system. For two of our most important quality attributes, modularity and scalability, the monolithic architecture is a poor choice. The disadvantages are explained in table 10.1. However, the monolithic architecture has one advantage: it might be easier to secure, since it has fewer communication points. This could have a positive impact on the confidentiality and integrity of the system.
+The monolithic architecture [[1]](#1) mainly has disadvantages for our system. For two of our most important quality attributes, modularity and scalability, the monolithic architecture is a poor choice. 
+In terms of modularity, The system cannot be distributed, and deployment in the cloud is very expensive. Moreover, if one thing does not work the rest does not work either. Since our system has many functionalities, this is not ideal, because if one function does not work all of the other functionalities do not work either. Additionally, if you change one thing in the monolith, everything has to be rebuild. Since there will be many changes on the platform, this is would be difficult. Tourist attractions will be added and removed all the time. Regarding scalability, the existing code cannot be reused. This means that if we want to use part of our existing code, we would have to reuse all of the code of our monolith, even the parts that we do not need.
 
-|                                 | **Disadvantages**                                                                                                                                                                                                  | **Advantages**            |
-| ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------- |
-| **Modularity**                  | The system cannot be distributed.                                                                                                                                                                                  |  X                        |
-|                                 | Deployment in the cloud is very expensive.                                                                                                                                                                         |  X                         |
-|                                 | If one thing does not work the rest does not work either. Since our system has many functionalities, this is not ideal, because if one function does not work all of the other functionalities do not work either. |   X                        |
-|                                 | If you change one thing in the monolith, everything has to be rebuild. Since there will be many changes on the platform, this is would be difficult. Tourist attractions will be added and removed all the time.            |    X                       |
-| **Scalability**                 | Existing code cannot be reused. This means that if we want to use part of our existing code, we would have to reuse all of the code of our monolith, even the parts that we do not need.                           |  X                        |
-| **Confidentiality / integrity** | X                                                                                                                                                                                                                  | Might be easier to secure |
-<p style="text-align: center;">Table 10.1: Advantages and disadvantages of the monolithic architecture</p>
+ However, the monolithic architecture has one advantage: it might be easier to secure, since it has fewer communication points. This could have a positive impact on the confidentiality and integrity of the system.
 
 #### 10.1.2 Microkernel Architecture
 
@@ -295,6 +286,19 @@ Serverless architecture enables the platform to be scaled automatically based on
 <p style="text-align: center;">Figure 10.2.1: Microservices architecture of the system</p>
 
 #### 10.1.5 Trade-Off Analysis for Architectural Styles
+Although all of the four architectural styles have their disadvantages and advantages, as shown in Table 10.1.5, a single approach must be selected. The monolithic architecture is the least suitable for our system, since it has significant disadvantages in terms of modularity and scalability. The microkernel and serverless architectures are both reasonable options, however they have less important advantages and more disadvantages compared to the microservice architecture. 
+\\
+The microservice architecture has advantages for all of our main quality attributes. The only disadvantage is that it increases the number of potential entry points into the system, which can be managed using event-driven communication. Therefore, the **microservice architecture** is the most advantageous for our system.
+
+|               | Advantages                                                                                                                                               | Disadvantages                                                                                                                                                                                                               |
+|---------------|----------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Monolithic      | - Easier to secure                                                                                                                                       | - System cannot be distributed<br>- Deployment in cloud is expensive<br>- If one thing does not work the rest does not either<br>- If one thing is changed everything has to be rebuild<br>- Existing code cannot be reused |
+| Microkernel   | - Allows features to be added as plug-ins<br>- Failures in one module does not affect others                                                             | - High performance overhead<br>- Increases development time & cost of designing and maintaining                                                                                                                             |
+| Serverless    | - Automatical scaling<br>- Simplifies deployment<br>- Improves operational efficiency                                                                    | - More overhead in response time and cost<br>- Less control on server side                                                                                                                                                  |
+| Microservices | - Each service can scale independently<br>- Features can be implemented, tested and deployed independently<br>- Isolates services and containes failures | - Number of potential entry points into the system increases                                                                                                                                                                |
+<p style="text-align: center;">Table 10.1.5: Advantages and disadvantages of the architectural styles </p>
+
+
 
 ### 10.2 Architectural Views
 
