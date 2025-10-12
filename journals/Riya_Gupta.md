@@ -41,3 +41,12 @@ After submitting the refinement presentation on Monday, we discussed on the diff
 I read up about Microkernel architecture and deduced that it was not a good fit for our platform. Later in the week, I went through the book to understand the different kind of design patterns. We had a meeting on Friday evening to decide on the best fit for our platform and how to divide up the further work. I also contributed to the presentation for the review meeting with the TA in the following week.
 
 Besides the report, I started implementing the POC with respect to microservices and understanding how to integrate the events.
+
+---
+## Week 6
+
+In the beginning of the week, I was working on the POC, trying to implement event-driven communication using an event bus initially. I also updated some configurations to be compatible with Windows and Mac/Linux.
+
+We had an in-person meeting on Tuesday where we discussed about the POC, cloud services and using Kafka instead for event-driven communication. Later in the day, we had a meeting with the TA. The outcome of the meeting was positive and we noted down the feedback to work on.
+
+The following days, I wrote about the functional requirements and the POC in the report. I was spent time reading and understanding how to use and implement Kafka. We also updated the Roadmap for the full cycle.
