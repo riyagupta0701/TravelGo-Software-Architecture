@@ -2,25 +2,16 @@
 <h3 align = "center">Team 11 <br> Aník van Deursen, Riya Gupta, Radha Mujumdar, Diana Todoran</h3>
 
 ## 1 Introduction
-<!-- 
-• Adopt selection of techniques (with references) to analyze 
-  problem domain and context in which system operates
-• Structure problem domain (= design) and offer 
-  initial ideas on concept architecture (= solution)
-• Motivate choice of techniques
-• Evaluate suitability of techniques used and assess what extra 
-  insights additional techniques could offer (with references) 
--->
 
 ### 1.1 Problem Statement
-Travelling is one of those things that everyone loves. Seeing new places, learning about cultures and tasting the finest of cuisines is an experience unlike any other. However, sometimes it can be quite challenging to see as much of a site as we would like. Fully engaging with the culture, history and seeing all of the highlights and hidden spots is almost impossible if you only have limited time. 
+Traveling is widely regarded as an enriching experience that allows individuals to explore new places, engage with diverse cultures, and participate in the social life of a destination. However, travelers often face considerable challenges. Limited time can make it difficult to fully engage with the abundance of culture and history, and often makes it impossible to visit all tourist attractions.
 
-Another challenge is connecting with other travellers. Tourist, especially solo-travellers, can have difficulty finding like-minded people. Because of this they might not create meaningful connections during their travels, which is unfortunate since exploring a city is even more fun with others!
+Another challenge lies in connecting with other travelers. Tourist, especially those traveling alone, can face difficulties in finding like-minded individuals. Because of this they might not create meaningful connections during their travels, which can limit the overall enjoyment of their experience.
 
 ### 1.2 Context & purpose
-We want to create an interactive digital platform that makes travelling easier and more fun for both group and solo travellers across various countries: TravelGo. Central to the platform is a map with all of the tourist attractions, including hidden spots. The platform aims to enrich cultural engagement with competitive games (for example quiz competitions) with a reward system through leaderboards. To make this competition fun for both inexperienced and experienced travellers, the platform uses a rating system with leagues. Users can additionally earn points by going to an attraction and thus ticking it off their bucket list. These points can be used to for example get a discount on entry fees or to get an exclusive souvenir.
+To address these challenges, we want to create an interactive digital platform that makes traveling easier and more enjoyable for both group and solo travelers across various countries: TravelGo. Central to the platform is a map with all of the tourist attractions, including hidden spots. The platform aims to enrich cultural engagement with competitive games (for example quiz competitions) with a reward system through leaderboards. To make this competition enjoyable for both inexperienced and experienced travelers, the platform uses a rating system with leagues. Users can additionally earn points by going to an attraction and thus ticking it off their bucket list. These points can be used to for example get a discount on entry fees or to get an exclusive souvenir.
 
-Another main part of TravelGo is making it easier for travellers to engage with each other. To encourage tourist interaction, the platform will have a chatroom. This chatroom helps travellers to meet new people that are at the same location. Users can also post new or hidden attractions that they recommend to others. Because of this, tourist will know which attractions they should definitely visit.
+Another main part of TravelGo is making it easier for travelers to engage with each other. To encourage tourist interaction, the platform will include a chatroom. This chatroom helps travelers to meet new people that are at the same location. Users can also post new or hidden attractions that they recommend to others. Because of this, tourist will know which attractions will be the most worthwhile to visit.
 
 ## 2 Wardley Map
 Building on the system’s vision and context, the Wardley Map highlights how TravelGo blends innovation with open source or standardized solutions.
