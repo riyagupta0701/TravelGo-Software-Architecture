@@ -313,6 +313,9 @@ The Component view bridges the gap between the system’s high-level structure a
 #### 9.2.4 Code View
 
 ### 9.3 Architectural & Design Patterns
+
+Considering the proposed architecture and the proposed architectural structure of the TravelGo system, various architectural patterns would be suitable. In the following subsections we will present the primary patterns that should be implemented with respect to the most important quality attributes of the system. Additionally, an overview of all recommended patterns for the implementation of the system can be found in Appendix C
+
 #### 9.3.1 Event Driven
 **Scalability:** Event-driven communication allows TravelGo to handle a large and diverse user base more efficiently. Instead of services constantly calling each other through direct APIs, they publish and subscribe to events via a broker. This reduces coupling and lets multiple services consume the same event without adding system strain. For instance, when a QuestCompleted event is published, the Leaderboard Service, Notification Service can all react independently. This enables TravelGo to scale individual services as demand grows, ensuring smooth performance during travel season spikes or viral content moments. <br>
 **Modularity:** TravelGo has distinct features such as the community chatroom, cultural side quests and league based competition, that all evolve at different speeds. Event-driven design supports loose coupling, meaning each service can be developed, deployed, and maintained independently. Adding new features is straightforward, a new service just subscribes to relevant events without disrupting existing ones. Introducing a new module only requires subscribing to its related events, avoiding changes to other services. <br>
@@ -332,6 +335,17 @@ The API Gateway acts as the central entry point for all client requests. Instead
 This design greatly simplifies communication between the frontend and backend systems. For example, when a traveller views the map, submits a post, or checks the leaderboard, the frontend sends requests only to the gateway. The gateway then coordinates with the relevant microservices such as the Map Service, Post Service, and Leaderboard Service, and compiles the response efficiently.
 
 The API Gateway helps TravelGo scale horizontally by decoupling client interactions from the underlying microservices. Each service can be deployed, replicated, and scaled independently without affecting others. By isolating each service behind the API Gateway, TravelGo’s architecture remains modular. All communication passes through the gateway as it is the central control point. The gateway can manage user authentication, enforce authorization, and apply HTTPS encryption to secure data in transit. This ensures that sensitive user information remains protected and that only authorized users can access specific features.
+
+#### 9.3.5 Circuit Breaker
+
+In a distributed microservices system, the Circuit Breaker pattern acts like a protective mechanism ensuring that when a service begins failing or unresponsive, the circuit breaker disconnects it from the rest of the infrastructure and stops forwarding further calls. This approach is known as fast, but gracefully failing and it is preferred over waiting or retrying endlessly. While the circuit is open, requests immediately return an error or fallback without following the entire failing service. The pattern thus protects against cascading failures and keeps the resources from being exhausted early.
+
+
+This pattern is a great fit since TravelGo depends on multiple remote services (maps, payments, rewards, tourism/attractions data, leaderboards) and it would mainly be used on the server side between services and third-party APIs. In the case of the rewards or payment systems, for example, if the services are down, the platform detects repeated failures and stops sending more requests to that service.
+
+#### 9.3.6 Retry Pattern
+
+The Retry Pattern is a mechanism that automatically reattempts failed operations after a short delay, sometimes successfully helping the systems recover from temporary issues such as network timeouts. It would be suitable for our system as it will likely face multiple network or connectivity issues or brief spikes from the third-party APIs during high network traffic. Therefore, simply retrying after a short delay would often lead to the service succeeding in these situations.
 
 ## 10 Proof of Concept
 
@@ -388,6 +402,8 @@ Pitrelli, M. (2023, March 27). More millennials are turning 40 — and they’re
 Artug, E., & Fateh, D. (2025, March 28). Serverless and microservices: A tale of two architectures. Contentful. https://www.contentful.com/blog/serverless-vs-microservices/ (Date Accessed - October 2025)
 <br><a id="6">[6]</a>
 Brown, S. (n.d.). The C4 model for visualising software architecture. C4 Model. Retrieved October 12, 2025, from https://c4model.com/ (Date Accessed - October 2025)
+<br><a id="7">[7]</a>
+Ahmad, A. (2025, August 23). 19 Essential Microservices Patterns for System Design Interviews. Design Gurus. https://www.designgurus.io/blog/19-essential-microservices-patterns-for-system-design-interviews?gad_source=1&gad_campaignid=21052024757&gbraid=0AAAAADME9yrt3rLA-YSrKYswgzdQyBX6D&gclid=Cj0KCQjwovPGBhDxARIsAFhgkwRavr_Fn1z55RbDBcbpqNeaZ_L5WuzKZd0gBhH05Vf0RLmLTqh8ahUaAkCBEALw_wcB  (Date Accessed - October 2025)
  
 ## 13 Appendices:
 
@@ -438,3 +454,21 @@ A user story is a brief description of a feature that a persona requires in the 
 | US15           | As a Travel Agent, I want offer city tours through TravelGo, for my clients to play along and for me to stand out from standard booking platforms. |          
 | US16           | As a Travel Agent, I want the platform to highlight premium guided tours or special events in collaboration with my agency in order to promote my business. |          
 | US17           | As an External Sponsor, I wish to financially support the platform's development in exchange for exposure. |          
+
+## Appendix C: Recommended Architectural Patterns
+
+Below is a table showcasing appropriate architectural patterns for the implementation of the TravelGo system. The research for suitable microservice patterns was heavily relying on Ahmad's article [[7]](#7).
+
+| Pattern Name | Pattern Description |
+|--------------|---------------------|
+| API Gateway           | Serves as a single entry point for client requests, routing them to appropriate microservices and safely manages concerns such as authentication. |          
+| Service Discovery (Service Registry)  | Allows microservices to dynamically find and communicate with each other by registering themselves and maintaining a central registry. |          
+| Circuit Breaker           | Prevents cascading failures such that each service is independently connected and in case of failure the entire system remains running with only the failing one being shut down. |          
+| Retry Pattern      | Automatically retries failed operations in an attempt to fix errors. |          
+| Event Sourcing Pattern   | Stores state changes as a sequence of events which can be replayed to reconstruct the system's state at any point in time. |          
+| Event driven      | Uses events as the primary means of communication between services, allowing for asynchronous actions. |          
+| CQRS           | Separates read and write operations into independent models to optimize performance, scalability, and complexity. |          
+| Sidecar Pattern  | The system deploys auxiliary components alongside their primary service to account for logging or configuration concerns.  |          
+| "Smart Endpoints, Dumb Pipes"  | Ensures that the logic is maintained in the services only and their connections (pipes) remain with little to no complexity implemented. |          
+| Shadow Deployment   | Runs a new version of a service in parallel (a "shadow") without affecting user and or the network's traffic, allowing for easier testing. |          
+| Stateless Services   | Ensures that services do not store the state of client sessions locally, thus enabling them to be scaled and replaced independently. |
