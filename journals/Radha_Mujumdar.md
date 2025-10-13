@@ -24,3 +24,10 @@ On Monday, 8th September, we scheduled a meeting with the TA to discuss our syst
 - On Wednesday, we had a team meeting at Aula between 4 to 6pm. We presented the designated architectural design to each other. After brainstorming for quite some time, we decided to go with the microservices architectural design. We then decided to look up different patterns under microservices. I researched about different patterns.
 - On Friday, we had an online google meet to discuss and finalise our design pattern.  We decided to go with microservices using event driven comminication.  We also made a presentation for the TA meeting.
 -I worked on my sections in the report on the weekend and explore ideas on how we will implement the poc.
+
+## Week 6
+- On Tuesday, we had a feedback meeting with the TA. He provided us with some valuable insights. Overall, he was quite happy with our progress. But he strongly advised us to look into kafka, as it would especially help us with the event driven architecture. We took notes about what I needed to improve upon and divided the tasks
+- I added the connecting sentences to the wardley map for better flow and connection
+- Then over the next few days, I looked into locust for proving the scalability quality attribute for the system. I plan to implement that in the following days as docker thing is done by Diana.
+- Over the weekend, I researched about cloud scalability and how travelgo can make use of cloud infrastructure. I found that travelgo could really benefit from cloud infra and there are some good options out there in the market, but some sensetive information should be made hybrid. I added the discussion about cloud section in the report.
+- Updated the roadmap and fixed the numbering in the report and for the bibliography.
