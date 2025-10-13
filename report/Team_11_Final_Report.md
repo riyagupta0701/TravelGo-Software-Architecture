@@ -467,3 +467,5 @@ Chrystal R. China, & Michael Goodwin (2025). IaaS, PaaS, SaaS: What's the differ
 Brown, S. (n.d.). The C4 model for visualising software architecture. C4 Model. Retrieved October 12, 2025, from https://c4model.com/ (Date Accessed - October 2025)
 <br><a id="10">[10]</a>
 Ahmad, A. (2025, August 23). 19 Essential Microservices Patterns for System Design Interviews. Design Gurus. https://www.designgurus.io/blog/19-essential-microservices-patterns-for-system-design-interviews?gad_source=1&gad_campaignid=21052024757&gbraid=0AAAAADME9yrt3rLA-YSrKYswgzdQyBX6D&gclid=Cj0KCQjwovPGBhDxARIsAFhgkwRavr_Fn1z55RbDBcbpqNeaZ_L5WuzKZd0gBhH05Vf0RLmLTqh8ahUaAkCBEALw_wcB  (Date Accessed - October 2025)
+<br><a id="11">[11]</a>
+Sethi, R. (2022). 3.1.3 Kinds of Requirements [ISBN 9781316511947]. In Software Engineering: Basic Principles and Best Practices. Cambridge University Press (1st ed., pp. 181-185).
