@@ -443,9 +443,6 @@ Despite its advantages, cloud deployment introduces certain challenges. Vendor l
 
 In conclusion, deploying TravelGo on the cloud complements its microservices based design by providing global scalability, modular growth, and secure operations. The cloud not only supports the system’s technical requirements but also aligns with its vision of delivering a smooth, engaging, and reliable travel experience to users worldwide.
 
-## Acknowledgement of AI
-The architects created all of the information in this report. However, sections were rewritten for clarity and conciseness with the help of generative AI. "Rewrite this paragraph/sentence such that it is easier to understand" was the standard query that was employed. After that, the results were examined and used as a guide to revise certain sections of the report. The architect personally rewrote the content in their own terms rather than merely copying it from the AI model.
-
 ## Bibliography
 <a id="1">[1]</a>
 Pautasso, C. (2020). Software Architecture: visual lecture notes. LeanPub. https://leanpub.com/software-architecture/

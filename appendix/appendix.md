@@ -65,3 +65,6 @@ Below is a table showcasing appropriate architectural patterns for the implement
 | "Smart Endpoints, Dumb Pipes"  | Ensures that the logic is maintained in the services only and their connections (pipes) remain with little to no complexity implemented. |          
 | Shadow Deployment   | Runs a new version of a service in parallel (a "shadow") without affecting user and or the network's traffic, allowing for easier testing. |          
 | Stateless Services   | Ensures that services do not store the state of client sessions locally, thus enabling them to be scaled and replaced independently. |
+
+## Appendix D: Acknowledgement of AI
+The architects created all of the information in this report. However, sections were rewritten for clarity and conciseness with the help of generative AI. "Rewrite this paragraph/sentence such that it is easier to understand" was the standard query that was employed. After that, the results were examined and used as a guide to revise certain sections of the report. The architect personally rewrote the content in their own terms rather than merely copying it from the AI model.
