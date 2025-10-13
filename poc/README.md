@@ -1,7 +1,5 @@
 # Team 11: TravelGo
-
-
-Give an overview of your proof of concept. Check lecture slides for details
+The proof of concept demonstrates how the platform can bring together travelers and tourism industry workers in one ecosystem. It validates core features such as interactive maps, attraction discovery, user-generated content, and gamification elements like leaderboards. The POC was developed to demonstrate the technical feasibility of the platform’s microservices-based architecture and to validate its core design principles; scalability, modularity, and reliability. The PoC serves as a minimal yet functional version of the TravelGo system, simulating the interaction between key components such as the map service, post service, leaderboard service, and chat service, all coordinated through an API Gateway and an event-driven communication model.
 
 
 ### Clone the repository
