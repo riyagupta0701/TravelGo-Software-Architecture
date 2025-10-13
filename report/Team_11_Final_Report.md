@@ -1,6 +1,6 @@
 <h1 align = "center">TravelGo!</h1>
 <h3 align = "center">Team 11 <br> Aník van Deursen, Riya Gupta, Radha Mujumdar, Diana Todoran</h3>
-<h4 align = "center"> GitLab Repository: https://gitlab.ewi.tudelft.nl/cs4505/2025-2026/team-11 </h4>
+<h4 align = "center"> GitLab Repository: [https://gitlab.ewi.tudelft.nl/cs4505/2025-2026/team-11/](https://gitlab.ewi.tudelft.nl/cs4505/2025-2026/team-11) </h4>
 
 ## 1 Introduction
 
