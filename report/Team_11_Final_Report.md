@@ -199,8 +199,7 @@ the user stories, which can be found in the Appendix A.
 
 ### 8.2 Non-Functional Requirements
 
-<!-- Text here -->
-
+Non-functional requirements aim to outline how a system should perform when completing its tasks, based on the system’s implementation. According to Sethi, R. (2023) [[11]](#11), non-functional requirements are better known as quality attributes as they describe the system's performance rather than its functionality. These specific attributes for TravelGo are further elaborated in the following section.
 
 ## 9 Quality Attributes
 Quality attributes describe desirable properties of a system.
