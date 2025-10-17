@@ -26,7 +26,7 @@
     <h2>Recent Posts</h2>
     <ul>
         {% for p in posts %}
-        <li><b>User {{ p.user_id }}</b> at <i>{{ p.attraction }}</i>: {{ p.content }}</li>
+        <li><b>User {{ p.user_id }}</b> at <i>{{ p.attraction }}</i>: <br> {{ p.content }}</li>
         {% endfor %}
     </ul>
 </body>
