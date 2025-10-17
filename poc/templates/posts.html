@@ -11,7 +11,7 @@
     </nav>
 
     <form method="POST">
-        <p>User ID: <input type="number" name="user_id" required></p>
+        <p>User ID: <input type="number" name="user_id" min="1" required></p>
         <p>Attraction:
       <select name="attraction" required>
         {% for a in attractions %}

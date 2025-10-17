@@ -14,6 +14,7 @@ def home():
 
 @app.route("/posts", methods=["GET", "POST"])
 def posts():
+    attractions = requests.get(f"{API_GATEWAY}/map").json()
     if request.method == "POST":
         user_id = request.form["user_id"]
         attraction = request.form["attraction"]
@@ -25,7 +26,7 @@ def posts():
         })
         return redirect(url_for("posts"))
     posts = requests.get(f"{API_GATEWAY}/posts").json()
-    return render_template("posts.html", posts=posts)
+    return render_template("posts.html", posts=posts, attractions=attractions)
 
 @app.route("/leaderboard")
 def leaderboard():
