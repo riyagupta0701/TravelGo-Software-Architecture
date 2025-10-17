@@ -16,6 +16,7 @@ Another main part of TravelGo is making it easier for travelers to engage with e
 
 ## 2 Wardley Map
 Building on the system’s vision and context, the Wardley Map highlights how TravelGo blends innovation with open source or standardized solutions.
+
 ![](WardleyMap.png)
 <p style="text-align: center;">Figure 2.1 : Wardley map</p>
 
@@ -107,8 +108,6 @@ The power/interest grid is used to classify stakeholders according to their infl
 
 ![](PowerInterestGrid.png) 
 <p style="text-align: center;"> Figure 5.1: Power / Interest Grid </p>
-
-<!--- ## mention something about personas here --->
 
 ## 6 Features
 
@@ -312,54 +311,23 @@ The microservice architecture has advantages for all of our main quality attribu
 | Microservices | - Each service can scale independently<br>- Features can be implemented, tested and deployed independently<br>- Isolates services and contains failures | - Number of potential entry points into the system increases                                                                                                                                                                |
 <p style="text-align: center;">Table 10.1.5: Advantages and disadvantages of the architectural styles </p>
 
-
-
-### 10.2 Architectural Views
-
-The C4 model [[9]](#9) presents are a set of diagrams used to visualize the architecture of a software architecture at different levels of detail. Together, these views help communicate clearly to stakeholders how a system fits into its environment, how it’s structured internally, and how its parts interact.
-
-#### 10.2.1 Context View
-
-The System Context Diagram highlights TravelGo’s role within its environment. It shows the platform as the central system interacting with travellers, attraction owners, and several external systems such as map providers, tourism boards, influencers, and competitors. The diagram illustrates key flows of information (e.g. travellers providing personal information, owners submitting attractions, the platform requesting maps) and helps define clear system boundaries and dependencies.
-
-![](ContextDiagram.png)
-<p style="text-align: center;">Figure 10.2.1: Context Diagram</p>
-
-#### 10.2.2 Container View
-
-The next view depicts all parts from the context view further elaborated into containers. As you can see in Figure 10.2.2 below, the TravelGo System, Local Business Owners, Tourism Boards and External Dependencies now showcase more details about their inner workings.  
-
-The system’s core container is the App, which interacts with the Tourist and utilizes internal databases to manage user data, as well as external databases to interact with the Tourism Boards. Furthermore, the connection with the External Dependencies is carried out through 2 connections between the Payment System for processing user subscription and the Third-Party Map API. Lastly, the Local Businesses contain the Rewards and the functional relation is presented.
-
-![](ContainerDiagram.png)
-<p style="text-align: center;"> Figure 10.2.2: Container Diagram</p>
-
-#### 10.2.3 Component View
-
-The Component view bridges the gap between the system’s high-level structure and its implementation details, gradually revealing how each container’s functionality is realized. As can be seen from the Figure 10.2.3 below, the system's App will contain the presented components, which will later be described in the Code View.
-
-![](ComponentDiagram.png)
-<p style="text-align: center;"> Figure 10.2.3: Component Diagram</p>
-
-#### 10.2.4 Code View
-
-### 10.3 Architectural & Design Patterns
+### 10.2 Architectural & Design Patterns
 
 Considering the proposed architecture and the proposed architectural structure of the TravelGo system, various architectural patterns would be suitable. In the following subsections we will present the primary patterns that should be implemented with respect to the most important quality attributes of the system. Additionally, an overview of all recommended patterns for the implementation of the system can be found in Appendix C
 
-#### 10.3.1 Event Driven
+#### 10.2.1 Event Driven
 **Scalability:** Event-driven communication allows TravelGo to handle a large and diverse user base more efficiently. Instead of services constantly calling each other through direct APIs, they publish and subscribe to events via a broker. This reduces coupling and lets multiple services consume the same event without adding system strain. For instance, when a QuestCompleted event is published, the Leaderboard Service, Notification Service can all react independently. This enables TravelGo to scale individual services as demand grows, ensuring smooth performance during travel season spikes or viral content moments. <br>
 **Modularity:** TravelGo has distinct features such as the community chatroom, cultural side quests and league based competition, that all evolve at different speeds. Event-driven design supports loose coupling, meaning each service can be developed, deployed, and maintained independently. Adding new features is straightforward, a new service just subscribes to relevant events without disrupting existing ones. Introducing a new module only requires subscribing to its related events, avoiding changes to other services. <br>
 **Integrity:** Events provide a structured, controlled way of sharing only the necessary data between services, improving data integrity and security. Sensitive data can be filtered at the broker, while services only receive the minimum required data needed, for instance, user IDs rather than full profiles. Moreover, event logs create an auditable trail of what happened and when, which strengthens TravelGo’s reliability and accountability. If inconsistencies like leaderboard manipulation arise, events can be traced back to verify the source of truth. <br>
 
-#### 10.3.2 CQRS (Command Query Responsibility Segregation)
+#### 10.2.2 CQRS (Command Query Responsibility Segregation)
 Implementing CQRS would be beneficial for TravelGo, since it improves scalability, modularity and performance. Because the write side of the system would be separated from the read side, we can use a different model for the reads, which makes the read side a lot faster. This is advantageous since our system will have far more reads than writes, since our users will mainly use the map feature with all of the tourist attractions. It is also a lot easier to scale the read and write sides when they are independent from each other. Another benefit is that the data is easier to update, which improves the modularity of the system. This is especially important since we often have to add or change the data of the tourist attractions. Lastly, CQRS fits really well with event driven communication, especially event sourcing, which we plan to use.
 
-#### 10.3.3 SAGA Pattern
+#### 10.2.3 SAGA Pattern
 Although SAGA is a widely used design pattern for microservices, we do not believe it to be advantageous for our system. There are two main reasons for this. First of all, SAGA might cause increased latency, since services have to coordinate with each other. Because of this, the performance of our system might decrease.
 Second of all, SAGA is difficult to implement, and hard to debug. We do not believe that the advantages of SAGA outweigh these disadvantages.
 
-#### 10.3.4 API Gateway
+#### 10.2.4 API Gateway
 
 The API Gateway acts as the central entry point for all client requests. Instead of the frontend or mobile application communicating directly with each individual microservice (like posts, chat, map, or leaderboard), all interactions first go through the API Gateway. It routes these requests to the correct service, aggregates data when needed, and returns a unified response to the user.
 
@@ -367,16 +335,193 @@ This design greatly simplifies communication between the frontend and backend sy
 
 The API Gateway helps TravelGo scale horizontally by decoupling client interactions from the underlying microservices. Each service can be deployed, replicated, and scaled independently without affecting others. By isolating each service behind the API Gateway, TravelGo’s architecture remains modular. All communication passes through the gateway as it is the central control point. The gateway can manage user authentication, enforce authorization, and apply HTTPS encryption to secure data in transit. This ensures that sensitive user information remains protected and that only authorized users can access specific features.
 
-#### 10.3.5 Circuit Breaker
+#### 10.2.5 Circuit Breaker
 
 In a distributed microservices system, the Circuit Breaker pattern acts like a protective mechanism ensuring that when a service begins failing or unresponsive, the circuit breaker disconnects it from the rest of the infrastructure and stops forwarding further calls. This approach is known as fast, but gracefully failing and it is preferred over waiting or retrying endlessly. While the circuit is open, requests immediately return an error or fallback without following the entire failing service. The pattern thus protects against cascading failures and keeps the resources from being exhausted early.
 
 
 This pattern is a great fit since TravelGo depends on multiple remote services (maps, payments, rewards, tourism/attractions data, leaderboards) and it would mainly be used on the server side between services and third-party APIs. In the case of the rewards or payment systems, for example, if the services are down, the platform detects repeated failures and stops sending more requests to that service.
 
-#### 10.3.6 Retry Pattern
+#### 10.2.6 Retry Pattern
 
 The Retry Pattern is a mechanism that automatically reattempts failed operations after a short delay, sometimes successfully helping the systems recover from temporary issues such as network timeouts. It would be suitable for our system as it will likely face multiple network or connectivity issues or brief spikes from the third-party APIs during high network traffic. Therefore, simply retrying after a short delay would often lead to the service succeeding in these situations.
+
+## 11 System Decomposition
+In order to attain modularity, scalability, and ease of maintenance, TravelGo is broken down into its component subsystems and modules using system decomposition. This hierarchical breakdown reflects the microservices based architecture adopted by the platform, emphasizing loose coupling between services and clear separation of functionalities. Each level of decomposition corresponds to increasing detail, from the overall system to specific services and functional modules.
+
+### 11.1 Context View
+
+The System Context Diagram highlights TravelGo’s role within its environment. It shows the platform as the central system interacting with travellers, attraction owners, and several external systems such as map providers, tourism boards, influencers, and competitors. The diagram illustrates key flows of information (e.g. travellers providing personal information, owners submitting attractions, the platform requesting maps) and helps define clear system boundaries and dependencies within a modular microservices framework.
+
+The system relies on event-driven communication (implemented via Kafka) and an API Gateway that serves as the single entry point for all client requests.
+
+![](ContextDiagram.png)
+<p style="text-align: center;">Figure 11.1: Context Diagram</p>
+
+### 11.2 Container View
+
+This next view depicts all subsystems from the context view further elaborated into containers. As you can see in Figure 11.2 below, the TravelGo System, Local Business Owners, Tourism Boards and External Dependencies now showcase more details about their inner workings.
+
+| **Subsystem**           | **Description**                                                                                               | **Interfaces / Dependencies**            |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------- | ---------------------------------------- |
+| **Frontend Service**    | Provides the interface for users to view maps, make posts, view leaderboards, and chat.                   | Communicates with API Gateway via REST  |
+| **API Gateway**         | Manages routing, authentication, and load balancing between clients and backend microservices.                | Interfaces with all backend services   |
+| **User Service**        | Manages user profiles, authentication, and subscriptions.                                                     | API Gateway, Database                 |
+| **Post Service**        | Handles posts, experiences, and attractions shared by travellers.                                              | Kafka, Leaderboard Service  |
+| **Leaderboard Service** | Calculates and updates user scores based on post activity.                                          | Kafka, Post Service |
+| **Chat Service**        | Enables real-time user communication and community discussions.                                               | Websocket API                          |
+| **Map Service**         | Integrates with third-party map providers. Displays locations and attractions. | API Gateway, External APIs             |
+| **Kafka**   | Ensures asynchronous message delivery between services for decoupled scalability.                             | All microservices                      |
+| **Database Layer**      | Stores structured and unstructured platform data (user profiles, posts, scores).                        | All microservices                      |
+<p style="text-align: center;">Table 10.1.5: Subsystem Decomposition </p>
+
+The system’s core container is the Application, which interacts with the Tourist and utilizes internal databases to manage user data, as well as external databases to interact with the Tourism Boards. Furthermore, the connection with the External Dependencies is carried out through 2 connections between the Payment System for processing user subscription and the Third-Party Map API. Lastly, the Local Businesses contain the Rewards and the functional relation is presented.
+
+![](ContainerDiagram.png)
+<p style="text-align: center;"> Figure 11.2: Container Diagram</p>
+
+### 11.3 Component View
+
+Each subsystem is further decomposed into logical components. Each service runs independently within its own Docker container, exposing RESTful APIs through the API Gateway and communicating asynchronously using Kafka topics when necessary. The following sections describe each service’s major components.
+
+#### 11.3.1 Frontend Service
+Responsible for rendering the user interface and providing interaction between the user and backend services.
+
+Main Components:
+- UI Layer (HTML/CSS/JS, Leaflet.js): Displays maps, attractions, posts, leaderboards, and chats interactively.
+- View Controller: Routes page navigation between Home, Posts, Leaderboard, and Chat.
+- API Client: Handles all REST API requests to the API Gateway.
+- Session Manager: Manages user sessions and local caching for efficiency.
+
+Responsibilities:
+- Render the interactive map on the home page.
+- Display posts, and leaderboard fetched from backend services.
+- Enable communication via chat and user-generated content creation.
+
+#### 11.3.2 API Gateway
+Serves as the single point of entry for all client requests. It provides request routing, authentication, and load balancing, ensuring a unified interface between the frontend and backend microservices.
+
+Main Components:
+- Request Router: Forwards incoming API calls to appropriate microservices.
+- Authentication Handler: Verifies tokens and manages session integrity.
+- Load Balancer: Distributes requests across instances of scalable services.
+- Response Aggregator: Merges responses from multiple microservices into unified responses for the client.
+
+Responsibilities:
+- Ensure secure and efficient request dispatching.
+- Hide service complexity from the client.
+- Facilitate scalability by abstracting backend endpoints.
+
+#### 11.3.3 User Service
+Manages all user related operations including authentication, profile management, preferences, and subscription handling.
+
+Main Components:
+- UserController: Exposes APIs for login, registration, and profile updates.
+- UserManager: Implements business logic for user authentication, account status, and preferences.
+- SubscriptionHandler: Manages premium user subscriptions and payment verification.
+- UserRepository: Handles persistent data storage in the database.
+
+Responsibilities:
+- Authenticate users and maintain secure sessions.
+- Manage personal information, interests, and privacy preferences.
+- Interface with payment services for premium access.
+
+#### 11.3.4 Map Service
+Integrates external map APIs and manages attraction visualisation.
+
+Main Components:
+- MapController: Provides APIs for fetching map tiles and location data.
+- AttractionLocator: Retrieves nearby attractions using geospatial queries.
+- MapIntegrator: Connects with third-party providers (Leaflet, OpenStreetMap).
+
+Responsibilities:
+- Provide up-to-date map data for visualisation.
+- Support attraction overlays and filtering by category.
+- Handle external API calls efficiently to reduce latency.
+
+#### 11.3.5 Posts Service
+Allows users to share travel experiences, images, and recommendations about attractions. It is event-driven and interacts with the Leaderboard Service through Kafka.
+
+Main Components:
+- PostController: Handles CRUD operations for posts and attractions.
+- PostManager: Contains business rules for validating and storing content.
+- AttractionRepository: Manages data persistence for attractions linked to posts.
+- EventPublisher: Publishes "PostCreated" events to Kafka for processing.
+
+Responsibilities:
+- Facilitate creation and retrieval of travel-related posts.
+- Maintain data integrity between posts and attractions.
+- Trigger leaderboard updates via Kafka when users posts.
+
+#### 11.3.6 Leaderboard Service
+Calculates user rankings and scores based on engagement activities.
+
+Main Components:
+- LeaderboardController: Exposes APIs for fetching rankings.
+- ScoreCalculator: Computes scores and rankings dynamically based on user activity.
+- EventHandler: Subscribes to Kafka events like "PostCreated" to update scores.
+- LeaderboardRepository: Stores user score histories and current rankings.
+
+Responsibilities:
+- Aggregate activity data into user scores.
+- Expose leaderboards for global and local rankings.
+
+#### 11.3.7 Chat Service
+Supports real-time text communication among users for travel discussions, experience sharing, and community engagement.
+
+Main Components:
+- ChatController: Provides WebSocket endpoints for real-time messaging.
+- MessageBroker: Handles routing and delivery of messages between users.
+- ChatRepository: Persists chat history and user threads.
+- NotificationManager: Pushes chat notifications to users via event triggers.
+
+Responsibilities:
+- Enable scalable, low-latency real-time communication.
+- Persist messages and ensure reliable delivery.
+- Integrate with user profiles and community features.
+
+#### 11.3.8 Kafka
+Serves as the central asynchronous event broker, decoupling microservices and enabling real-time communication.
+
+Main Components:
+- Producer: Sends messages (events) from publishing services (e.g., Post Service).
+- Consumer: Listens to and processes events in subscribed services (e.g., Leaderboard Service).
+- Topic Manager: Organizes event topics and partitions for scalability.
+- Offset Manager: Tracks message consumption state to ensure reliability.
+
+Responsibilities:
+- Enable real-time event propagation.
+- Ensure high throughput and scalability in communication.
+- Decouple service dependencies to reduce coupling and improve modularity.
+
+#### 11.3.9 Database Later
+Consists of multiple logical databases, each associated with a microservice to ensure autonomy and data encapsulation.
+
+Main Components:
+- UserDB: Stores user credentials and profiles.
+- MapDB: Stores attraction data.
+- PostDB: Stores posts.
+- LeaderboardDB: Stores user scores and rankings.
+- ChatDB: Persists messages and user threads.
+
+Each database can scale horizontally and uses backups for ensuring data integrity and fault tolerance.
+
+As can be seen from the Figure 11.3 below, the system's Application will contain the presented components, which will later be described in the Code View.
+
+![](ComponentDiagram.png)
+<p style="text-align: center;"> Figure 11.3: Component Diagram</p>
+
+### 11.4 Code View
+
+
+### 11.5 Deployment View
+At runtime, TravelGo operates within a Docker-based containerized environment. Each service (User, Post, Map, etc.) runs in its own container, orchestrated by Docker Compose.
+Kafka runs as a separate container for event streaming, while the API Gateway and Frontend are load-balanced to support scalability testing with Locust.
+
+Deployment Components:
+- Client (Web/Mobile) → API Gateway → Microservices → Kafka → Database.
+- Containers communicate via REST or asynchronous event messages.
+- Scaling is achieved by increasing the number of service containers dynamically based on load.
 
 ## 11 Proof of Concept
 
