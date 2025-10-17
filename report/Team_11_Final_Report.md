@@ -373,7 +373,7 @@ This next view depicts all subsystems from the context view further elaborated i
 | **Map Service**         | Integrates with third-party map providers. Displays locations and attractions. | API Gateway, External APIs             |
 | **Kafka**   | Ensures asynchronous message delivery between services for decoupled scalability.                             | All microservices                      |
 | **Database Layer**      | Stores structured and unstructured platform data (user profiles, posts, scores).                        | All microservices                      |
-<p style="text-align: center;">Table 10.1.5: Subsystem Decomposition </p>
+<p style="text-align: center;">Table 11.2: Subsystem Decomposition </p>
 
 The system’s core container is the Application, which interacts with the Tourist and utilizes internal databases to manage user data, as well as external databases to interact with the Tourism Boards. Furthermore, the connection with the External Dependencies is carried out through 2 connections between the Payment System for processing user subscription and the Third-Party Map API. Lastly, the Local Businesses contain the Rewards and the functional relation is presented.
 
@@ -523,7 +523,7 @@ Deployment Components:
 - Containers communicate via REST or asynchronous event messages.
 - Scaling is achieved by increasing the number of service containers dynamically based on load.
 
-## 11 Proof of Concept
+## 12 Proof of Concept
 
 The proof of concept demonstrates how the platform can bring together travellers and tourism industry workers in one ecosystem. It validates core features such as interactive maps, attraction discovery, user-generated content, and gamification elements like leaderboards. The POC was developed to demonstrate the technical feasibility of the platform’s microservices-based architecture and to validate its core design principles; scalability, modularity, and reliability. The PoC serves as a minimal yet functional version of the TravelGo system, simulating the interaction between key components such as the map service, post service, leaderboard service, and chat service, all coordinated through an API Gateway and an event-driven communication model [[12]](#12).
 
@@ -534,17 +534,17 @@ At the center of the architecture lies the API Gateway, which acts as the single
 The PoC includes a simple frontend interface built with Flask templates. The homepage displays an interactive map from the map service, while the posts, leaderboard, and chat pages represent user interaction points. Although simplified, this frontend demonstrates how user actions trigger backend operations and inter-service communication. The structure follows the directory layout of real-world modular systems, ensuring future compatibility with more advanced frameworks or containerized deployments (e.g., using Kubernetes).
 
 
-### 11.1 External Dependencies
+### 12.1 External Dependencies
 
 The platform relies on several external dependencies to function effectively. Some core services include maps and geolocation APIs (e.g., Google Maps) for navigation, routing, and location tracking. Furthermore, with respect to monetization, the platform depends on payment processors (IDEAL, PayPal, etc). On the technical side, the use of cloud hosting and databases would provide scalability and performance. Additionally, authentication services (Google, Facebook, etc) and communication tools (email/SMS providers) would also be employed to support user management.
 
 For the current proof of concept implementation, we made use of [Leaflet](leafletjs.com) to develop the interactive map and OpenStreetMap for the dataset.
 
-## 12 Revenue Model
+## 13 Revenue Model
 
 In order to ensure long-term success for a platform, a sustainable revenue model is essential. The presented system would blend reality exploration with competitive gaming, meaning it can attract tourism-focused partnerships, as well as game-industry monetization.
 
-### 12.1 Revenue Streams
+### 13.1 Revenue Streams
 
 The platform can be supported by income from multiple combined streams presented in the table below.
 
@@ -553,29 +553,29 @@ The platform can be supported by income from multiple combined streams presented
 | Free Content / Subscription | Free tier with core features; premium tier unlocks exclusive content | Predictable recurring income; encourages retention   | Requires adequate premium features to justify the cost |
 | In-App Purchases  | Cosmetic items, location-based boosts, hints, custom avatars | Transaction-based revenue resulting in immediate revenue from passionate users   | High risk of warping user perception and turning the platform into "pay-to-win" if not balanced |
 | Advertising & Sponsorships | Through advertisements, local businesses sponsor the discounts, souvenirs and/or events | Transaction-based revenue for non-premium users; Immediate income from sponsors | The advertising cannot be excessive in order to not degrade user experience   |
-<p style="text-align: center;">Table 12.1.1: List of viable revenue streams.</p>
+<p style="text-align: center;">Table 13.1.1: List of viable revenue streams.</p>
 
 
 Furthermore, since the platform is newly developed, the revenue model should be implemented in progressive stages.
 At launch, most of the platform content should remain free to access to build the user base. Additionally, basic in-app purchases for cosmetic reasons can be included. During the next stage, the relation with local business owners would be established, and the platform would begin featuring sponsored restaurants and souvenir shops, as well as custom maps and affiliation with tourist companies in the premium version. Lastly, the final stage could envision production of large-scale events, partnerships with museums from bigger cities and metropolises and potential merchandise sales.
 
-### 12.2 Risks and Considerations
+### 13.2 Risks and Considerations
 
 - User Experience: Excessive monetization risks pushing tourists away, therefore, the free version must remain engaging.
 - Fairness: Competitive features must avoid "pay-to-win" dynamics.
 - Scalability: Each additional revenue stream increases system complexity. As such, the platform should be built in a modular way so features can be added independently without interfering with existing ones.
 
 
-## 13 Roadmap
+## 14 Roadmap
 The stages in which the proposed system will be implemented can be seen in the roadmap below.
 
 ![](Roadmap.png)
 <p style="text-align: center;">Figure 13.1: Roadmap</p>
 
-## 14 Open Source
+## 15 Open Source
 To safe on time, cost and effort, we will make use of open source software. This does come with some risks: open source software might lead to compatibility issues, lack of support and potential security vulnerabilities. To mitigate these risks, all open source software must be carefully evaluated before usage. In some cases, open source tools might have to be adapted to fit our system better. For our POC, we already made use of several open source tools: more information can be found in section 11.1. 
 
-### 14.1 Interactive Map
+### 15.1 Interactive Map
 The map is one of the core features which users will utilise to explore attractions, and post experiences. It impacts the performance, flexibility, licensing cost, and integration ease of the system.
 
 | **Criteria** | **Leaflet** | **OpenStreetMap (OSM)** | **Google Maps** |
@@ -591,11 +591,11 @@ The map is one of the core features which users will utilise to explore attracti
 | **Privacy** | Self-hosted; no tracking | Fully open data | Google owns map data and telemetry |
 | **Deployment** | Very easy; no API keys or billing setup | Needs rendering layer | Requires Google API key and cloud project setup |
 
-<p style="text-align: center;">Table 14.1: Comparative Analysis for Interactive Maps </p> 
+<p style="text-align: center;">Table 15.1: Comparative Analysis for Interactive Maps </p> 
 
 Based on the table, Leaflet was chosen for the mapping engine with OpenStreetMap dataset as it is open-source and cost free [[13]](#13). It has no licensing or billing constraints and can be embedded directly into the existing client-side module. Moreover, as it implements a plugin ecosystem, TravelGo’s concept of showing hidden gems and user posts can be rendered in custom layers. By pairing Leaflet with OpenStreetMap tiles, the system achieves a completely open-source mapping stack [[14]](#14). This preserves data ownership and allows for migration to self-hosted tiles or private map layers at a later stage. This ensures user privacy and local compliance. Leaflet can cache tiles locally or use self-hosted tile servers, enabling limited offline functionality, which aligns with the future goal of supporting travelers in low-connectivity areas.
 
-## 15 Discussion about Cloud
+## 16 Discussion about Cloud
 TravelGo has a global user base and considering it's microservices driven architecture, deploying the system on the cloud offers clear advantages in terms of scalability, flexibility, and integrity. The system aims to reach travelers, local communities, and businesses across the world. Therefore, leveraging cloud infrastructure ensures low latency and seamless accessibility across regions. Cloud providers offer geographically distributed data centers, enabling TravelGo to host its services closer to its users and deliver fast, consistent performance even during high-traffic periods such as holiday seasons or major events. <br>
 
 A public cloud environment such as Amazon Web Services (AWS), Microsoft Azure, or Google Cloud Platform (GCP) will be a goof fit for the system. It provides cost efficiency, elasticity, and rapid deployment without the heavy maintenance required for private infrastructure. However, certain sensitive components, such as payment systems and user data, could also benefit from a hybrid approach, where confidential data is stored in a private cloud or restricted region to comply with regulations such as GDPR, while general application services operate on the public cloud.
