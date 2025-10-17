@@ -380,7 +380,7 @@ The Retry Pattern is a mechanism that automatically reattempts failed operations
 
 ## 11 Proof of Concept
 
-The proof of concept demonstrates how the platform can bring together travellers and tourism industry workers in one ecosystem. It validates core features such as interactive maps, attraction discovery, user-generated content, and gamification elements like leaderboards. The POC was developed to demonstrate the technical feasibility of the platform’s microservices-based architecture and to validate its core design principles; scalability, modularity, and reliability. The PoC serves as a minimal yet functional version of the TravelGo system, simulating the interaction between key components such as the map service, post service, leaderboard service, and chat service, all coordinated through an API Gateway and an event-driven communication model.
+The proof of concept demonstrates how the platform can bring together travellers and tourism industry workers in one ecosystem. It validates core features such as interactive maps, attraction discovery, user-generated content, and gamification elements like leaderboards. The POC was developed to demonstrate the technical feasibility of the platform’s microservices-based architecture and to validate its core design principles; scalability, modularity, and reliability. The PoC serves as a minimal yet functional version of the TravelGo system, simulating the interaction between key components such as the map service, post service, leaderboard service, and chat service, all coordinated through an API Gateway and an event-driven communication model [[12]](#12).
 
 The implementation uses Python and Flask to represent each microservice, where every service runs independently on a separate port. This allows each module to be developed, deployed, and scaled independently; a direct demonstration of modularity and scalability. For instance, the post service handles user-generated travel experiences and attractions, while the leaderboard service listens for new posts via Kafka to dynamically update user scores. Similarly, the map service provides data on available destinations and attractions that appear on the home page.
 
@@ -393,7 +393,7 @@ The PoC includes a simple frontend interface built with Flask templates. The hom
 
 The platform relies on several external dependencies to function effectively. Some core services include maps and geolocation APIs (e.g., Google Maps) for navigation, routing, and location tracking. Furthermore, with respect to monetization, the platform depends on payment processors (IDEAL, PayPal, etc). On the technical side, the use of cloud hosting and databases would provide scalability and performance. Additionally, authentication services (Google, Facebook, etc) and communication tools (email/SMS providers) would also be employed to support user management.
 
-For the current proof of concept implementation, we made use of [Leaflet](leafletjs.com) to develop the interactive map.
+For the current proof of concept implementation, we made use of [Leaflet](leafletjs.com) to develop the interactive map and OpenStreetMap for the dataset.
 
 ## 12 Revenue Model
 
@@ -429,6 +429,26 @@ The stages in which the proposed system will be implemented can be seen in the r
 
 ## 14 Open Source
 To safe on time, cost and effort, we will make use of open source software. This does come with some risks: open source software might lead to compatibility issues, lack of support and potential security vulnerabilities. To mitigate these risks, all open source software must be carefully evaluated before usage. In some cases, open source tools might have to be adapted to fit our system better. For our POC, we already made use of several open source tools: more information can be found in section 11.1. 
+
+### 14.1 Interactive Map
+The map is one of the core features which users will utilise to explore attractions, and post experiences. It impacts the performance, flexibility, licensing cost, and integration ease of the system.
+
+| **Criteria** | **Leaflet** | **OpenStreetMap (OSM)** | **Google Maps** |
+|---------------|-------------|--------------------------|-----------------|
+| **Type** | JavaScript mapping library | Geospatial data provider | Full mapping platform (API + data) |
+| **Cost** | Free & open-source | Free | Paid after free tier |
+| **Map Data Source** | Customizable | Own map data | Proprietary data |
+| **Customization** | Extremely high | Moderate | Limited |
+| **Integration Complexity** | Low | Medium | High |
+| **Offline Support** | Partial (with local tiles or caching) | Yes, if tiles are self-hosted | Limited |
+| **Performance** | Very fast | Depends on rendering library | Fast |
+| **License Restrictions** | None for library itself; tile servers must respect provider terms | Requires attribution | Strict API usage terms, cannot self-host |
+| **Privacy** | Self-hosted; no tracking | Fully open data | Google owns map data and telemetry |
+| **Deployment** | Very easy; no API keys or billing setup | Needs rendering layer | Requires Google API key and cloud project setup |
+
+<p style="text-align: center;">Table 14.1: Comparative Analysis for Interactive Maps </p> 
+
+Based on the table, Leaflet was chosen for the mapping engine with OpenStreetMap dataset as it is open-source and cost free [[13]](#13). It has no licensing or billing constraints and can be embedded directly into the existing client-side module. Moreover, as it implements a plugin ecosystem, TravelGo’s concept of showing hidden gems and user posts can be rendered in custom layers. By pairing Leaflet with OpenStreetMap tiles, the system achieves a completely open-source mapping stack [[14]](#14). This preserves data ownership and allows for migration to self-hosted tiles or private map layers at a later stage. This ensures user privacy and local compliance. Leaflet can cache tiles locally or use self-hosted tile servers, enabling limited offline functionality, which aligns with the future goal of supporting travelers in low-connectivity areas.
 
 ## 15 Discussion about Cloud
 TravelGo has a global user base and considering it's microservices driven architecture, deploying the system on the cloud offers clear advantages in terms of scalability, flexibility, and integrity. The system aims to reach travelers, local communities, and businesses across the world. Therefore, leveraging cloud infrastructure ensures low latency and seamless accessibility across regions. Cloud providers offer geographically distributed data centers, enabling TravelGo to host its services closer to its users and deliver fast, consistent performance even during high-traffic periods such as holiday seasons or major events. <br>
@@ -466,3 +486,9 @@ Brown, S. (n.d.). The C4 model for visualising software architecture. C4 Model. 
 Ahmad, A. (2025, August 23). 19 Essential Microservices Patterns for System Design Interviews. Design Gurus. https://www.designgurus.io/blog/19-essential-microservices-patterns-for-system-design-interviews?gad_source=1&gad_campaignid=21052024757&gbraid=0AAAAADME9yrt3rLA-YSrKYswgzdQyBX6D&gclid=Cj0KCQjwovPGBhDxARIsAFhgkwRavr_Fn1z55RbDBcbpqNeaZ_L5WuzKZd0gBhH05Vf0RLmLTqh8ahUaAkCBEALw_wcB  (Date Accessed - October 2025)
 <br><a id="11">[11]</a>
 Sethi, R. (2022). 3.1.3 Kinds of Requirements [ISBN 9781316511947]. In Software Engineering: Basic Principles and Best Practices. Cambridge University Press (1st ed., pp. 181-185).
+<br><a id="12">[12]</a>
+Singh, B. (2024, October 20). Building a Simple Microservices Architecture with Python: A Step-by-Step Guide. Medium. https://medium.com/@bittusinghtech/building-a-simple-microservices-architecture-with-python-a-step-by-step-guide-c41da2cd4631
+<br><a id="13">[13]</a>
+Temprano, V. G. (2017, January 18). Google Maps API or Leaflet: What's Best for your Project? Codementor. https://www.codementor.io/@victorgerardtemprano/google-maps-api-or-leaflet--what-s-best-for-your-project-faaev60vm
+<br><a id="14">[14]</a>
+I-Finity Associates Ltd. (n.d.). OpenStreetMap vs Google Maps | I-Finity. https://www.i-finity.co.uk/articles/openstreetmap-vs-google-maps
