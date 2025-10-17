@@ -35,4 +35,11 @@ docker compose up --build
 ### Open the application
 ```
 http://127.0.0.1:5008
+http://172.18.0.8:5008
+```
+
+### locust
+```
+!pip install locust
+locust -f load-tests/locustfile.py --host=http://localhost:5000
 ```
