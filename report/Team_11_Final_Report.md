@@ -540,6 +540,20 @@ The platform relies on several external dependencies to function effectively. So
 
 For the current proof of concept implementation, we made use of [Leaflet](leafletjs.com) to develop the interactive map and OpenStreetMap for the dataset.
 
+## 12 Experiment: Proving Scalability
+To evaluate the scalability of the TravelGo system, we conduct load testing using Locust, an open-source tool for simulating user traffic. The objective of this experiment is to verify that the chat service can handle increasing user loads without significant failures or degradation in response time.
+
+In the experiment, we configure Locust to simulate multiple concurrent users sending chat messages through the API Gateway. The test environment consists of all microservices deployed via Docker Compose, ensuring realistic inter-service communication. We observe key performance indicators such as request rate (RPS), failure rate, and average response time as the number of simulated users increased.
+
+We initially deploy multiple API Gateway replicas and configured NGINX as a load balancer for these replicas. When only a single instance of the chat service was active, response times increases and occasional request failures occur as the number of concurrent users grow. To address this, we deploy multiple replicas of these services to implement horizontal scaling and route requests through an NGINX load balancer. NGINX distributes incoming requests evenly across available instances, preventing any single container from becoming a bottleneck.
+
+After scaling the chat service, Locust results showed significant performance improvements: the average response time decreased and throughput (RPS) increased even as the number of simulated users rose. These results demonstrate that TravelGo’s microservices-based design supports horizontal scaling at the service level, allowing individual components such as the chat service to handle higher loads efficiently without affecting others.
+
+These results demonstrate that TravelGo’s microservices architecture supports elastic scalability: services can be scaled independently based on demand without affecting overall system performance. This confirms that the chat service can efficiently handle higher loads, maintaining system integrity and user experience.Future tests can extend this setup to other services, validating end-to-end scalability across the entire TravelGo ecosystem.
+
+![](experiment-results.png)
+<p style="text-align: center;"> Figure 12.1: Locust load-test experiment results</p>
+
 ## 13 Revenue Model
 
 In order to ensure long-term success for a platform, a sustainable revenue model is essential. The presented system would blend reality exploration with competitive gaming, meaning it can attract tourism-focused partnerships, as well as game-industry monetization.

@@ -38,8 +38,24 @@ http://127.0.0.1:5008
 http://172.18.0.8:5008
 ```
 
-### locust
+### Experminet Setup - Locust
+```
+Install locust using the following command:
 ```
 !pip install locust
+```
+Make sure your docker is open and running using this command : 
+```
+docker compose up -d --scale api_gateway=3 -d 
+```
+In a new terminal, run the command: 
+```
 locust -f load-tests/locustfile.py --host=http://localhost:5000
+```
+Open http://localhost:8089/ to see locust hosted. Set number of users to 1000 and Swarms as 100 (just default for this experiment)
+
+To implement scaling and create replicas: 
+```
+docker compose up --scale chat_service=10 -d
+
 ```
