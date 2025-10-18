@@ -540,7 +540,7 @@ The platform relies on several external dependencies to function effectively. So
 
 For the current proof of concept implementation, we made use of [Leaflet](leafletjs.com) to develop the interactive map and OpenStreetMap for the dataset.
 
-## 12 Experiment: Proving Scalability
+## 13 Experiment: Proving Scalability
 To evaluate the scalability of the TravelGo system, we conduct load testing using Locust, an open-source tool for simulating user traffic. The objective of this experiment is to verify that the chat service can handle increasing user loads without significant failures or degradation in response time.
 
 In the experiment, we configure Locust to simulate multiple concurrent users sending chat messages through the API Gateway. The test environment consists of all microservices deployed via Docker Compose, ensuring realistic inter-service communication. We observe key performance indicators such as request rate (RPS), failure rate, and average response time as the number of simulated users increased.
@@ -552,13 +552,13 @@ After scaling the chat service, Locust results showed significant performance im
 These results demonstrate that TravelGo’s microservices architecture supports elastic scalability: services can be scaled independently based on demand without affecting overall system performance. This confirms that the chat service can efficiently handle higher loads, maintaining system integrity and user experience.Future tests can extend this setup to other services, validating end-to-end scalability across the entire TravelGo ecosystem.
 
 ![](experiment-results.png)
-<p style="text-align: center;"> Figure 12.1: Locust load-test experiment results</p>
+<p style="text-align: center;"> Figure 13.1: Locust load-test experiment results</p>
 
-## 13 Revenue Model
+## 14 Revenue Model
 
 In order to ensure long-term success for a platform, a sustainable revenue model is essential. The presented system would blend reality exploration with competitive gaming, meaning it can attract tourism-focused partnerships, as well as game-industry monetization.
 
-### 13.1 Revenue Streams
+### 14.1 Revenue Streams
 
 The platform can be supported by income from multiple combined streams presented in the table below.
 
@@ -567,29 +567,29 @@ The platform can be supported by income from multiple combined streams presented
 | Free Content / Subscription | Free tier with core features; premium tier unlocks exclusive content | Predictable recurring income; encourages retention   | Requires adequate premium features to justify the cost |
 | In-App Purchases  | Cosmetic items, location-based boosts, hints, custom avatars | Transaction-based revenue resulting in immediate revenue from passionate users   | High risk of warping user perception and turning the platform into "pay-to-win" if not balanced |
 | Advertising & Sponsorships | Through advertisements, local businesses sponsor the discounts, souvenirs and/or events | Transaction-based revenue for non-premium users; Immediate income from sponsors | The advertising cannot be excessive in order to not degrade user experience   |
-<p style="text-align: center;">Table 13.1.1: List of viable revenue streams.</p>
+<p style="text-align: center;">Table 14.1.1: List of viable revenue streams.</p>
 
 
 Furthermore, since the platform is newly developed, the revenue model should be implemented in progressive stages.
 At launch, most of the platform content should remain free to access to build the user base. Additionally, basic in-app purchases for cosmetic reasons can be included. During the next stage, the relation with local business owners would be established, and the platform would begin featuring sponsored restaurants and souvenir shops, as well as custom maps and affiliation with tourist companies in the premium version. Lastly, the final stage could envision production of large-scale events, partnerships with museums from bigger cities and metropolises and potential merchandise sales.
 
-### 13.2 Risks and Considerations
+### 14.2 Risks and Considerations
 
 - User Experience: Excessive monetization risks pushing tourists away, therefore, the free version must remain engaging.
 - Fairness: Competitive features must avoid "pay-to-win" dynamics.
 - Scalability: Each additional revenue stream increases system complexity. As such, the platform should be built in a modular way so features can be added independently without interfering with existing ones.
 
 
-## 14 Roadmap
+## 15 Roadmap
 The stages in which the proposed system will be implemented can be seen in the roadmap below.
 
 ![](Roadmap.png)
-<p style="text-align: center;">Figure 13.1: Roadmap</p>
+<p style="text-align: center;">Figure 15.1: Roadmap</p>
 
-## 15 Open Source
+## 16 Open Source
 To safe on time, cost and effort, we will make use of open source software. This does come with some risks: open source software might lead to compatibility issues, lack of support and potential security vulnerabilities. To mitigate these risks, all open source software must be carefully evaluated before usage. In some cases, open source tools might have to be adapted to fit our system better. For our POC, we already made use of several open source tools: more information can be found in section 11.1. 
 
-### 15.1 Interactive Map
+### 16.1 Interactive Map
 The map is one of the core features which users will utilise to explore attractions, and post experiences. It impacts the performance, flexibility, licensing cost, and integration ease of the system.
 
 | **Criteria** | **Leaflet** | **OpenStreetMap (OSM)** | **Google Maps** |
@@ -605,11 +605,27 @@ The map is one of the core features which users will utilise to explore attracti
 | **Privacy** | Self-hosted; no tracking | Fully open data | Google owns map data and telemetry |
 | **Deployment** | Very easy; no API keys or billing setup | Needs rendering layer | Requires Google API key and cloud project setup |
 
-<p style="text-align: center;">Table 15.1: Comparative Analysis for Interactive Maps </p> 
+<p style="text-align: center;">Table 16.1: Comparative Analysis for Interactive Maps </p> 
 
 Based on the table, Leaflet was chosen for the mapping engine with OpenStreetMap dataset as it is open-source and cost free [[13]](#13). It has no licensing or billing constraints and can be embedded directly into the existing client-side module. Moreover, as it implements a plugin ecosystem, TravelGo’s concept of showing hidden gems and user posts can be rendered in custom layers. By pairing Leaflet with OpenStreetMap tiles, the system achieves a completely open-source mapping stack [[14]](#14). This preserves data ownership and allows for migration to self-hosted tiles or private map layers at a later stage. This ensures user privacy and local compliance. Leaflet can cache tiles locally or use self-hosted tile servers, enabling limited offline functionality, which aligns with the future goal of supporting travelers in low-connectivity areas.
 
-## 16 Discussion about Cloud
+### 16.2 Locust - Load Testing Tool
+Locust was selected as the primary load testing tool for TravelGo because of its flexibility, simplicity, and seamless integration with our microservices and Docker-based architecture. Written in Python, Locust allows test scenarios to be defined as plain Python code, which made it easy to simulate realistic user interactions with TravelGo’s REST APIs, such as creating posts without requiring complex scripting or configuration.
+
+Compared to other tools like Apache JMeter or Gatling, Locust offered several practical advantages for our setup. It is lightweight, open-source, and natively supports distributed load testing, allowing us to simulate thousands of concurrent users through multiple worker instances if needed. The web-based dashboard provided real-time metrics on request rates, failures, and latency, making it ideal for demonstrating system scalability visually during experimentation.
+
+Furthermore, Locust integrates smoothly with Docker Compose, enabling it to run as a separate container within the same network as other services. This simplified deployment and ensured consistent testing conditions without additional setup. Overall, Locust proved to be the most efficient and developer-friendly choice for validating the scalability and performance of TravelGo’s microservices.
+
+| **Criteria** | **Locust** | **Apache Jmeter** | **Gatling** |
+|---------------|-------------|--------------------------|-----------------|
+| **Language/Framework** | Python | Java | Scala |
+| **Advantages** | Lightweight, integrates well with docker and microservices | Extensive protocol support and strong analytics | Good for continuous integration  |
+| **Disadvantages** | Comparatively less advanced reporting | Heavier setup, complex scripting | Requires scala knowledge |
+| **Suitability for TravelGo** | Simple, scalable and developer friendly | Not very suitable for containerized setup | Less flexible |
+
+<p style="text-align: center;">Table 16.2: Comparative Analysis for load testing tools </p>
+
+## 17 Discussion about Cloud
 TravelGo has a global user base and considering it's microservices driven architecture, deploying the system on the cloud offers clear advantages in terms of scalability, flexibility, and integrity. The system aims to reach travelers, local communities, and businesses across the world. Therefore, leveraging cloud infrastructure ensures low latency and seamless accessibility across regions. Cloud providers offer geographically distributed data centers, enabling TravelGo to host its services closer to its users and deliver fast, consistent performance even during high-traffic periods such as holiday seasons or major events. <br>
 
 A public cloud environment such as Amazon Web Services (AWS), Microsoft Azure, or Google Cloud Platform (GCP) will be a goof fit for the system. It provides cost efficiency, elasticity, and rapid deployment without the heavy maintenance required for private infrastructure. However, certain sensitive components, such as payment systems and user data, could also benefit from a hybrid approach, where confidential data is stored in a private cloud or restricted region to comply with regulations such as GDPR, while general application services operate on the public cloud.

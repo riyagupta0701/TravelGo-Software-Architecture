@@ -42,13 +42,13 @@ http://172.18.0.8:5008
 ```
 Install locust using the following command:
 ```
-!pip install locust
+pip install locust
 ```
-Make sure your docker is open and running using this command : 
+Make sure your docker desktop is open and run this command in the poc folder : 
 ```
 docker compose up -d --scale api_gateway=3 -d 
 ```
-In a new terminal, run the command: 
+In a new terminal, run the command after navigating to the poc folder: 
 ```
 locust -f load-tests/locustfile.py --host=http://localhost:5000
 ```
@@ -58,4 +58,8 @@ To implement scaling and create replicas:
 ```
 docker compose up --scale chat_service=10 -d
 
+```
+To stop the containers, run the following command:
+```
+docker compose down
 ```
