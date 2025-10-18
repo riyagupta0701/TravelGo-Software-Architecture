@@ -3,10 +3,30 @@ import os
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from flask import Flask, request, jsonify
-from events import event_bus
-
+from confluent_kafka import Producer
+import json
+import time
 app = Flask(__name__)
 posts = []
+
+conf = {'bootstrap.servers': 'kafka:9092'}
+producer = Producer(conf)
+dummy_post = {"id": 0, "user_id": 0, "attraction": "Eiffel Tower", "content": "Great"}
+posts.append(dummy_post)
+
+for i in range(10):
+    try:
+        producer.produce(topic='new_post', value=json.dumps(dummy_post).encode('utf-8'))
+        producer.flush()  
+        break
+    except Exception as e:
+        time.sleep(2)
+
+def delivered(err, msg):
+    if err is not None:
+        print("Failed to deliver message: %s: %s" % (str(msg), str(err)))
+    else:
+        print("Message produced: %s" % (str(msg)))
 
 @app.route("/posts", methods=["POST"])
 def create_post():
@@ -15,8 +35,8 @@ def create_post():
     post = {"id": post_id, "user_id": data["user_id"], "attraction": data["attraction"], "content": data["content"]}
     posts.append(post)
 
-    event_bus.publish("post_created", post)
-
+    producer.produce(topic='new_post', value=json.dumps(post).encode('utf-8'), callback=delivered)
+    producer.flush()
     return jsonify(post), 201
 
 @app.route("/posts", methods=["GET"])
