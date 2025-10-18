@@ -28,7 +28,6 @@ pip install -r requirements.txt
 ```
 
 ### Run the application using docker
-Once you navigate to the poc folder, run the command:
 ```
 docker compose up --build
 ```
@@ -36,5 +35,4 @@ docker compose up --build
 ### Open the application
 ```
 http://127.0.0.1:5008
-http://172.18.0.8:5008
 ```
