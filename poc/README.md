@@ -25,6 +25,7 @@ vEnv\Scripts\activate
 ### Install dependencies
 ```
 pip install -r requirements.txt
+pip install confluent-kafka
 ```
 
 ### Run the application using docker
