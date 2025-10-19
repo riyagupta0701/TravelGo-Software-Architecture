@@ -50,3 +50,12 @@ In the beginning of the week, I was working on the POC, trying to implement even
 We had an in-person meeting on Tuesday where we discussed about the POC, cloud services and using Kafka instead for event-driven communication. Later in the day, we had a meeting with the TA. The outcome of the meeting was positive and we noted down the feedback to work on.
 
 The following days, I wrote about the functional requirements and the POC in the report. I was spent time reading and understanding how to use and implement Kafka. We also updated the Roadmap for the full cycle.
+
+---
+## Week 7
+
+On Monday, we had an offline meeting where we finalised the report and POC implementation for the Heron release and submitted the documents. We created the release on GitLab and then discussed on the last few remaining additions for our report.
+
+I worked on the system decomposition and updating the C4 section in the report. I started on the Peer Review by reading the report the following days.
+
+We had an in-person meeting on Thursday, to discuss the report and to further expand upon the content for the open source section and finalising on the testing for the POC. For the rest of the week, I updated the open source section with the interactive map and its alternatives and went through the peer review report and POC.
