@@ -31,3 +31,11 @@ On Monday, 8th September, we scheduled a meeting with the TA to discuss our syst
 - Then over the next few days, I looked into locust for proving the scalability quality attribute for the system. I plan to implement that in the following days as docker thing is done by Diana.
 - Over the weekend, I researched about cloud scalability and how travelgo can make use of cloud infrastructure. I found that travelgo could really benefit from cloud infra and there are some good options out there in the market, but some sensetive information should be made hybrid. I added the discussion about cloud section in the report.
 - Updated the roadmap and fixed the numbering in the report and for the bibliography.
+
+## Week 7
+- This week, I worked on proving the system's scalability. I researched possible options for the same, and finally decided on using locust as it was easier to implement than Jmeter or Gatling.
+- We had a team meeting on Thursday in the campus where we discussed our progress and the next steps, what was remaining and what needed to be updated. 
+- For the experminet, I coded the necessary files, and when I implemented it, I observed that there was no even distribution of the requests across service replicas, so I realised that a load balancer must be added to distribute the requests evenly. I used nginx for the same due to its easier integration.
+- I observed that the response time decreased even though number of users increased as I implemented scaling and created replicas of chat service.
+- I added my experiment section in the report about what was the aim of the experiment and what results were observed after it. 
+- While reviewing the rubrics, I realized the open-source section lacked discussion on the components used in our architecture. I communicated this to the team and added NGINX and Locust to the section, justifying why they were the best fit for our system.

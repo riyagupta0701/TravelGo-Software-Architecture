@@ -625,6 +625,9 @@ Furthermore, Locust integrates smoothly with Docker Compose, enabling it to run 
 
 <p style="text-align: center;">Table 16.2: Comparative Analysis for load testing tools </p>
 
+### 16.3 Nginx - Load balancer
+Nginx was chosen as a load balancer for TravelGo's system architecture due to its simplicity and lightweight footprint. It fit well with the system's docker based microservices architecture. While there are more advanced alternatives available like HAProxy or Traefik which offer dynamic service discovery, Nginx was sufficient for the experimental setup. Its easier integration enabled us to implement and prove horizontal scaling without adding unnecessary complexity.
+
 
 ### 16.4 Docker Implementation
 
