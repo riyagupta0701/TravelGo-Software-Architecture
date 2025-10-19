@@ -626,9 +626,11 @@ Furthermore, Locust integrates smoothly with Docker Compose, enabling it to run 
 <p style="text-align: center;">Table 16.2: Comparative Analysis for load testing tools </p>
 
 
-### 16.4 Docker for containerizing
+### 16.4 Docker Implementation
 
-TravelGo relies on a microservices architecture and therefore needs to ensure scalability, portability, and modular growth. Docker provides a superior containerization solution compared to other open-source tools such as Podman, LXC, or rkt. Docker’s mature ecosystem, extensive community support, and seamless integration with orchestration tools such as Kubernetes make it ideal for TravelGo’s cloud-based deployment strategy. Unlike LXC, which focuses on low-level OS virtualization, Docker offers higher-level abstractions, making it easier for TravelGo developers to manage independent microservices such as the chat, map, and leaderboard services. Compared to Podman, which lacks a built-in daemon and has a steeper learning curve for orchestration, Docker simplifies CI/CD integration and local testing—important for TravelGo’s rapid feature rollouts. Moreover, Docker Hub’s vast image repository accelerates development and ensures reproducibility across distributed teams, aligning perfectly with TravelGo’s modular, event-driven design and need for consistent deployment across diverse environments worldwide.
+Docker is a one of the most popular open-source containerization platforms that allows developers to package applications with all their dependencies into portable, lightweight containers. Since TravelGo implements an event-driven approach in a microservices architecture, multiple services need to work together, and Docker offers a high degree of flexibility and versatility by ensuring cross-platform compatibility and easy control over container versions [[17]](#17). However, using Docker can also raise concerns about system security, as it relies heavily on a daemon [[17]](#17) to run all containers under a centralized background process. This can introduce security vulnerabilities related to the daemon's root access, alongside concerns about high memory and CPU usage rates. Therefore, alternatives such as Podman and Buildah were created to overcome these drawbacks. In this sense, Podman removes the security vulnerability by allowing users to run containers themselves without the daemon, which is a safer approach [[17]](#17). On the other hand, Buildah is used to create containers without a background service, focusing on container images, and thus offers more control over the building process and it is lighter and more secure [[16]](#16). Despite this, neither Podman and Buildah are optimal for TravelGo, as they further imply additional complexity for creating and managing containers. This fragmentation could potentially slow down the platform's response to changes.
+
+Other alternatives such as Linux Container Daemon (LXD) and Vagrant are also imcompatible for TravelGo. This is because LXD uses entire system environments instead of containers, making the entire operation slower and unsuitable for a microservice architecture [[18]](#18), while Vagrant relies on virtual machines, which are resource intensive [[17]](#17). Therefore, Docker remains the best option for TravelGo, due to its ease of use and operation, which are perfect for TravelGo's design philosophy.   
 
 
 ## 17 Discussion about Cloud
@@ -646,21 +648,21 @@ In conclusion, deploying TravelGo on the cloud complements its microservices bas
 
 ## Bibliography
 <a id="1">[1]</a>
-Pautasso, C. (2020). Software Architecture: visual lecture notes. LeanPub. https://leanpub.com/software-architecture/
+Pautasso, C. (2020). Software Architecture: visual lecture notes. LeanPub. https://leanpub.com/software-architecture/ (Date Accessed - September 2025)
 <br><a id="2">[2]</a>
-Alčaković, S., Pavlović, D., & Popesku, J. (2017). Millennials and gamification: A model proposal for gamification application in tourism destination. Marketing, 48(4), 207–214. https://doi.org/10.5937/markt1704207a 
+Alčaković, S., Pavlović, D., & Popesku, J. (2017). Millennials and gamification: A model proposal for gamification application in tourism destination. Marketing, 48(4), 207–214. https://doi.org/10.5937/markt1704207a (Date Accessed - September 2025)
 <br><a id="3">[3]</a>
-Gen Z Travel Trends: Statistics, Insights and what it all means for the industry [2025]. (n.d.). Atlys. https://www.atlys.com/blog/gen-z-travel-trends
+Gen Z Travel Trends: Statistics, Insights and what it all means for the industry [2025]. (n.d.). Atlys. https://www.atlys.com/blog/gen-z-travel-trends (Date Accessed - September 2025)
 <br><a id="4">[4]</a> 
-Pitrelli, M. (2023, March 27). More millennials are turning 40 — and they’re changing travel as we know it. CNBC. https://www.cnbc.com/2023/03/27/millennials-are-turning-40-and-theyre-changing-travel-as-we-know-it.html
+Pitrelli, M. (2023, March 27). More millennials are turning 40 — and they’re changing travel as we know it. CNBC. https://www.cnbc.com/2023/03/27/millennials-are-turning-40-and-theyre-changing-travel-as-we-know-it.html (Date Accessed - September 2025)
 <br><a id="5">[5]</a>
 Artug, E., & Fateh, D. (2025, March 28). Serverless and microservices: A tale of two architectures. Contentful. https://www.contentful.com/blog/serverless-vs-microservices/ (Date Accessed - October 2025)
 <br><a id="6">[6]</a>
-Types of Cloud Computing. AWS. https://aws.amazon.com/types-of-cloud-computing/
+Types of Cloud Computing. AWS. https://aws.amazon.com/types-of-cloud-computing/ (Date Accessed - September 2025)
 <br><a id="7">[7]</a>
-Cody Slingerland. (2023). What Is Cloud Scalability? Benefits And Tips For Every Organization. CloudZero. https://www.cloudzero.com/blog/cloud-scalability/
+Cody Slingerland. (2023). What Is Cloud Scalability? Benefits And Tips For Every Organization. CloudZero. https://www.cloudzero.com/blog/cloud-scalability/ (Date Accessed - October 2025)
 <br><a id="8">[8]</a>
-Chrystal R. China, & Michael Goodwin (2025). IaaS, PaaS, SaaS: What's the difference? IBM. https://www.ibm.com/think/topics/iaas-paas-saas 
+Chrystal R. China, & Michael Goodwin (2025). IaaS, PaaS, SaaS: What's the difference? IBM. https://www.ibm.com/think/topics/iaas-paas-saas (Date Accessed - September 2025)
 <br><a id="9">[9]</a>
 Brown, S. (n.d.). The C4 model for visualising software architecture. C4 Model. Retrieved October 12, 2025, from https://c4model.com/ (Date Accessed - October 2025)
 <br><a id="10">[10]</a>
@@ -668,10 +670,16 @@ Ahmad, A. (2025, August 23). 19 Essential Microservices Patterns for System Desi
 <br><a id="11">[11]</a>
 Sethi, R. (2022). 3.1.3 Kinds of Requirements [ISBN 9781316511947]. In Software Engineering: Basic Principles and Best Practices. Cambridge University Press (1st ed., pp. 181-185).
 <br><a id="12">[12]</a>
-Singh, B. (2024, October 20). Building a Simple Microservices Architecture with Python: A Step-by-Step Guide. Medium. https://medium.com/@bittusinghtech/building-a-simple-microservices-architecture-with-python-a-step-by-step-guide-c41da2cd4631
+Singh, B. (2024, October 20). Building a Simple Microservices Architecture with Python: A Step-by-Step Guide. Medium. https://medium.com/@bittusinghtech/building-a-simple-microservices-architecture-with-python-a-step-by-step-guide-c41da2cd4631 (Date Accessed - September 2025)
 <br><a id="13">[13]</a>
-Temprano, V. G. (2017, January 18). Google Maps API or Leaflet: What's Best for your Project? Codementor. https://www.codementor.io/@victorgerardtemprano/google-maps-api-or-leaflet--what-s-best-for-your-project-faaev60vm
+Temprano, V. G. (2017, January 18). Google Maps API or Leaflet: What's Best for your Project? Codementor. https://www.codementor.io/@victorgerardtemprano/google-maps-api-or-leaflet--what-s-best-for-your-project-faaev60vm (Date Accessed - October 2025)
 <br><a id="14">[14]</a>
-I-Finity Associates Ltd. (n.d.). OpenStreetMap vs Google Maps | I-Finity. https://www.i-finity.co.uk/articles/openstreetmap-vs-google-maps
+I-Finity Associates Ltd. (n.d.). OpenStreetMap vs Google Maps | I-Finity. https://www.i-finity.co.uk/articles/openstreetmap-vs-google-maps (Date Accessed - October 2025)
 <br><a id="15">[15]</a>
 Public Cloud vs Private Cloud vs Hybrid Cloud. (2025, July 23). GeeksforGeeks. https://www.geeksforgeeks.org/devops/public-cloud-vs-private-cloud-vs-hybrid-cloud/ (Date Accessed - October 2025)
+<br><a id="16">[16]</a>
+Minimal Develops. (2024, August 15). Buildah Vs Docker. Medium. https://minimaldevops.com/buildah-and-docker-are-both-tools-for-building-container-images-but-they-have-some-key-differences-a3530b923be0 (Date Accessed - October 2025)
+<br><a id="17">[17]</a>
+Top 10 Docker Alternatives For Software Developers. (2025, July 23). GeeksforGeeks. https://www.geeksforgeeks.org/blogs/docker-alternatives/ (Date Accessed - October 2025)
+<br><a id="18">[18]</a>
+Perlow, J. (2024, June 13). LXC vs. Docker: Which One Should You Use? Docker. https://www.docker.com/blog/lxc-vs-docker/ (Date Accessed - October 2025)
