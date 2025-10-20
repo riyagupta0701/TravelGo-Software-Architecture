@@ -540,7 +540,9 @@ The platform relies on several external dependencies to function effectively. So
 
 For the current proof of concept implementation, we made use of [Leaflet](leafletjs.com) to develop the interactive map and OpenStreetMap for the dataset.
 
-## 13 Experiment: Proving Scalability
+## 13 Testing
+
+### 13.1 Experiment: Proving Scalability
 To evaluate the scalability of the TravelGo system, we conduct load testing using Locust, an open-source tool for simulating user traffic. The objective of this experiment is to verify that the chat service can handle increasing user loads without significant failures or degradation in response time.
 
 In the experiment, we configure Locust to simulate multiple concurrent users sending chat messages through the API Gateway. The test environment consists of all microservices deployed via Docker Compose, ensuring realistic inter-service communication. We observe key performance indicators such as request rate (RPS), failure rate, and average response time as the number of simulated users increased.
@@ -553,6 +555,13 @@ These results demonstrate that TravelGo’s microservices architecture supports 
 
 ![](experiment-results.png)
 <p style="text-align: center;"> Figure 13.1: Locust load-test experiment results</p>
+
+### 13.2 Event-driven
+To ensure that TravelGo operates as an event-driven system, we integrated Apache Kafka. Specifically, our goal was to have the leaderboard update automatically whenever a user creates a new post through the post service. 
+
+The post service acts as a Kafka producer and publishes an event to the new post topic whenever a new post is created. The leaderboard service is implemented as the Kafka consumer, which is subscribed to this topic and listens for incoming events. Every time a user makes a new post, the post service publishes an event to Kafka. The leaderboard consumes this event and updates the leaderboard accordingly.
+
+To test this, we simply create a new post for a specific user id. After the event is published and consumed, the user gains ten points on the leaderboard. Creating additional posts results in further point increments, confirming that the event-driven communication between the two services works as expected.
 
 ## 14 Revenue Model
 
