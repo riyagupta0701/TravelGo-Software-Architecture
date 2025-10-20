@@ -52,7 +52,7 @@ http://172.18.0.8:5008
 
 Install locust using the following command:
 ```
-pip install locustdocker compose down
+pip install locust
 
 ```
 Make sure your docker desktop is open and run this command in the poc folder : 
