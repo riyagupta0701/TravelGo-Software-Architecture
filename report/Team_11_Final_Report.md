@@ -536,11 +536,13 @@ The PoC includes a simple frontend interface built with Flask templates. The hom
 
 ### 12.1 External Dependencies
 
-The platform relies on several external dependencies to function effectively. Some core services include maps and geolocation APIs (e.g., Google Maps) for navigation, routing, and location tracking. Furthermore, with respect to monetization, the platform depends on payment processors (IDEAL, PayPal, etc). On the technical side, the use of cloud hosting and databases would provide scalability and performance. Additionally, authentication services (Google, Facebook, etc) and communication tools (email/SMS providers) would also be employed to support user management.
+The platform relies on several external dependencies to function effectively. Some core services include maps and geolocation APIs (e.g., Google Maps) for navigation, routing, and location tracking. Furthermore, with respect to monetization, the platform depends on payment processors (IDEAL, PayPal, etc). On the technical side, the use of cloud hosting and databases would provide scalability and performance. Additionally, authentication services (Google, Facebook, etc) and communication tools (email/SMS providers) would also be employed to support user management. The platform relies on Apache Kafka as an event streaming platform for asynchronous, real-time communication between the microservices.
 
 For the current proof of concept implementation, we made use of [Leaflet](leafletjs.com) to develop the interactive map and OpenStreetMap for the dataset.
 
-## 13 Experiment: Proving Scalability
+## 13 Testing
+
+### 13.1 Experiment: Proving Scalability
 To evaluate the scalability of the TravelGo system, we conduct load testing using Locust, an open-source tool for simulating user traffic. The objective of this experiment is to verify that the chat service can handle increasing user loads without significant failures or degradation in response time.
 
 In the experiment, we configure Locust to simulate multiple concurrent users sending chat messages through the API Gateway. The test environment consists of all microservices deployed via Docker Compose, ensuring realistic inter-service communication. We observe key performance indicators such as request rate (RPS), failure rate, and average response time as the number of simulated users increased.
@@ -553,6 +555,13 @@ These results demonstrate that TravelGo’s microservices architecture supports 
 
 ![](experiment-results.png)
 <p style="text-align: center;"> Figure 13.1: Locust load-test experiment results</p>
+
+### 13.2 Event-driven
+To ensure that TravelGo operates as an event-driven system, we integrated Apache Kafka. Specifically, our goal was to have the leaderboard update automatically whenever a user creates a new post through the post service. 
+
+The post service acts as a Kafka producer and publishes an event to the new post topic whenever a new post is created. The leaderboard service is implemented as the Kafka consumer, which is subscribed to this topic and listens for incoming events. Every time a user makes a new post, the post service publishes an event to Kafka. The leaderboard consumes this event and updates the leaderboard accordingly.
+
+To test this, we simply create a new post for a specific user id. After the event is published and consumed, the user gains ten points on the leaderboard. Creating additional posts results in further point increments, confirming that the event-driven communication between the two services works as expected.
 
 ## 14 Revenue Model
 
@@ -628,8 +637,20 @@ Furthermore, Locust integrates smoothly with Docker Compose, enabling it to run 
 ### 16.3 Nginx - Load balancer
 Nginx was chosen as a load balancer for TravelGo's system architecture due to its simplicity and lightweight footprint. It fit well with the system's docker based microservices architecture. While there are more advanced alternatives available like HAProxy or Traefik which offer dynamic service discovery, Nginx was sufficient for the experimental setup. Its easier integration enabled us to implement and prove horizontal scaling without adding unnecessary complexity.
 
+### 16.4 Apache Kafka - Event Streaming Platform
+The choice of an event streaming platform is an important decision that impacts system performance, scalability and reliability. In Table 16.4 multiple options are compared based on their advantages, disadvantages and suitability.
 
-### 16.4 Docker Implementation
+|                          | Kafka                                                                                          | RabbitMQ                                                                               | Amazon Kinesis                                                              | RedPanda                                                           |
+|--------------------------|------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------|-----------------------------------------------------------------------------|--------------------------------------------------------------------|
+| Advantages               | High performance, fault tolerance and durability                                               | Supports multiple messaging protocols, reliable messaging and flexible routing options | Deep integration with AWS ecosystem, high scalability and strong durability | Simplicity, low latency, strong durability, ease of use            |
+| Disadvantages            | Complex to setup, configure and manage                                                         | Limited scalability                                                                    | Vendor lock-in with AWS, can become costly                                  | New to the market                                                  |
+| Best for                 | Large-scale, real-time data streaming and event-driven architectures                           | Small-scale projects or environments requiring messaging-oriented middleware           | AWS-based projects, large-scale real-time data processing                   | Projects with high performance and low latency                     |
+| Suitability for TravelGo | Very suitable, as it enables scalable and reliable event-driven communication between services | Not ideal, because TravelGo requires high scalability                                  | Not ideal, as TravelGo is not AWS-based and it can become costly            | Good option, however small community since it is new to the market |
+<p style="text-align: center;">Table 16.4: Comparative analysis for event streaming platforms </p>
+
+Based on Table 16.4, Kafka is the best option for TravelGo, since it offers high performance, fault tolerance, durability and great scalability. RabbitMQ and Amazon Kinesis have the most significant disadvantages for TravelGo. RabbitMQ lacks scalability, and Amazon Kinesis has potential concerns due to cost and the vendor lock-in. While RedPanda would be a good alternative, compared to Kafka it has a smaller community and is relatively new to the market which can result in less support and maturity.
+
+### 16.5 Docker Implementation
 
 Docker is a one of the most popular open-source containerization platforms that allows developers to package applications with all their dependencies into portable, lightweight containers. Since TravelGo implements an event-driven approach in a microservices architecture, multiple services need to work together, and Docker offers a high degree of flexibility and versatility by ensuring cross-platform compatibility and easy control over container versions [[17]](#17). However, using Docker can also raise concerns about system security, as it relies heavily on a daemon [[17]](#17) to run all containers under a centralized background process. This can introduce security vulnerabilities related to the daemon's root access, alongside concerns about high memory and CPU usage rates. Therefore, alternatives such as Podman and Buildah were created to overcome these drawbacks. In this sense, Podman removes the security vulnerability by allowing users to run containers themselves without the daemon, which is a safer approach [[17]](#17). On the other hand, Buildah is used to create containers without a background service, focusing on container images, and thus offers more control over the building process and it is lighter and more secure [[16]](#16). Despite this, neither Podman and Buildah are optimal for TravelGo, as they further imply additional complexity for creating and managing containers. This fragmentation could potentially slow down the platform's response to changes.
 
