@@ -43,7 +43,7 @@ To identify opportunities for innovation, it is useful to examine the existing p
 ### 3.1 Key Insights
 
 #### Is there demand?  
-Market trends indicate that travellers increasingly seek experiences over mere sightseeing. Therefore, platforms that are interactive and community-driven are especially popular among younger travellers nowadays.[[2]](#2)[[3]](#3)[[4]](#4)
+Market trends indicate that travellers increasingly seek experiences over mere sightseeing. Therefore, platforms that are interactive and community-driven are especially popular among younger travellers nowadays [[2]](#2)[[3]](#3)[[4]](#4).
 
 #### What’s missing in current solutions?  
 - Most travel apps focus on either utility (planning, booking) or authenticity (guided tours).  
@@ -628,36 +628,44 @@ Furthermore, Locust integrates smoothly with Docker Compose, enabling it to run 
 ### 16.3 Nginx - Load balancer
 Nginx was chosen as a load balancer for TravelGo's system architecture due to its simplicity and lightweight footprint. It fit well with the system's docker based microservices architecture. While there are more advanced alternatives available like HAProxy or Traefik which offer dynamic service discovery, Nginx was sufficient for the experimental setup. Its easier integration enabled us to implement and prove horizontal scaling without adding unnecessary complexity.
 
+
+### 16.4 Docker Implementation
+
+Docker is a one of the most popular open-source containerization platforms that allows developers to package applications with all their dependencies into portable, lightweight containers. Since TravelGo implements an event-driven approach in a microservices architecture, multiple services need to work together, and Docker offers a high degree of flexibility and versatility by ensuring cross-platform compatibility and easy control over container versions [[17]](#17). However, using Docker can also raise concerns about system security, as it relies heavily on a daemon [[17]](#17) to run all containers under a centralized background process. This can introduce security vulnerabilities related to the daemon's root access, alongside concerns about high memory and CPU usage rates. Therefore, alternatives such as Podman and Buildah were created to overcome these drawbacks. In this sense, Podman removes the security vulnerability by allowing users to run containers themselves without the daemon, which is a safer approach [[17]](#17). On the other hand, Buildah is used to create containers without a background service, focusing on container images, and thus offers more control over the building process and it is lighter and more secure [[16]](#16). Despite this, neither Podman and Buildah are optimal for TravelGo, as they further imply additional complexity for creating and managing containers. This fragmentation could potentially slow down the platform's response to changes.
+
+Other alternatives such as Linux Container Daemon (LXD) and Vagrant are also imcompatible for TravelGo. This is because LXD uses entire system environments instead of containers, making the entire operation slower and unsuitable for a microservice architecture [[18]](#18), while Vagrant relies on virtual machines, which are resource intensive [[17]](#17). Therefore, Docker remains the best option for TravelGo, due to its ease of use and operation, which are perfect for TravelGo's design philosophy.   
+
+
 ## 17 Discussion about Cloud
 TravelGo has a global user base and considering it's microservices driven architecture, deploying the system on the cloud offers clear advantages in terms of scalability, flexibility, and integrity. The system aims to reach travelers, local communities, and businesses across the world. Therefore, leveraging cloud infrastructure ensures low latency and seamless accessibility across regions. Cloud providers offer geographically distributed data centers, enabling TravelGo to host its services closer to its users and deliver fast, consistent performance even during high-traffic periods such as holiday seasons or major events. <br>
 
-A public cloud environment such as Amazon Web Services (AWS), Microsoft Azure, or Google Cloud Platform (GCP) will be a goof fit for the system. It provides cost efficiency, elasticity, and rapid deployment without the heavy maintenance required for private infrastructure. However, certain sensitive components, such as payment systems and user data, could also benefit from a hybrid approach, where confidential data is stored in a private cloud or restricted region to comply with regulations such as GDPR, while general application services operate on the public cloud.
+However, when making this decision, we also need to carefully pick the most fitted type of cloud environment. A public cloud environment such as Amazon Web Services (AWS), Microsoft Azure, or Google Cloud Platform (GCP) will be a good fit for the system in the early stages, as it provides cost efficiency, elasticity, and rapid deployment without the heavy maintenance required for private infrastructure. However, certain sensitive components, such as payment systems and user data, could also benefit from a hybrid approach, where confidential data is stored in a private cloud or restricted region to comply with regulations such as GDPR, while general application services operate on the public cloud. When considering Public Cloud deployment, TravelGO would mainly pay for what it uses, while avoiding the need to own and maintain the physical servers or implement software updates, which are provided by the entity managing the servers. This combination of factors could make Public Cloud a cost-effective option on a short-term basis while the platform is establishing a user base. As the user base expands, concerns associated with decreased security and privacy and cost overruns could appear [[15]](#15). In this sense, Private Cloud could be an attractive option, with higher levels of security, privacy and control coming at the cost of limited scalability, necessary maintenance and a considerably large starting investment into hardware components. Moreover, dedicated servers could also imply hidden costs, as staff needs to be hired on a long-term basis due to the technical complexity of Private Cloud systems [[15]](#15). On the other hand, by storing sensitive data on private servers while also allowing connections from public servers, Hybrid Cloud systems could provide a best-of-both-worlds scenario, where flexibility and scalability are not sacrificed for the sake of safety and control. However, given the high level of complexity associated with such systems, this option could be the most costly approach, while also requiring technical expertise to manage network latency, proper integration and potential security concerns [[15]](#15). For this reason, a smart strategy would be to begin using the Public Cloud services until reaching large user traffic. Afterwards, we should begin implementing Private Cloud systems reaching a Hybrid approach and maintaining it for the long term, allowing us to keep scaling while comfortably bearing the high costs.<br>
 
-In terms of service models, TravelGo would best utilize Platform as a Service (PaaS) or container-based solutions like AWS ECS or Google Kubernetes Engine. These services abstract away low-level infrastructure management while supporting independent deployment of microservices.[[6]](#6) This complements TravelGo’s modular design where each service can be deployed and scaled separately depending on demand. Serverless offerings, such as AWS Lambda or Google Cloud Functions, could also support event-driven features like notifications or leaderboard updates, providing efficient scalability for unpredictable workloads.
+In terms of service models, TravelGo would best utilize Platform as a Service (PaaS) or container-based solutions like AWS ECS or Google Kubernetes Engine. These services abstract away low-level infrastructure management while supporting independent deployment of microservices[[6]](#6). This complements TravelGo’s modular design where each service can be deployed and scaled separately depending on demand. Serverless offerings, such as AWS Lambda or Google Cloud Functions, could also support event-driven features like notifications or leaderboard updates, providing efficient scalability for unpredictable workloads.
 
-Cloud deployment directly supports TravelGo’s key quality attributes by enabling scalability, modularity, and integrity. Through auto-scaling mechanisms, the platform can dynamically adjust resources based on user demand. [[7]](#7) Each microservice can be containerized and managed independently, allowing for isolated updates and seamless feature expansion. Moreover, built-in cloud security measures such as encryption, identity and access management (IAM), and DDoS protection enhance system reliability and secure user data.
+Cloud deployment directly supports TravelGo’s key quality attributes by enabling scalability, modularity, and integrity. Through auto-scaling mechanisms, the platform can dynamically adjust resources based on user demand [[7]](#7). Each microservice can be containerized and managed independently, allowing for isolated updates and seamless feature expansion. Moreover, built-in cloud security measures such as encryption, identity and access management (IAM), and DDoS protection enhance system reliability and secure user data.
 
-Despite its advantages, cloud deployment introduces certain challenges. Vendor lock-in may restrict flexibility in switching providers, while data residency laws, particularly in the EU, require careful configuration to ensure compliance.[[8]](#8) Furthermore, managing a distributed microservices environment in the cloud adds operational complexity. These challenges can be mitigated through the use of cloud-agnostic technologies such as Docker and Kubernetes, and region-specific deployments for user data.
+Despite its advantages, cloud deployment introduces certain challenges. Vendor lock-in may restrict flexibility in switching providers, while data residency laws, particularly in the EU, require careful configuration to ensure compliance [[8]](#8). Furthermore, managing a distributed microservices environment in the cloud adds operational complexity. These challenges can be mitigated through the use of cloud-agnostic technologies such as Docker and Kubernetes, and region-specific deployments for user data.
 
 In conclusion, deploying TravelGo on the cloud complements its microservices based design by providing global scalability, modular growth, and secure operations. The cloud not only supports the system’s technical requirements but also aligns with its vision of delivering a smooth, engaging, and reliable travel experience to users worldwide.
 
 ## Bibliography
 <a id="1">[1]</a>
-Pautasso, C. (2020). Software Architecture: visual lecture notes. LeanPub. https://leanpub.com/software-architecture/
+Pautasso, C. (2020). Software Architecture: visual lecture notes. LeanPub. https://leanpub.com/software-architecture/ (Date Accessed - September 2025)
 <br><a id="2">[2]</a>
-Alčaković, S., Pavlović, D., & Popesku, J. (2017). Millennials and gamification: A model proposal for gamification application in tourism destination. Marketing, 48(4), 207–214. https://doi.org/10.5937/markt1704207a 
+Alčaković, S., Pavlović, D., & Popesku, J. (2017). Millennials and gamification: A model proposal for gamification application in tourism destination. Marketing, 48(4), 207–214. https://doi.org/10.5937/markt1704207a (Date Accessed - September 2025)
 <br><a id="3">[3]</a>
-Gen Z Travel Trends: Statistics, Insights and what it all means for the industry [2025]. (n.d.). Atlys. https://www.atlys.com/blog/gen-z-travel-trends
+Gen Z Travel Trends: Statistics, Insights and what it all means for the industry [2025]. (n.d.). Atlys. https://www.atlys.com/blog/gen-z-travel-trends (Date Accessed - September 2025)
 <br><a id="4">[4]</a> 
-Pitrelli, M. (2023, March 27). More millennials are turning 40 — and they’re changing travel as we know it. CNBC. https://www.cnbc.com/2023/03/27/millennials-are-turning-40-and-theyre-changing-travel-as-we-know-it.html
+Pitrelli, M. (2023, March 27). More millennials are turning 40 — and they’re changing travel as we know it. CNBC. https://www.cnbc.com/2023/03/27/millennials-are-turning-40-and-theyre-changing-travel-as-we-know-it.html (Date Accessed - September 2025)
 <br><a id="5">[5]</a>
 Artug, E., & Fateh, D. (2025, March 28). Serverless and microservices: A tale of two architectures. Contentful. https://www.contentful.com/blog/serverless-vs-microservices/ (Date Accessed - October 2025)
 <br><a id="6">[6]</a>
-Types of Cloud Computing. AWS. https://aws.amazon.com/types-of-cloud-computing/
+Types of Cloud Computing. AWS. https://aws.amazon.com/types-of-cloud-computing/ (Date Accessed - September 2025)
 <br><a id="7">[7]</a>
-Cody Slingerland. (2023). What Is Cloud Scalability? Benefits And Tips For Every Organization. CloudZero. https://www.cloudzero.com/blog/cloud-scalability/
+Cody Slingerland. (2023). What Is Cloud Scalability? Benefits And Tips For Every Organization. CloudZero. https://www.cloudzero.com/blog/cloud-scalability/ (Date Accessed - October 2025)
 <br><a id="8">[8]</a>
-Chrystal R. China, & Michael Goodwin (2025). IaaS, PaaS, SaaS: What's the difference? IBM. https://www.ibm.com/think/topics/iaas-paas-saas 
+Chrystal R. China, & Michael Goodwin (2025). IaaS, PaaS, SaaS: What's the difference? IBM. https://www.ibm.com/think/topics/iaas-paas-saas (Date Accessed - September 2025)
 <br><a id="9">[9]</a>
 Brown, S. (n.d.). The C4 model for visualising software architecture. C4 Model. Retrieved October 12, 2025, from https://c4model.com/ (Date Accessed - October 2025)
 <br><a id="10">[10]</a>
@@ -665,8 +673,16 @@ Ahmad, A. (2025, August 23). 19 Essential Microservices Patterns for System Desi
 <br><a id="11">[11]</a>
 Sethi, R. (2022). 3.1.3 Kinds of Requirements [ISBN 9781316511947]. In Software Engineering: Basic Principles and Best Practices. Cambridge University Press (1st ed., pp. 181-185).
 <br><a id="12">[12]</a>
-Singh, B. (2024, October 20). Building a Simple Microservices Architecture with Python: A Step-by-Step Guide. Medium. https://medium.com/@bittusinghtech/building-a-simple-microservices-architecture-with-python-a-step-by-step-guide-c41da2cd4631
+Singh, B. (2024, October 20). Building a Simple Microservices Architecture with Python: A Step-by-Step Guide. Medium. https://medium.com/@bittusinghtech/building-a-simple-microservices-architecture-with-python-a-step-by-step-guide-c41da2cd4631 (Date Accessed - September 2025)
 <br><a id="13">[13]</a>
-Temprano, V. G. (2017, January 18). Google Maps API or Leaflet: What's Best for your Project? Codementor. https://www.codementor.io/@victorgerardtemprano/google-maps-api-or-leaflet--what-s-best-for-your-project-faaev60vm
+Temprano, V. G. (2017, January 18). Google Maps API or Leaflet: What's Best for your Project? Codementor. https://www.codementor.io/@victorgerardtemprano/google-maps-api-or-leaflet--what-s-best-for-your-project-faaev60vm (Date Accessed - October 2025)
 <br><a id="14">[14]</a>
-I-Finity Associates Ltd. (n.d.). OpenStreetMap vs Google Maps | I-Finity. https://www.i-finity.co.uk/articles/openstreetmap-vs-google-maps
+I-Finity Associates Ltd. (n.d.). OpenStreetMap vs Google Maps | I-Finity. https://www.i-finity.co.uk/articles/openstreetmap-vs-google-maps (Date Accessed - October 2025)
+<br><a id="15">[15]</a>
+Public Cloud vs Private Cloud vs Hybrid Cloud. (2025, July 23). GeeksforGeeks. https://www.geeksforgeeks.org/devops/public-cloud-vs-private-cloud-vs-hybrid-cloud/ (Date Accessed - October 2025)
+<br><a id="16">[16]</a>
+Minimal Develops. (2024, August 15). Buildah Vs Docker. Medium. https://minimaldevops.com/buildah-and-docker-are-both-tools-for-building-container-images-but-they-have-some-key-differences-a3530b923be0 (Date Accessed - October 2025)
+<br><a id="17">[17]</a>
+Top 10 Docker Alternatives For Software Developers. (2025, July 23). GeeksforGeeks. https://www.geeksforgeeks.org/blogs/docker-alternatives/ (Date Accessed - October 2025)
+<br><a id="18">[18]</a>
+Perlow, J. (2024, June 13). LXC vs. Docker: Which One Should You Use? Docker. https://www.docker.com/blog/lxc-vs-docker/ (Date Accessed - October 2025)

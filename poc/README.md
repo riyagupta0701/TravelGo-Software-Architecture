@@ -32,6 +32,15 @@ pip install confluent-kafka
 ```
 docker compose up --build
 ```
+To ensure modularity, each service can be independently shut off and started up again using the commands:
+```
+# stop only the leaderboard container
+docker compose stop leaderboard_service
+
+# start it again later
+docker compose start leaderboard_service
+```
+Similarly, these commands can be applied to any service.
 
 ### Open the application
 ```
