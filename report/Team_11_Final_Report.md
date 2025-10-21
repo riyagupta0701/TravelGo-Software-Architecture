@@ -511,8 +511,14 @@ As can be seen from the Figure 11.3 below, the system's Application will contain
 ![](ComponentDiagram.png)
 <p style="text-align: center;"> Figure 11.3: Component Diagram</p>
 
-### 11.4 Code View
+### 11.4 Class View
 
+<!---
+Text here.
+--->
+
+![](ClassDiagram.png)
+<p style="text-align: center;"> Figure 11.3: Class Diagram</p>
 
 ### 11.5 Deployment View
 At runtime, TravelGo operates within a Docker-based containerized environment. Each service (User, Post, Map, etc.) runs in its own container, orchestrated by Docker Compose.
