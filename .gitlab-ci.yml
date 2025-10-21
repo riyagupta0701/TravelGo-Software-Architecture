@@ -1,0 +1,16 @@
+build-job:
+    stage: build
+    script:
+        - echo "Build completed."
+
+upload_pdf:
+    stage: upload
+    when: manual
+    script:
+        - ls -R
+        - ls -l report
+        - cat report/submission_pdfs/FinchRelease_Team_11_Finch_Release.pdf || true
+        - echo "Uploading the artifact"
+    artifacts:
+        paths:
+            - report/submission_pdfs/FinchRelease_Team_11_Finch_Release.pdf
