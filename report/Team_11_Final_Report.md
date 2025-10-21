@@ -494,7 +494,7 @@ Responsibilities:
 - Ensure high throughput and scalability in communication.
 - Decouple service dependencies to reduce coupling and improve modularity.
 
-#### 11.3.9 Database Later
+#### 11.3.9 Database Layer
 Consists of multiple logical databases, each associated with a microservice to ensure autonomy and data encapsulation.
 
 Main Components:
@@ -513,9 +513,9 @@ As can be seen from the Figure 11.3 below, the system's Application will contain
 
 ### 11.4 Class View
 
-<!---
-Text here.
---->
+The class view represents the structural relationships and interactions between the primary components of the TravelGo system. It comprises five main classes, user, post, leaderboard, chat, and map. Each class is defined with relevant fields, methods, and return types, as illustrated in the diagram below. For example, the user class encapsulates essential user information and corresponding methods. 
+
+The leaderboard class derives its data from both the user and post classes to compute rankings. The post class interacts with the user and map classes to associate posts with specific users and locations or attractions. Similarly, the chat class depends on the user class to manage message exchanges and identify message ownership. This structure ensures modularity, clarity, and efficient data flow across different components of the system.
 
 ![](ClassDiagram.png)
 <p style="text-align: center;"> Figure 11.3: Class Diagram</p>
