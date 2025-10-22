@@ -128,7 +128,7 @@ Features are distinct pieces of functionality that deliver value to users. They 
 
 Use case scenarios explain how a user works with a system to accomplish certain tasks or objectives. They
 outline the steps needed to achieve a set objective and also help define system requirements, derived from
-the user stories, which can be found in the Appendix A.
+the user stories, which can be found in the Appendix A. The corresponding UML is illustrated in figure 7.2.
 
 | Use Case ID | Use Case Description |
 |--------------|------------|
@@ -148,6 +148,9 @@ the user stories, which can be found in the Appendix A.
 | UC14          | (In case of premium) display a list of available accommodations. |          
 | UC15          | (In case of premium) Remove advertisements and any sort of advertisement. |          
 <p style="text-align: center;">Table 7.1: List of use case scenarios that will be implemented for the final product.</p>
+
+![](UML.png)
+<p style="text-align: center;">Figure 7.2 : UML of the Use Case Scenarios</p>
 
 
 ## 8 Requirements
