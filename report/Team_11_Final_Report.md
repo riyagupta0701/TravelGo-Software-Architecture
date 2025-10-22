@@ -569,7 +569,10 @@ To ensure that TravelGo operates as an event-driven system, we integrated Apache
 
 The post service acts as a Kafka producer and publishes an event to the new post topic whenever a new post is created. The leaderboard service is implemented as the Kafka consumer, which is subscribed to this topic and listens for incoming events. Every time a user makes a new post, the post service publishes an event to Kafka. The leaderboard consumes this event and updates the leaderboard accordingly.
 
-To test this, we simply create a new post for a specific user id. After the event is published and consumed, the user gains ten points on the leaderboard. Creating additional posts results in further point increments, confirming that the event-driven communication between the two services works as expected.
+To test this, we simply create a new post for a specific user id. After the event is published and consumed, the user gains ten points on the leaderboard. Creating additional posts results in further point increments, confirming that the event-driven communication between the two services works as expected. The results are shown in Figure 13.2.
+
+![](PostLeaderboard.png)
+<p style="text-align: center;"> Figure 13.2: The leaderboard gets updated after new posts</p>
 
 ## 14 Revenue Model
 
