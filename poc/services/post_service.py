@@ -11,7 +11,7 @@ posts = []
 
 conf = {'bootstrap.servers': 'kafka:9092'}
 producer = Producer(conf)
-dummy_post = {"id": 0, "user_id": 0, "attraction": "Eiffel Tower", "content": "Great"}
+dummy_post = {"id": 0, "user_id": 1, "attraction": "Eiffel Tower", "content": "Great"}
 posts.append(dummy_post)
 
 for i in range(10):

@@ -1,5 +1,5 @@
 # Team 11: TravelGo
-The proof of concept demonstrates how the platform can bring together travelers and tourism industry workers in one ecosystem. It validates core features such as interactive maps, attraction discovery, user-generated content, and gamification elements like leaderboards. The POC was developed to demonstrate the technical feasibility of the platform’s microservices-based architecture and to validate its core design principles; scalability, modularity, and reliability. The PoC serves as a minimal yet functional version of the TravelGo system, simulating the interaction between key components such as the map service, post service, leaderboard service, and chat service, all coordinated through an API Gateway and an event-driven communication model.
+The proof of concept demonstrates the technical feasibility of the platform’s microservices-based architecture and to validate its core design principles; scalability, and modularity. The PoC serves as a minimal yet functional version of the TravelGo system, simulating the interaction between key components such as the post service, leaderboard service, and chat service, all coordinated through a load balancer, an API Gateway and an event-driven communication model.
 
 
 ### Clone the repository
@@ -9,13 +9,13 @@ cd poc
 ```
 
 ### Create virtual environment
-For mac
+For Mac/Linux
 ```
 python -m venv venv
 source venv/bin/activate
 ```
 
-For windows
+For Windows
 ```
 pip install virtualenv
 python -m virtualenv vEnv
@@ -44,20 +44,18 @@ Similarly, these commands can be applied to any service.
 ### Open the application
 ```
 http://127.0.0.1:5008
-http://172.18.0.8:5008
 ```
 
-### Experminet Setup - Locust
+### Experiment Setup - Locust
 
 Install locust using the following command:
 ```
 pip install locust
-
 ```
 Make sure your docker desktop is open and run this command in the poc folder : 
 
 ```
-docker compose up -d --scale api_gateway=3 -d 
+docker compose up -d --scale api_gateway=3 -d
 ```
 In a new terminal, run the command after navigating to the poc folder: 
 
@@ -70,7 +68,6 @@ To implement scaling and create replicas:
 
 ```
 docker compose up --scale chat_service=10 -d
-
 ```
 
 To stop the containers, run the following command:
