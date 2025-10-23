@@ -28,7 +28,7 @@ To identify opportunities for innovation, it is useful to examine the existing p
 | 5 | **Komoot** | Expertise in outdoor navigation and route planning | Very niche (outdoors only) | Add cultural challenges with a social community |
 | 6 | **Mapstr** | Save and share favourite places easily | More like a utility app (maps), lacks engagement, no gamification | Build on map sharing, but with interactive quests, culture and competition | <br>
 | 7 | **Google Maps** | Massively popular for navigation, locating places | Lacks the interactive aspect | We add interactivity and cultural immersion | <br>
-<p style="text-align:center;">Table 3.1 : Competitor Analysis</p>
+<p style="text-align:center;">Table 1: Competitor Analysis</p>
 
 ### 2.1 Key Insights
 
@@ -49,7 +49,7 @@ Market trends indicate that travellers increasingly seek experiences over mere s
 Building on the system’s vision and context, the Wardley Map highlights how TravelGo blends innovation with open source or standardised solutions.
 
 ![](WardleyMap.png)
-<p style="text-align: center;">Figure 3.1 : Wardley map</p>
+<p style="text-align: center;">Figure 1: Wardley map</p>
 
 **Genesis** : This space contains novel, experimental features like side quests, cultural quizzes and souvenir based rewards which are not yet mainstream in the travel tech domain. They provide differentiation, but also present a high risk of adoption and design. <br>
 **Custom Built**: Features like leaderboards and points system are placed here. While interactive platforms are popular in other domains like fitness and education, applying it specifically to cultural travel remains relatively bespoke. These features distinguish TravelGo from commodity travel apps but are less risky than Genesis elements. <br>
@@ -104,10 +104,10 @@ Travellers create demand by seeking personalisation and meaningful connections, 
 
 <br>
 
-The power/interest grid is used to classify stakeholders according to their influence and level of engagement. High-power, high-interest stakeholders such as travellers and attraction owners are closely managed since they are the core users. Tourism boards and regulators have high power but lower day-to-day interest, requiring consultation occasionally. Communities, influencers, and competitors have lower power but varying levels of interest, monitored for promotion and market positioning.
+The power/interest grid in Figure 2, is used to classify stakeholders according to their influence and level of engagement. High-power, high-interest stakeholders such as travellers and attraction owners are closely managed since they are the core users. Tourism boards and regulators have high power but lower day-to-day interest, requiring consultation occasionally. Communities, influencers, and competitors have lower power but varying levels of interest, monitored for promotion and market positioning.
 
 ![](PowerInterestGrid.png) 
-<p style="text-align: center;"> Figure 5.1: Power / Interest Grid </p>
+<p style="text-align: center;"> Figure 2: Power / Interest Grid </p>
 
 ## 6 Features
 
@@ -122,13 +122,13 @@ Features are distinct pieces of functionality that deliver value to users. They 
 | F5         | Allow for premium features. (Let the user know when there are discounts for accommodation)        |        
 | F6         | Keep track of the user's daily quiz score and their placement in the leaderboard. |        
 | F7         | Reward the top competitors of the leaderboard with discounts, vouchers or free souvenirs.         |
-<p style="text-align: center;">Table 6.1: List of features that will be implemented for the final product.</p>
+<p style="text-align: center;">Table 2: List of features that will be implemented for the final product.</p>
 
 ## 7 Use Case Scenarios
 
 Use case scenarios explain how a user works with a system to accomplish certain tasks or objectives. They
 outline the steps needed to achieve a set objective and also help define system requirements, derived from
-the user stories, which can be found in the Appendix A. The corresponding UML is illustrated in figure 7.2.
+the user stories, which can be found in the Appendix B. The corresponding UML is illustrated in figure 3.
 
 | Use Case ID | Use Case Description |
 |--------------|------------|
@@ -147,17 +147,17 @@ the user stories, which can be found in the Appendix A. The corresponding UML is
 | UC13          | (In case of premium) Process subscription fee for unlocking premium for the user's account. |          
 | UC14          | (In case of premium) display a list of available accommodations. |          
 | UC15          | (In case of premium) Remove advertisements and any sort of advertisement. |          
-<p style="text-align: center;">Table 7.1: List of use case scenarios that will be implemented for the final product.</p>
+<p style="text-align: center;">Table 3: List of use case scenarios that will be implemented for the final product.</p>
 
 ![](UML.png)
-<p style="text-align: center;">Figure 7.2 : UML of the Use Case Scenarios</p>
+<p style="text-align: center;">Figure 3: UML of the Use Case Scenarios</p>
 
 
 ## 8 Requirements
 Requirements are an essential part of understanding the needs and expectations of a system.
 
 ### 8.1 Functional Requirements
-Table 8.1 shows the key functional requirements for the different features and modules.
+Table 4 shows the key functional requirements for the different features and modules.
 
 | **Feature / Module**                      | **Key Functional Requirements**                                                                                                                                                         |
 | ----------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -170,7 +170,7 @@ Table 8.1 shows the key functional requirements for the different features and m
 | **Data Accuracy & Management**            | Verify data on maps, attractions, and offers regularly.<br> Maintain integrity and prevent unauthorized edits.                                                                       |
 | **Communication & Interaction**           | Provide chat or forum features for user discussions.<br> Enable sharing of tips, experiences, and messages.                                                                          |
 | **System Integration & Interoperability** | Connect all services via API Gateway and event-driven communication.<br> Ensure loose coupling, scalability, and secure data transfer.                                               |
-<p style="text-align: center;">Table 8.1 : Functional Requirements</p>
+<p style="text-align: center;">Table 4: Functional Requirements</p>
 
 
 ### 8.2 Non-Functional Requirements
@@ -204,19 +204,16 @@ The quality attributes that we primarily want to focus on are **scalability**, *
 For the main quality attributes, there are some trade-offs that we should keep in mind while designing the system:
 
 **Scalability vs Integrity**: TravelGo should be designed for growth. However, a large user-base all around the world could have an impact on integrity. For example, with more tourist attractions, it might be more difficult to assure that all the information on the platform is authentic and trustworthy.
-\
-\
+
 **Scalability vs Performance**: We want TravelGo to have as many users as possible. Having said that, with more users the performance of the app might go down, especially since the users will be from all around the world. 
-\
-\
+
 **Modularity vs Performance**: If the system is designed to be modular, the performance of the app might be worse. This is the case because the modules have to communicate with each other, which may cause delays.
-\
-\
+
 **Confidentiality vs Modularity**: Confidentiality and modularity are both very important for most of our stakeholders. However, if the system is designed to be modular, it is harder to secure our system, since there will be multiple communication points between the modules.
 
 
 ### 9.2 Important quality attributes for stakeholders
-Different stakeholders have different reasoning why certain quality attributes are the most important. This is shown in table 9.2.
+Different stakeholders have different reasoning why certain quality attributes are the most important. This is shown in table 5.
 
 | Quality Attribute | Expectation                                                                                                                                               | Stakeholders                                                                                    |
 |-------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|
@@ -235,7 +232,7 @@ Different stakeholders have different reasoning why certain quality attributes a
 |                   | - System should provide advertised features if the premium subscription is paid for                                                                       | - Tourists and Travellers                                                                       |
 |                   | - System should reward a winner from leagues. In the case of equal scores, alternative solutions must be implemented                                      | - Tourists and Travellers                                                                       |
 | Confidentiality   | - Sensitive data should not be leaked or shared                                                                                                           | - Investors & Sponsors<br>- Attraction Sites<br>- Local Businesses<br>- Tourists and Travellers |
-<p style="text-align: center;">Table 9.2: Quality Attributes with respect to Stakeholders needs </p>
+<p style="text-align: center;">Table 5: Quality Attributes with respect to Stakeholders needs </p>
 
 ## 10 Architecture Design
 Now that the context of the system has been defined, the next step is to determine the architectural design. This will be based on our main quality attributes: scalability, modularity, integrity and confidentiality.
@@ -265,7 +262,7 @@ Regarding modularity, TravelGo offers a variety of features like community inter
 Lastly, as TravelGo collects sensitive personal data such as names, payment details, and location information, integrity and security are critical. Microservices help here by isolating services and containing failures. If one service is compromised, others remain unaffected, protecting the majority of user data. While microservices do increase the number of potential entry points into the system, these risks can be managed with event-driven communication, strong authentication, and encryption. This ensures that TravelGo maintains user trust by preserving data security and system reliability. <br>
 
 ![](Microservices.png)
-<p style="text-align: center;">Figure 10.1.4: Microservices architecture of the system</p>
+<p style="text-align: center;">Figure 4: Microservices architecture of the system</p>
 
 #### 10.1.5 Trade-Off Analysis for Architectural Styles
 Although all of the four architectural styles have their disadvantages and advantages, as shown in Table 10.1.5, a single approach must be selected. The monolithic architecture is the least suitable for our system, since it has significant disadvantages in terms of modularity and scalability. The microkernel and serverless architectures are both reasonable options, however they have less important advantages and more disadvantages compared to the microservice architecture. 
@@ -278,7 +275,7 @@ The microservice architecture has advantages for all of our main quality attribu
 | Microkernel   | - Allows features to be added as plug-ins<br>- Failures in one module does not affect others                                                             | - High performance overhead<br>- Increases development time & cost of designing and maintaining                                                                                                                             |
 | Serverless    | - Automatic scaling<br>- Simplifies deployment<br>- Improves operational efficiency                                                                    | - More overhead in response time and cost<br>- Less control on server side                                                                                                                                                  |
 | Microservices | - Each service can scale independently<br>- Features can be implemented, tested and deployed independently<br>- Isolates services and contains failures | - Number of potential entry points into the system increases                                                                                                                                                                |
-<p style="text-align: center;">Table 10.1.5: Advantages and disadvantages of the architectural styles </p>
+<p style="text-align: center;">Table 6: Advantages and disadvantages of the architectural styles </p>
 
 ### 10.2 Architectural & Design Patterns
 
@@ -320,11 +317,11 @@ The System Context Diagram highlights TravelGo’s role within its environment. 
 The system relies on event-driven communication (implemented via Kafka) and an API Gateway that serves as the single entry point for all client requests.
 
 ![](ContextDiagram.png)
-<p style="text-align: center;">Figure 11.1: Context Diagram</p>
+<p style="text-align: center;">Figure 5: Context Diagram</p>
 
 ### 11.2 Container View
 
-This next view depicts all subsystems from the context view further elaborated into containers. As you can see in Figure 11.2 below, the TravelGo System, Local Business Owners, Tourism Boards and External Dependencies now showcase more details about their inner workings.
+This next view depicts all subsystems from the context view further elaborated into containers. As you can see in Figure 6 below, the TravelGo System, Local Business Owners, Tourism Boards and External Dependencies now showcase more details about their inner workings.
 
 | **Subsystem**           | **Description**                                                                                               | **Interfaces / Dependencies**            |
 | ----------------------- | ------------------------------------------------------------------------------------------------------------- | ---------------------------------------- |
@@ -338,28 +335,28 @@ This next view depicts all subsystems from the context view further elaborated i
 | **Advertisement Service**         | Integrates with third-party providers to display advertisements. | All microservices             |
 | **Kafka**   | Ensures asynchronous message delivery between services for decoupled scalability.                             | All microservices                      |
 | **Database Layer**      | Stores structured and unstructured platform data (user profiles, posts, scores).                        | All microservices                      |
-<p style="text-align: center;">Table 11.2: Subsystem Decomposition </p>
+<p style="text-align: center;">Table 7: Subsystem Decomposition </p>
 
 The system’s core container is the Application, which interacts with the Tourist and utilises internal databases to manage user data, as well as external databases to interact with the Tourism Boards. Furthermore, the connection with the External Dependencies is carried out through 2 connections between the Payment System for processing user subscription and the Third-Party Map API. Lastly, the Local Businesses contain the Rewards and the functional relation is presented.
 
 ![](ContainerDiagram.png)
-<p style="text-align: center;"> Figure 11.2: Container Diagram</p>
+<p style="text-align: center;"> Figure 6: Container Diagram</p>
 
 ### 11.3 Component View
 
 Each subsystem is further decomposed into logical components. Each service runs independently within its own Docker container, exposing RESTful APIs through the API Gateway and communicating asynchronously using Kafka topics when necessary. Each service's major components are defined further in appendix D.
 
-As can be seen from the Figure 11.3 below, the system's Application will contain the presented components.
+As can be seen from the Figure 7 below, the system's Application will contain the presented components.
 
 ![](ComponentDiagram.png)
-<p style="text-align: center;"> Figure 11.3: Component Diagram</p>
+<p style="text-align: center;"> Figure 7: Component Diagram</p>
 
 ### 11.4 Class View
 
-The class view represents the structural relationships and interactions between the services of TravelGo. It comprises five main classes: user, post, leaderboard, chat, and map. Each class is defined with relevant fields, methods, and return types, as illustrated in Figure 11.4 below. The leaderboard class derives its data from both the user and post classes to compute rankings. The post class interacts with the user and map classes to associate posts with specific users and locations or attractions. Similarly, the chat class depends on the user class to manage message exchanges and identify message ownership. This structure ensures modularity, clarity, and efficient data flow across different components of the system.
+The class view represents the structural relationships and interactions between the services of TravelGo. It comprises five main classes: user, post, leaderboard, chat, and map. Each class is defined with relevant fields, methods, and return types, as illustrated in Figure 8 below. The leaderboard class derives its data from both the user and post classes to compute rankings. The post class interacts with the user and map classes to associate posts with specific users and locations or attractions. Similarly, the chat class depends on the user class to manage message exchanges and identify message ownership. This structure ensures modularity, clarity, and efficient data flow across different components of the system.
 
 ![](ClassDiagram.png)
-<p style="text-align: center;"> Figure 11.4: Class Diagram</p>
+<p style="text-align: center;"> Figure 8: Class Diagram</p>
 
 ### 11.5 Deployment View
 At runtime, TravelGo operates within a Docker-based containerised environment. Each service (User, Post, Map, etc.) runs in its own container, orchestrated by Docker Compose.
@@ -380,7 +377,7 @@ To determine the most suitable cloud environment, three primary options were eva
 | **Public Cloud** | Cost-efficient, elastic scaling, minimal maintenance, pay-as-you-go model | Lower control over security and compliance                      | Ideal for early-stage deployment; fast, flexible, and cost-effective |
 | **Private Cloud**                  | Enhanced security, privacy, and control                                   | High setup cost, limited scalability, ongoing maintenance needs | Suitable for sensitive data and compliance-heavy operations         |
 | **Hybrid Cloud**                   | Combines scalability of public cloud with control of private cloud        | Complex management, higher cost, potential latency issues       | Long-term strategy — balance flexibility with data protection       |
-<p style="text-align: center;"> Table 12: Cloud Comparison</p>
+<p style="text-align: center;"> Table 8: Cloud Comparison</p>
 
 
 <br>
@@ -417,14 +414,14 @@ The map is one of the core features which users will utilise to explore attracti
 | **Privacy** | Self-hosted; no tracking | Fully open data | Google owns map data and telemetry |
 | **Deployment** | Very easy; no API keys or billing setup | Needs rendering layer | Requires Google API key and cloud project setup |
 
-<p style="text-align: center;">Table 13.1: Comparative Analysis for Interactive Maps </p> 
+<p style="text-align: center;">Table 9: Comparative Analysis for Interactive Maps </p> 
 
 Based on the table, Leaflet was chosen for the mapping engine with OpenStreetMap dataset as it is open-source and cost free [[13]](#13). It has no licensing or billing constraints and can be embedded directly into the existing client-side module. Moreover, as it implements a plugin ecosystem, TravelGo’s concept of showing hidden gems and user posts can be rendered in custom layers. By pairing Leaflet with OpenStreetMap tiles, the system achieves a completely open-source mapping stack [[14]](#14). This preserves data ownership and allows for migration to self-hosted tiles or private map layers at a later stage. This ensures user privacy and local compliance. Leaflet can cache tiles locally or use self-hosted tile servers, enabling limited offline functionality, which aligns with the future goal of supporting travelers in low-connectivity areas.
 
 ### 13.2 Locust - Load Testing Tool
 Locust was selected as the primary load testing tool for TravelGo because of its flexibility, simplicity, and seamless integration with our microservices and Docker-based architecture. Written in Python, Locust allows test scenarios to be defined as plain Python code, which made it easy to simulate realistic user interactions with TravelGo’s REST APIs, such as creating posts without requiring complex scripting or configuration.
 
-Compared to other tools like Apache JMeter or Gatling, Locust offered several practical advantages for our setup, as shown in Table 13.2. It is lightweight, open-source, and natively supports distributed load testing, allowing us to simulate thousands of concurrent users through multiple worker instances if needed. The web-based dashboard provided real-time metrics on request rates, failures, and latency, making it ideal for demonstrating system scalability visually during experimentation.
+Compared to other tools like Apache JMeter or Gatling, Locust offered several practical advantages for our setup, as shown in Table 11. It is lightweight, open-source, and natively supports distributed load testing, allowing us to simulate thousands of concurrent users through multiple worker instances if needed. The web-based dashboard provided real-time metrics on request rates, failures, and latency, making it ideal for demonstrating system scalability visually during experimentation.
 
 Furthermore, Locust integrates smoothly with Docker Compose, enabling it to run as a separate container within the same network as other services. This simplified deployment and ensured consistent testing conditions without additional setup. Overall, Locust proved to be the most efficient and developer-friendly choice for validating the scalability and performance of TravelGo’s microservices.
 
@@ -435,13 +432,13 @@ Furthermore, Locust integrates smoothly with Docker Compose, enabling it to run 
 | **Disadvantages** | Comparatively less advanced reporting | Heavier setup, complex scripting | Requires scala knowledge |
 | **Suitability for TravelGo** | Simple, scalable and developer friendly | Not very suitable for containerised setup | Less flexible |
 
-<p style="text-align: center;">Table 13.2: Comparative Analysis for load testing tools </p>
+<p style="text-align: center;">Table 10: Comparative Analysis for load testing tools </p>
 
 ### 13.3 Nginx - Load balancer
 Nginx was chosen as a load balancer for TravelGo's system architecture due to its simplicity and lightweight footprint. It fit well with the system's docker based microservices architecture. There are more advanced alternatives available like HAProxy or Traefik which offer dynamic service discovery. For the PoC, we implemented Nginx as it was sufficient. Its easier integration enabled us to implement and prove horizontal scaling without adding unnecessary complexity.
 
 ### 13.4 Apache Kafka - Event Streaming Platform
-The choice of an event streaming platform is an important decision that impacts system performance, scalability and reliability. In Table 16.4 multiple options are compared based on their advantages, disadvantages and suitability.
+The choice of an event streaming platform is an important decision that impacts system performance, scalability and reliability. In Table 11, multiple options are compared based on their advantages, disadvantages and suitability.
 
 |                          | Kafka                                                                                          | RabbitMQ                                                                               | Amazon Kinesis                                                              | RedPanda                                                           |
 |--------------------------|------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------|-----------------------------------------------------------------------------|--------------------------------------------------------------------|
@@ -449,9 +446,9 @@ The choice of an event streaming platform is an important decision that impacts 
 | Disadvantages            | Complex to setup, configure and manage                                                         | Limited scalability                                                                    | Vendor lock-in with AWS, can become costly                                  | New to the market                                                  |
 | Best for                 | Large-scale, real-time data streaming and event-driven architectures                           | Small-scale projects or environments requiring messaging-oriented middleware           | AWS-based projects, large-scale real-time data processing                   | Projects with high performance and low latency                     |
 | Suitability for TravelGo | Very suitable, as it enables scalable and reliable event-driven communication between services | Not ideal, because TravelGo requires high scalability                                  | Not ideal, as TravelGo is not AWS-based and it can become costly            | Good option, however small community since it is new to the market |
-<p style="text-align: center;">Table 13.4: Comparative analysis for event streaming platforms </p>
+<p style="text-align: center;">Table 11: Comparative analysis for event streaming platforms </p>
 
-Based on Table 13.4, Kafka is the best option for TravelGo, since it offers high performance, fault tolerance, durability and great scalability. RabbitMQ and Amazon Kinesis have the most significant disadvantages for TravelGo. RabbitMQ lacks scalability, and Amazon Kinesis has potential concerns due to cost and the vendor lock-in. While RedPanda would be a good alternative, compared to Kafka it has a smaller community and is relatively new to the market which can result in less support and maturity.
+Based on Table 11, Kafka is the best option for TravelGo, since it offers high performance, fault tolerance, durability and great scalability. RabbitMQ and Amazon Kinesis have the most significant disadvantages for TravelGo. RabbitMQ lacks scalability, and Amazon Kinesis has potential concerns due to cost and the vendor lock-in. While RedPanda would be a good alternative, compared to Kafka it has a smaller community and is relatively new to the market which can result in less support and maturity.
 
 ### 13.5 Docker Implementation
 
@@ -478,10 +475,10 @@ To implement event-driven communication, we integrated Apache Kafka. Specificall
 
 The post service acts as a Kafka producer and publishes an event to the new post topic whenever a new post is created. The leaderboard service is implemented as the Kafka consumer, which is subscribed to this topic and listens for incoming events. Every time a user makes a new post, the post service publishes an event to Kafka. The leaderboard consumes this event and updates the leaderboard accordingly.
 
-To test this, we simply create a new post for a specific user id. After the event is published and consumed, the user gains ten points on the leaderboard. Creating additional posts results in further point increments, confirming that the event-driven communication between the two services works as expected. The results are shown in Figure 14.1.1.
+To test this, we simply create a new post for a specific user id. After the event is published and consumed, the user gains ten points on the leaderboard. Creating additional posts results in further point increments, confirming that the event-driven communication between the two services works as expected. The results are shown in Figure 9.
 
 ![](PostLeaderboard.png)
-<p style="text-align: center;"> Figure 14.1.1: The leaderboard gets updated after new posts</p>
+<p style="text-align: center;"> Figure 9: The leaderboard gets updated after new posts</p>
 
 
 #### 14.1.2 Proving Scalability
@@ -493,10 +490,10 @@ We initially deploy multiple API Gateway replicas and configured NGINX as a load
 
 After scaling the chat service, Locust results showed significant performance improvements: the average response time decreased and throughput (RPS) increased even as the number of simulated users rose. These results demonstrate that TravelGo’s microservices-based design supports horizontal scaling at the service level, allowing individual components such as the chat service to handle higher loads efficiently without affecting others.
 
-These results demonstrate that TravelGo’s microservices architecture supports elastic scalability: services can be scaled independently based on demand without affecting overall system performance. This confirms that the chat service can efficiently handle higher loads, maintaining system integrity and user experience.Future tests can extend this setup to other services, validating end-to-end scalability across the entire TravelGo ecosystem. The results are shown in Figure 14.1.2.
+These results demonstrate that TravelGo’s microservices architecture supports elastic scalability: services can be scaled independently based on demand without affecting overall system performance. This confirms that the chat service can efficiently handle higher loads, maintaining system integrity and user experience.Future tests can extend this setup to other services, validating end-to-end scalability across the entire TravelGo ecosystem. The results are shown in Figure 10.
 
 ![](experiment-results.png)
-<p style="text-align: center;"> Figure 14.1.2: Locust load-test experiment results</p>
+<p style="text-align: center;"> Figure 10: Locust load-test experiment results</p>
 
 #### 14.1.3 Proving Modularity
 
@@ -513,7 +510,7 @@ The platform can be supported by income from multiple combined streams presented
 | Free Content / Subscription | Free tier with core features; premium tier unlocks exclusive content | Predictable recurring income; encourages retention   | Requires adequate premium features to justify the cost |
 | In-App Purchases  | Cosmetic items, location-based boosts, hints, custom avatars | Transaction-based revenue resulting in immediate revenue from passionate users   | High risk of warping user perception and turning the platform into "pay-to-win" if not balanced |
 | Advertising & Sponsorships | Through advertisements, local businesses sponsor the discounts, souvenirs and/or events | Transaction-based revenue for non-premium users; Immediate income from sponsors | The advertising cannot be excessive in order to not degrade user experience   |
-<p style="text-align: center;">Table 14.1.1: List of viable revenue streams.</p>
+<p style="text-align: center;">Table 12: List of viable revenue streams.</p>
 
 
 Furthermore, since the platform is newly developed, the revenue model should be implemented in progressive stages.
@@ -530,7 +527,7 @@ At launch, most of the platform content should remain free to access to build th
 The stages in which the proposed system will be implemented can be seen in the roadmap below.
 
 ![](Roadmap.png)
-<p style="text-align: center;">Figure 15.1: Roadmap</p>
+<p style="text-align: center;">Figure 11: Roadmap</p>
 
 ## 16 Future scope
 Due to time constraints, the primary focus of this report was on setting up the system architecture to support the main features of TravelGo. The PoC was therefore limited in scope, since it does not include the features exclusive to our premium subscribers, such as the removal of advertisements. Although we designed the architecture with these extensions in mind, their implications will be addressed in future development. This should not come with significant challenges, as the architecture follows a modular approach.
