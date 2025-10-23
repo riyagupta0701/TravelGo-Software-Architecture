@@ -9,13 +9,13 @@ cd poc
 ```
 
 ### Create virtual environment
-For mac
+For Mac/Linux
 ```
 python -m venv venv
 source venv/bin/activate
 ```
 
-For windows
+For Windows
 ```
 pip install virtualenv
 python -m virtualenv vEnv
@@ -51,12 +51,11 @@ http://127.0.0.1:5008
 Install locust using the following command:
 ```
 pip install locust
-
 ```
 Make sure your docker desktop is open and run this command in the poc folder : 
 
 ```
-docker compose up -d --scale api_gateway=3 -d 
+docker compose up -d --scale api_gateway=3 -d
 ```
 In a new terminal, run the command after navigating to the poc folder: 
 
