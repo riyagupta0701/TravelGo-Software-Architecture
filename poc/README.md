@@ -44,10 +44,9 @@ Similarly, these commands can be applied to any service.
 ### Open the application
 ```
 http://127.0.0.1:5008
-http://172.18.0.8:5008
 ```
 
-### Experminet Setup - Locust
+### Experiment Setup - Locust
 
 Install locust using the following command:
 ```
