@@ -128,7 +128,7 @@ Features are distinct pieces of functionality that deliver value to users. They 
 
 Use case scenarios explain how a user works with a system to accomplish certain tasks or objectives. They
 outline the steps needed to achieve a set objective and also help define system requirements, derived from
-the user stories, which can be found in the Appendix A.
+the user stories, which can be found in the Appendix A. The corresponding UML is illustrated in figure 7.2.
 
 | Use Case ID | Use Case Description |
 |--------------|------------|
@@ -148,6 +148,9 @@ the user stories, which can be found in the Appendix A.
 | UC14          | (In case of premium) display a list of available accommodations. |          
 | UC15          | (In case of premium) Remove advertisements and any sort of advertisement. |          
 <p style="text-align: center;">Table 7.1: List of use case scenarios that will be implemented for the final product.</p>
+
+![](UML.png)
+<p style="text-align: center;">Figure 7.2 : UML of the Use Case Scenarios</p>
 
 
 ## 8 Requirements
@@ -566,7 +569,10 @@ To ensure that TravelGo operates as an event-driven system, we integrated Apache
 
 The post service acts as a Kafka producer and publishes an event to the new post topic whenever a new post is created. The leaderboard service is implemented as the Kafka consumer, which is subscribed to this topic and listens for incoming events. Every time a user makes a new post, the post service publishes an event to Kafka. The leaderboard consumes this event and updates the leaderboard accordingly.
 
-To test this, we simply create a new post for a specific user id. After the event is published and consumed, the user gains ten points on the leaderboard. Creating additional posts results in further point increments, confirming that the event-driven communication between the two services works as expected.
+To test this, we simply create a new post for a specific user id. After the event is published and consumed, the user gains ten points on the leaderboard. Creating additional posts results in further point increments, confirming that the event-driven communication between the two services works as expected. The results are shown in Figure 13.2.
+
+![](PostLeaderboard.png)
+<p style="text-align: center;"> Figure 13.2: The leaderboard gets updated after new posts</p>
 
 ## 14 Revenue Model
 
@@ -680,6 +686,10 @@ Cloud deployment directly supports TravelGo’s key quality attributes by enabli
 Despite its advantages, cloud deployment introduces certain challenges. Vendor lock-in may restrict flexibility in switching providers, while data residency laws, particularly in the EU, require careful configuration to ensure compliance [[8]](#8). Furthermore, managing a distributed microservices environment in the cloud adds operational complexity. These challenges can be mitigated through the use of cloud-agnostic technologies such as Docker and Kubernetes, and region-specific deployments for user data.
 
 In conclusion, deploying TravelGo on the cloud complements its microservices based design by providing global scalability, modular growth, and secure operations. The cloud not only supports the system’s technical requirements but also aligns with its vision of delivering a smooth, engaging, and reliable travel experience to users worldwide.
+
+
+## Future scope
+Due to time constraints, the primary focus of this report was on setting up the system architecture to support the main features of TravelGo. Both the POC and C4 diagram were therefore limited in scope, since they did not include the features exclusive to our premium subscribers, such as the removal of advertisements. Although we designed the architecture with these extensions in mind, their implications will be addressed in future development. This should not come with significant challenges, as the architecture follows a modular approach.
 
 ## Bibliography
 <a id="1">[1]</a>
