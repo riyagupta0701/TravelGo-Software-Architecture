@@ -17,7 +17,7 @@ Another main part of TravelGo is making it easier for travelers to engage with e
 
 ## 2 Market Research
 
-To identify opportunities for innovation, it is useful to examine the existing players in the travel tech market. The table below presents a comparative analysis of these competitors, outlining their strengths, weaknesses, and potential gaps.
+To identify opportunities for innovation, it is useful to examine the existing players in the travel tech market. The Table 1 below presents a comparative analysis of these competitors, outlining their strengths, weaknesses, and potential gaps.
 
 | Serial No. | Competitor | Strengths | Weaknesses | Opportunity for us |
 |--------|------------|-----------|------------|---------------------|
@@ -46,7 +46,7 @@ Market trends indicate that travellers increasingly seek experiences over mere s
 - Promotes social discovery by connecting travellers nearby.
 
 ## 3 Wardley Map
-Building on the system’s vision and context, the Wardley Map highlights how TravelGo blends innovation with open source or standardised solutions.
+Building on the system’s vision and context, the Wardley Map shown in Figure 1 highlights how TravelGo blends innovation with open source or standardised solutions.
 
 ![](WardleyMap.png)
 <p style="text-align: center;">Figure 1: Wardley map</p>
@@ -111,7 +111,7 @@ The power/interest grid in Figure 2, is used to classify stakeholders according 
 
 ## 6 Features
 
-Features are distinct pieces of functionality that deliver value to users. They define what the software can do and are often used to plan and develop the product throughout its lifecycle.
+Features are distinct pieces of functionality that deliver value to users. They define what the software can do and are often used to plan and develop the product throughout its lifecycle. Table 2 lists the features that will be implemented for the final product.
 
 | Feature ID | Feature Description|
 |-----------|------------|
@@ -122,13 +122,13 @@ Features are distinct pieces of functionality that deliver value to users. They 
 | F5         | Allow for premium features. (Let the user know when there are discounts for accommodation)        |        
 | F6         | Keep track of the user's daily quiz score and their placement in the leaderboard. |        
 | F7         | Reward the top competitors of the leaderboard with discounts, vouchers or free souvenirs.         |
-<p style="text-align: center;">Table 2: List of features that will be implemented for the final product.</p>
+<p style="text-align: center;">Table 2: Features</p>
 
 ## 7 Use Case Scenarios
 
 Use case scenarios explain how a user works with a system to accomplish certain tasks or objectives. They
 outline the steps needed to achieve a set objective and also help define system requirements, derived from
-the user stories, which can be found in the Appendix B. The corresponding UML is illustrated in figure 3.
+the user stories, which can be found in the Appendix B. Table 3 lists use case scenarios that will be implemented for the final product. The corresponding UML is illustrated in figure 3.
 
 | Use Case ID | Use Case Description |
 |--------------|------------|
@@ -147,7 +147,7 @@ the user stories, which can be found in the Appendix B. The corresponding UML is
 | UC13          | (In case of premium) Process subscription fee for unlocking premium for the user's account. |          
 | UC14          | (In case of premium) display a list of available accommodations. |          
 | UC15          | (In case of premium) Remove advertisements and any sort of advertisement. |          
-<p style="text-align: center;">Table 3: List of use case scenarios that will be implemented for the final product.</p>
+<p style="text-align: center;">Table 3:Use case scenarios</p>
 
 ![](UML.png)
 <p style="text-align: center;">Figure 3: UML of the Use Case Scenarios</p>
@@ -259,7 +259,7 @@ With respect to scalability, TravelGo will serve a diverse user base with travel
 
 Regarding modularity, TravelGo offers a variety of features like community interactions, cultural content, side quests,  and plans to add even more in the future. Microservices naturally support modularity by dividing the system into small, loosely coupled services, each built around a specific business capability. This allows TravelGo to implement, test, and deploy new features independently, without slowing down the rest of the system. For instance, a new “local quiz” module could be rolled out without touching the existing leaderboard or chat functionality.
 
-Lastly, as TravelGo collects sensitive personal data such as names, payment details, and location information, integrity and security are critical. Microservices help here by isolating services and containing failures. If one service is compromised, others remain unaffected, protecting the majority of user data. While microservices do increase the number of potential entry points into the system, these risks can be managed with event-driven communication, strong authentication, and encryption. This ensures that TravelGo maintains user trust by preserving data security and system reliability. <br>
+Lastly, as TravelGo collects sensitive personal data such as names, payment details, and location information, integrity and security are critical. Microservices help here by isolating services and containing failures. If one service is compromised, others remain unaffected, protecting the majority of user data. While microservices do increase the number of potential entry points into the system, these risks can be managed with event-driven communication, strong authentication, and encryption. This ensures that TravelGo maintains user trust by preserving data security and system reliability. Figure 4 demonstrates a microservice driven architecture for TravelGo. <br>
 
 ![](Microservices.png)
 <p style="text-align: center;">Figure 4: Microservices architecture of the system</p>
@@ -312,7 +312,7 @@ In order to attain modularity, scalability, and ease of maintenance, TravelGo is
 
 ### 11.1 Context View
 
-The System Context Diagram highlights TravelGo’s role within its environment. It shows the platform as the central system interacting with travellers, attraction owners, and several external systems such as map providers, tourism boards, influencers, and competitors. The diagram illustrates key flows of information (e.g. travellers providing personal information, owners submitting attractions, the platform requesting maps) and helps define clear system boundaries and dependencies within a modular microservices framework.
+The System Context Diagram as seen in Figure 5, highlights TravelGo’s role within its environment. It shows the platform as the central system interacting with travellers, attraction owners, and several external systems such as map providers, tourism boards, influencers, and competitors. The diagram illustrates key flows of information (e.g. travellers providing personal information, owners submitting attractions, the platform requesting maps) and helps define clear system boundaries and dependencies within a modular microservices framework.
 
 The system relies on event-driven communication (implemented via Kafka) and an API Gateway that serves as the single entry point for all client requests.
 
@@ -321,7 +321,7 @@ The system relies on event-driven communication (implemented via Kafka) and an A
 
 ### 11.2 Container View
 
-This next view depicts all subsystems from the context view further elaborated into containers. As you can see in Figure 6 below, the TravelGo System, Local Business Owners, Tourism Boards and External Dependencies now showcase more details about their inner workings.
+This next view in Table 7 depicts all subsystems from the context view further elaborated into containers. As you can see in Figure 6 below, the TravelGo System, Local Business Owners, Tourism Boards and External Dependencies now showcase more details about their inner workings.
 
 | **Subsystem**           | **Description**                                                                                               | **Interfaces / Dependencies**            |
 | ----------------------- | ------------------------------------------------------------------------------------------------------------- | ---------------------------------------- |
@@ -368,9 +368,9 @@ Deployment Components:
 - Scaling is achieved by increasing the number of service containers dynamically based on load.
 
 ## 12 Cloud Dependency
-Given TravelGo’s global reach and microservices-based architecture, deploying the system on the cloud offers clear benefits in terms of scalability, modularity, and integrity than having servers on premise. Cloud infrastructure allows hosting services closer to users through geographically distributed data centers, ensuring low latency and consistent performance even during high-traffic periods.
+Given TravelGo’s global reach and microservices-based architecture, deploying the system on the cloud offers clear benefits in terms of scalability, modularity, and integrity than having servers on premise [[7]](#7). Cloud infrastructure allows hosting services closer to users through geographically distributed data centers, ensuring low latency and consistent performance even during high-traffic periods.
 
-To determine the most suitable cloud environment, three primary options were evaluated below:
+To determine the most suitable cloud environment, three primary options were evaluated in Table 8 below:
 
 | **Cloud Model**                    | **Advantages**                                                            | **Disadvantages**                                               | **Suitability for TravelGo**                                           |
 | ---------------------------------- | ------------------------------------------------------------------------- | --------------------------------------------------------------- | ---------------------------------------------------------------------- |
@@ -384,8 +384,8 @@ To determine the most suitable cloud environment, three primary options were eva
 We begin with Public Cloud for cost efficiency and rapid scaling, then transition toward a Hybrid Cloud as the user base grows and security requirements increase.
 <br><br>
 
-TravelGo would primarily use Platform as a Service (PaaS) or container-based solutions such as AWS ECS or Google Kubernetes Engine, enabling independent deployment and scaling of microservices. Serverless options like AWS Lambda or Google Cloud Functions can handle event-driven features (e.g., notifications or leaderboard updates), offering efficient scalability for unpredictable workloads.
-<br><br>
+TravelGo would primarily use Platform as a Service (PaaS) or container-based solutions such as AWS ECS or Google Kubernetes Engine, enabling independent deployment and scaling of microservices [[8]](#8). Serverless options like AWS Lambda or Google Cloud Functions can handle event-driven features (e.g., notifications or leaderboard updates), offering efficient scalability for unpredictable workloads [[6]](#6).
+
 
 Cloud deployment reinforces TravelGo’s key quality attributes:
 
@@ -416,12 +416,12 @@ The map is one of the core features which users will utilise to explore attracti
 
 <p style="text-align: center;">Table 9: Comparative Analysis for Interactive Maps </p> 
 
-Based on the table, Leaflet was chosen for the mapping engine with OpenStreetMap dataset as it is open-source and cost free [[13]](#13). It has no licensing or billing constraints and can be embedded directly into the existing client-side module. Moreover, as it implements a plugin ecosystem, TravelGo’s concept of showing hidden gems and user posts can be rendered in custom layers. By pairing Leaflet with OpenStreetMap tiles, the system achieves a completely open-source mapping stack [[14]](#14). This preserves data ownership and allows for migration to self-hosted tiles or private map layers at a later stage. This ensures user privacy and local compliance. Leaflet can cache tiles locally or use self-hosted tile servers, enabling limited offline functionality, which aligns with the future goal of supporting travelers in low-connectivity areas.
+Based on Table 9, Leaflet was chosen for the mapping engine with OpenStreetMap dataset as it is open-source and cost free [[13]](#13). It has no licensing or billing constraints and can be embedded directly into the existing client-side module. Moreover, as it implements a plugin ecosystem, TravelGo’s concept of showing hidden gems and user posts can be rendered in custom layers. By pairing Leaflet with OpenStreetMap tiles, the system achieves a completely open-source mapping stack [[14]](#14). This preserves data ownership and allows for migration to self-hosted tiles or private map layers at a later stage. This ensures user privacy and local compliance. Leaflet can cache tiles locally or use self-hosted tile servers, enabling limited offline functionality, which aligns with the future goal of supporting travelers in low-connectivity areas.
 
 ### 13.2 Locust - Load Testing Tool
 Locust was selected as the primary load testing tool for TravelGo because of its flexibility, simplicity, and seamless integration with our microservices and Docker-based architecture. Written in Python, Locust allows test scenarios to be defined as plain Python code, which made it easy to simulate realistic user interactions with TravelGo’s REST APIs, such as creating posts without requiring complex scripting or configuration.
 
-Compared to other tools like Apache JMeter or Gatling, Locust offered several practical advantages for our setup, as shown in Table 11. It is lightweight, open-source, and natively supports distributed load testing, allowing us to simulate thousands of concurrent users through multiple worker instances if needed. The web-based dashboard provided real-time metrics on request rates, failures, and latency, making it ideal for demonstrating system scalability visually during experimentation.
+Compared to other tools like Apache JMeter or Gatling, Locust offered several practical advantages for our setup, as shown in Table 10. It is lightweight, open-source, and natively supports distributed load testing, allowing us to simulate thousands of concurrent users through multiple worker instances if needed. The web-based dashboard provided real-time metrics on request rates, failures, and latency, making it ideal for demonstrating system scalability visually during experimentation.
 
 Furthermore, Locust integrates smoothly with Docker Compose, enabling it to run as a separate container within the same network as other services. This simplified deployment and ensured consistent testing conditions without additional setup. Overall, Locust proved to be the most efficient and developer-friendly choice for validating the scalability and performance of TravelGo’s microservices.
 
@@ -503,7 +503,7 @@ In order to ensure long-term success for a platform, a sustainable revenue model
 
 ### 14.1 Revenue Streams
 
-The platform can be supported by income from multiple combined streams presented in the table below.
+The platform can be supported by income from multiple combined streams presented in Table 12 below.
 
 | Revenue Stream   | Implementation Details | Advantages| Challenges |
 | -------------------------------- |-------- | --------- | ----------|
@@ -524,7 +524,7 @@ At launch, most of the platform content should remain free to access to build th
 
 
 ## 15 Roadmap
-The stages in which the proposed system will be implemented can be seen in the roadmap below.
+The stages in which the proposed system will be implemented can be seen in the roadmap below in Figure 11.
 
 ![](Roadmap.png)
 <p style="text-align: center;">Figure 11: Roadmap</p>
