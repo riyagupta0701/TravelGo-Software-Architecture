@@ -265,7 +265,7 @@ Lastly, as TravelGo collects sensitive personal data such as names, payment deta
 <p style="text-align: center;">Figure 4: Microservices architecture of the system</p>
 
 #### 10.1.5 Trade-Off Analysis for Architectural Styles
-Although all of the four architectural styles have their disadvantages and advantages, as shown in Table 10.1.5, a single approach must be selected. The monolithic architecture is the least suitable for our system, since it has significant disadvantages in terms of modularity and scalability. The microkernel and serverless architectures are both reasonable options, however they have less important advantages and more disadvantages compared to the microservice architecture. 
+Although all of the four architectural styles have their disadvantages and advantages, as shown in Table 6, a single approach must be selected. The monolithic architecture is the least suitable for our system, since it has significant disadvantages in terms of modularity and scalability. The microkernel and serverless architectures are both reasonable options, however they have less important advantages and more disadvantages compared to the microservice architecture. 
 
 The microservice architecture has advantages for all of our main quality attributes. The only disadvantage is that it increases the number of potential entry points into the system, which can be managed using event-driven communication. Therefore, the **microservice architecture** is the most advantageous for our system.
 
@@ -480,8 +480,10 @@ To test this, we simply create a new post for a specific user id. After the even
 ![](PostLeaderboard.png)
 <p style="text-align: center;"> Figure 9: The leaderboard gets updated after new posts</p>
 
+#### 14.1.2 Proving Modularity
 
-#### 14.1.2 Proving Scalability
+
+#### 14.1.3 Proving Scalability
 To evaluate the scalability of the TravelGo system, we conduct load testing using Locust, an open-source tool for simulating user traffic. The objective of this experiment is to verify that the chat service can handle increasing user loads without significant failures or degradation in response time.
 
 In the experiment, we configure Locust to simulate multiple concurrent users sending chat messages through the API Gateway. The test environment consists of all microservices deployed via Docker Compose, ensuring realistic inter-service communication. We observe key performance indicators such as request rate (RPS), failure rate, and average response time as the number of simulated users increased.
@@ -494,8 +496,6 @@ These results demonstrate that TravelGo’s microservices architecture supports 
 
 ![](experiment-results.png)
 <p style="text-align: center;"> Figure 10: Locust load-test experiment results</p>
-
-#### 14.1.3 Proving Modularity
 
 ## 14 Revenue Model
 
