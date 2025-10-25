@@ -38,17 +38,17 @@ http://127.0.0.1:5008
 ```
 
 ### Experiment Setup - Modularity
-To ensure modularity, each service can be independently shut off and started up again using the commands:
+To ensure modularity, each service can be independently shut off using the command:
 ```
-# stop only the leaderboard container
 docker compose stop leaderboard_service
-
-# start it again later
+```
+Furthermore, the service can be started up again using the command:
+```
 docker compose start leaderboard_service
 ```
 Similarly, these commands can be applied to any service.
 
-### Experiment Setup - Locust
+### Experiment Setup - Scalability (Locust)
 
 Install locust using the following command:
 ```
