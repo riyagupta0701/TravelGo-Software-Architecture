@@ -1,6 +1,6 @@
 <h1 align = "center">TravelGo!</h1>
 <h3 align = "center">Team 11 <br> Aník van Deursen, Riya Gupta, Radha Mujumdar, Diana Todoran</h3>
-<h3 align = "center">GitLab Repository: [https://gitlab.ewi.tudelft.nl/cs4505/2025-2026/team-11](https://gitlab.ewi.tudelft.nl/cs4505/2025-2026/team-11)</h3>
+<h3 align = "center">GitLab Repository: https://gitlab.ewi.tudelft.nl/cs4505/2025-2026/team-11</h3>
 
 ## 1 Introduction
 
@@ -128,7 +128,7 @@ Features are distinct pieces of functionality that deliver value to users. They 
 
 Use case scenarios explain how a user works with a system to accomplish certain tasks or objectives. They
 outline the steps needed to achieve a set objective and also help define system requirements, derived from
-the user stories, which can be found in the Appendix B. Table 3 lists use case scenarios that will be implemented for the final product. The corresponding UML is illustrated in figure 3.
+the user stories of personas, which can be found in the Appendices A and B. Table 3 lists use case scenarios that will be implemented for the final product. The corresponding UML is illustrated in Figure 3.
 
 | Use Case ID | Use Case Description |
 |--------------|------------|
@@ -213,7 +213,7 @@ For the main quality attributes, there are some trade-offs that we should keep i
 
 
 ### 9.2 Important quality attributes for stakeholders
-Different stakeholders have different reasoning why certain quality attributes are the most important. This is shown in table 5.
+Different stakeholders have different reasoning why certain quality attributes are the most important. This is shown in Table 5.
 
 | Quality Attribute | Expectation                                                                                                                                               | Stakeholders                                                                                    |
 |-------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|
@@ -308,7 +308,7 @@ To conclude, the architecture that would be the best fit for TravelGo is a micro
 
 
 ## 11 System Decomposition
-In order to attain modularity, scalability, and ease of maintenance, TravelGo is broken down into its component subsystems and modules using system decomposition. This hierarchical breakdown reflects the microservices based architecture adopted by the platform, emphasising loose coupling between services and clear separation of functionalities. Each level of decomposition corresponds to increasing detail, from the overall system to specific services and functional modules.
+In order to attain modularity, scalability, and ease of maintenance, TravelGo is broken down into its component subsystems and modules using system decomposition. This hierarchical breakdown reflects the microservices based architecture adopted by the platform, emphasising loose coupling between services and clear separation of functionalities. Each level of decomposition corresponds to increasing detail, from the overall system to specific services and functional modules, following the C4 model [[9]](#9).
 
 ### 11.1 Context View
 
@@ -344,7 +344,7 @@ The system’s core container is the Application, which interacts with the Touri
 
 ### 11.3 Component View
 
-Each subsystem is further decomposed into logical components. Each service runs independently within its own Docker container, exposing RESTful APIs through the API Gateway and communicating asynchronously using Kafka topics when necessary. Each service's major components are defined further in appendix D.
+Each subsystem is further decomposed into logical components. Each service runs independently within its own Docker container, exposing RESTful APIs through the API Gateway and communicating asynchronously using Kafka topics when necessary. Each service's major components are defined further in Appendix D.
 
 As can be seen from the Figure 7 below, the system's Application will contain the presented components.
 
@@ -370,7 +370,7 @@ Deployment Components:
 ## 12 Cloud Dependency
 Given TravelGo’s global reach and microservices-based architecture, deploying the system on the cloud offers clear benefits in terms of scalability, modularity, and integrity than having servers on premise [[7]](#7). Cloud infrastructure allows hosting services closer to users through geographically distributed data centers, ensuring low latency and consistent performance even during high-traffic periods.
 
-To determine the most suitable cloud environment, three primary options were evaluated in Table 8 below:
+To determine the most suitable cloud environment, three primary options were evaluated in Table 8 below [[15]](#15):
 
 | **Cloud Model**                    | **Advantages**                                                            | **Disadvantages**                                               | **Suitability for TravelGo**                                           |
 | ---------------------------------- | ------------------------------------------------------------------------- | --------------------------------------------------------------- | ---------------------------------------------------------------------- |
@@ -482,6 +482,10 @@ To test this, we simply create a new post for a specific user id. After the even
 
 #### 14.1.2 Proving Modularity
 
+We evaluate modularity by assessing the impact of one service failure on the entire application. In our Docker Compose setup, we selectively stopped the leaderboard service while keeping other services running, as can be seen in Figure 10. During this test, the remaining pages remained available as they were running independently, while the leaderboard page showed internal server error. When the leaderboard page was started again, it can easily be accessed again and no change took place on the other services. This behavior indicates that our services are loosely coupled and are deployed independently.
+
+![](ModularityLeaderboardStop.png)
+<p style="text-align: center;"> Figure 10: The leaderboard container is shut down while the other services are still running</p>
 
 #### 14.1.3 Proving Scalability
 To evaluate the scalability of the TravelGo system, we conduct load testing using Locust, an open-source tool for simulating user traffic. The objective of this experiment is to verify that the chat service can handle increasing user loads without significant failures or degradation in response time.
@@ -492,10 +496,10 @@ We initially deploy multiple API Gateway replicas and configured NGINX as a load
 
 After scaling the chat service, Locust results showed significant performance improvements: the average response time decreased and throughput (RPS) increased even as the number of simulated users rose. These results demonstrate that TravelGo’s microservices-based design supports horizontal scaling at the service level, allowing individual components such as the chat service to handle higher loads efficiently without affecting others.
 
-These results demonstrate that TravelGo’s microservices architecture supports elastic scalability: services can be scaled independently based on demand without affecting overall system performance. This confirms that the chat service can efficiently handle higher loads, maintaining system integrity and user experience.Future tests can extend this setup to other services, validating end-to-end scalability across the entire TravelGo ecosystem. The results are shown in Figure 10.
+These results demonstrate that TravelGo’s microservices architecture supports elastic scalability: services can be scaled independently based on demand without affecting overall system performance. This confirms that the chat service can efficiently handle higher loads, maintaining system integrity and user experience.Future tests can extend this setup to other services, validating end-to-end scalability across the entire TravelGo ecosystem. The results are shown in Figure 11.
 
-![](experiment-results.png)
-<p style="text-align: center;"> Figure 10: Locust load-test experiment results</p>
+![](ExperimentResults.png)
+<p style="text-align: center;"> Figure 11: Locust load-test experiment results</p>
 
 ## 14 Revenue Model
 
@@ -524,10 +528,10 @@ At launch, most of the platform content should remain free to access to build th
 
 
 ## 15 Roadmap
-The stages in which the proposed system will be implemented can be seen in the roadmap below in Figure 11.
+The stages in which the proposed system will be implemented can be seen in the roadmap below in Figure 12.
 
 ![](Roadmap.png)
-<p style="text-align: center;">Figure 11: Roadmap</p>
+<p style="text-align: center;">Figure 12: Roadmap</p>
 
 ## 16 Future scope
 Due to time constraints, the primary focus of this report was on setting up the system architecture to support the main features of TravelGo. The PoC was therefore limited in scope, since it does not include the features exclusive to our premium subscribers, such as the removal of advertisements. Although we designed the architecture with these extensions in mind, their implications will be addressed in future development. This should not come with significant challenges, as the architecture follows a modular approach.
