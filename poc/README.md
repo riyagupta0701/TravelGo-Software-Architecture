@@ -31,6 +31,13 @@ pip install -r requirements.txt
 ```
 docker compose up --build
 ```
+
+### Open the application
+```
+http://127.0.0.1:5008
+```
+
+### Experiment Setup - Modularity
 To ensure modularity, each service can be independently shut off and started up again using the commands:
 ```
 # stop only the leaderboard container
@@ -40,11 +47,6 @@ docker compose stop leaderboard_service
 docker compose start leaderboard_service
 ```
 Similarly, these commands can be applied to any service.
-
-### Open the application
-```
-http://127.0.0.1:5008
-```
 
 ### Experiment Setup - Locust
 
