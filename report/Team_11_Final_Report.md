@@ -128,7 +128,7 @@ Features are distinct pieces of functionality that deliver value to users. They 
 
 Use case scenarios explain how a user works with a system to accomplish certain tasks or objectives. They
 outline the steps needed to achieve a set objective and also help define system requirements, derived from
-the user stories, which can be found in the Appendix B. Table 3 lists use case scenarios that will be implemented for the final product. The corresponding UML is illustrated in figure 3.
+the user stories, which can be found in the Appendix B. Table 3 lists use case scenarios that will be implemented for the final product. The corresponding UML is illustrated in Figure 3.
 
 | Use Case ID | Use Case Description |
 |--------------|------------|
@@ -213,7 +213,7 @@ For the main quality attributes, there are some trade-offs that we should keep i
 
 
 ### 9.2 Important quality attributes for stakeholders
-Different stakeholders have different reasoning why certain quality attributes are the most important. This is shown in table 5.
+Different stakeholders have different reasoning why certain quality attributes are the most important. This is shown in Table 5.
 
 | Quality Attribute | Expectation                                                                                                                                               | Stakeholders                                                                                    |
 |-------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|
@@ -482,7 +482,7 @@ To test this, we simply create a new post for a specific user id. After the even
 
 #### 14.1.2 Proving Modularity
 
-We evaluate modularity by assessing the impact of one service failure on the entire application. In our Docker Compose setup, we selectively stopped the leaderboard service while keeping other services running. During this test, the remaining pages remained available as they were running independently, while the leaderboard page showed internal server error. When the leaderboard page was started again, it can easily be accessed again and no change took place on the other services. This behavior indicates that our services are loosely coupled and are deployed independently.
+We evaluate modularity by assessing the impact of one service failure on the entire application. In our Docker Compose setup, we selectively stopped the leaderboard service while keeping other services running, as can be seen in Figure 10. During this test, the remaining pages remained available as they were running independently, while the leaderboard page showed internal server error. When the leaderboard page was started again, it can easily be accessed again and no change took place on the other services. This behavior indicates that our services are loosely coupled and are deployed independently.
 
 ![](ModularityLeaderboardStop.png)
 <p style="text-align: center;"> Figure 10: The leaderboard container is shut down while the other services are still running</p>
@@ -496,7 +496,7 @@ We initially deploy multiple API Gateway replicas and configured NGINX as a load
 
 After scaling the chat service, Locust results showed significant performance improvements: the average response time decreased and throughput (RPS) increased even as the number of simulated users rose. These results demonstrate that TravelGo’s microservices-based design supports horizontal scaling at the service level, allowing individual components such as the chat service to handle higher loads efficiently without affecting others.
 
-These results demonstrate that TravelGo’s microservices architecture supports elastic scalability: services can be scaled independently based on demand without affecting overall system performance. This confirms that the chat service can efficiently handle higher loads, maintaining system integrity and user experience.Future tests can extend this setup to other services, validating end-to-end scalability across the entire TravelGo ecosystem. The results are shown in Figure 10.
+These results demonstrate that TravelGo’s microservices architecture supports elastic scalability: services can be scaled independently based on demand without affecting overall system performance. This confirms that the chat service can efficiently handle higher loads, maintaining system integrity and user experience.Future tests can extend this setup to other services, validating end-to-end scalability across the entire TravelGo ecosystem. The results are shown in Figure 11.
 
 ![](ExperimentResults.png)
 <p style="text-align: center;"> Figure 11: Locust load-test experiment results</p>
@@ -528,7 +528,7 @@ At launch, most of the platform content should remain free to access to build th
 
 
 ## 15 Roadmap
-The stages in which the proposed system will be implemented can be seen in the roadmap below in Figure 11.
+The stages in which the proposed system will be implemented can be seen in the roadmap below in Figure 12.
 
 ![](Roadmap.png)
 <p style="text-align: center;">Figure 12: Roadmap</p>
