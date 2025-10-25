@@ -482,6 +482,7 @@ To test this, we simply create a new post for a specific user id. After the even
 
 #### 14.1.2 Proving Modularity
 
+We evaluate modularity by assessing the impact of one service failure on the entire entire application. In our Docker Compose setup, we selectively stopped the leaderboard service while keeping other services running. During this test, the remaining pages remained available as they were running independently, while the leaderboard page showed internal server error. When the leaderboard page was started again, it can easily be accessed again and no change took place on the other services. This behavior indicates that our services are loosely coupled and are deployed independently.
 
 #### 14.1.3 Proving Scalability
 To evaluate the scalability of the TravelGo system, we conduct load testing using Locust, an open-source tool for simulating user traffic. The objective of this experiment is to verify that the chat service can handle increasing user loads without significant failures or degradation in response time.
