@@ -128,7 +128,7 @@ Features are distinct pieces of functionality that deliver value to users. They 
 
 Use case scenarios explain how a user works with a system to accomplish certain tasks or objectives. They
 outline the steps needed to achieve a set objective and also help define system requirements, derived from
-the user stories, which can be found in the Appendix B. Table 3 lists use case scenarios that will be implemented for the final product. The corresponding UML is illustrated in Figure 3.
+the user stories of personas, which can be found in the Appendices A and B. Table 3 lists use case scenarios that will be implemented for the final product. The corresponding UML is illustrated in Figure 3.
 
 | Use Case ID | Use Case Description |
 |--------------|------------|
@@ -344,7 +344,7 @@ The system’s core container is the Application, which interacts with the Touri
 
 ### 11.3 Component View
 
-Each subsystem is further decomposed into logical components. Each service runs independently within its own Docker container, exposing RESTful APIs through the API Gateway and communicating asynchronously using Kafka topics when necessary. Each service's major components are defined further in appendix D.
+Each subsystem is further decomposed into logical components. Each service runs independently within its own Docker container, exposing RESTful APIs through the API Gateway and communicating asynchronously using Kafka topics when necessary. Each service's major components are defined further in Appendix D.
 
 As can be seen from the Figure 7 below, the system's Application will contain the presented components.
 
