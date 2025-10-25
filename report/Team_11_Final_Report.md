@@ -498,7 +498,7 @@ After scaling the chat service, Locust results showed significant performance im
 
 These results demonstrate that TravelGo’s microservices architecture supports elastic scalability: services can be scaled independently based on demand without affecting overall system performance. This confirms that the chat service can efficiently handle higher loads, maintaining system integrity and user experience.Future tests can extend this setup to other services, validating end-to-end scalability across the entire TravelGo ecosystem. The results are shown in Figure 10.
 
-![](experiment-results.png)
+![](ExperimentResults.png)
 <p style="text-align: center;"> Figure 11: Locust load-test experiment results</p>
 
 ## 14 Revenue Model
