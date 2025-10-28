@@ -12,7 +12,7 @@ Another challenge lies in connecting with other travelers. Tourist, especially t
 ### 1.2 Context & purpose
 To address these challenges, we want to create an interactive digital platform that makes travelling easier and more enjoyable for both group and solo travelers across various countries: TravelGo. Central to the platform is a map with all of the tourist attractions, including hidden spots. The platform aims to enrich cultural engagement with competitive games (for example quiz competitions) with a reward system through leaderboards. To make this competition enjoyable for both inexperienced and experienced travelers, the platform uses a rating system with leagues. Users can additionally earn points by going to an attraction and thus ticking it off their bucket list. These points can be used to for example get a discount on entry fees or to get an exclusive souvenir.
 
-Another main part of TravelGo is making it easier for travelers to engage with each other. To encourage tourist interaction, the platform will include a chatroom. This chatroom helps travelers to meet new people that are at the same location. Users can also post new or hidden attractions that they recommend to others. Because of this, tourist will know which attractions will be the most worthwhile to visit.
+Another main part of TravelGo is making it easier for travelers to engage with each other. To encourage tourist interaction, the platform will include a chatroom. This chatroom helps travelers to meet new people that are at the same location. Users can also post new or hidden attractions that they recommend to others. Because of this, tourist will know which attractions will be the most worthwhile to visit. In the next section, we will compare the existing solutions. 
 
 
 ## 2 Market Research
@@ -57,6 +57,8 @@ Building on the system’s vision and context, the Wardley Map shown in Figure 1
 **Commodity Stage**: Underlying infrastructure such as digital maps, location pinning, user accounts and APIs are considered commodity. They are invisible to end-users and widely available through third-party providers like Google Maps. TravelGo does not attempt to innovate here but instead rely on stable, low-cost services. <br>
 
 ## 4 Challenges
+
+To properly assess the complexity of the system, we consider the key challenges that arise with respect to the development process.
 
 **I. Data Privacy & Trust** : Data privacy and trust are critical concerns for TravelGo, as the platform collects personal information such as names, locations, and travel history. Mishandling this data could result in legal issues and a loss of customer trust. However, several ambiguities arise, such as determining how much data should be collected, finding the right balance between personalisation and privacy, and managing cross-border compliance. From an architectural perspective, the system must implement data minimisation by collecting only what is necessary, incorporate strong consent management, and ensure secure data storage and transmission. Additionally, regional data hosting may be required to meet compliance regulations.
 
@@ -154,7 +156,7 @@ the user stories of personas, which can be found in the Appendices A and B. Tabl
 
 
 ## 8 Requirements
-Requirements are an essential part of understanding the needs and expectations of a system.
+Considering the aforementioned use case scenarios, the essential requirements are presented below, with respect to the expectations for the proposed system.
 
 ### 8.1 Functional Requirements
 Table 4 shows the key functional requirements for the different features and modules.
@@ -178,7 +180,8 @@ Table 4 shows the key functional requirements for the different features and mod
 Non-functional requirements aim to outline how a system should perform when completing its tasks, based on the system’s implementation. According to Sethi, R. (2023) [[11]](#11), non-functional requirements are better known as quality attributes as they describe the system's performance rather than its functionality. These specific attributes for TravelGo are further elaborated in the following section.
 
 ## 9 Quality Attributes
-Quality attributes describe desirable properties of a system. For creating TravelGo we want to consider the following elements:
+
+With regards to the stakeholder needs and use case scenarios, we consider the following quality attributes and their trade-off analysis.
 
  - **Modularity**: Since the platform will have distributed deployment, TravelGo needs to use modules. Modularity is also important for parallel development and incrementally building. 
 
@@ -456,10 +459,9 @@ Docker is a one of the most popular open-source containerisation platforms that 
 
 Other alternatives such as Linux Container Daemon (LXD) and Vagrant are also incompatible for TravelGo. This is because LXD uses entire system environments instead of containers, making the entire operation slower and unsuitable for a microservice architecture [[18]](#18), while Vagrant relies on virtual machines, which are resource intensive [[17]](#17). Therefore, Docker remains the best option for TravelGo, due to its ease of use and operation, which are perfect for TravelGo's design philosophy.   
 
-
 ## 14 Proof of Concept
 
-The development of the proof of concept demonstrates the technical feasibility of the platform’s microservices-based architecture and to validate its core design principles; scalability, modularity, and reliability. The PoC serves as a minimal yet functional version of the TravelGo system, simulating the interaction between key components such as the map service, post service, leaderboard service, and chat service, all coordinated through an API Gateway and an event-driven communication model [[12]](#12).
+Considering the defined architecture, cloud deployment and open source components, the development of the proof of concept demonstrates the technical feasibility of the platform architecture and validates its core design principles. Furthermore, the PoC serves as a minimal yet functional version of the TravelGo system, simulating the interaction between key components such as the map service, post service, leaderboard service, and chat service, all coordinated through an API Gateway and an event-driven communication model [[12]](#12).
 
 The implementation uses Python and Flask to represent each microservice, where every service runs independently on a separate port. This allows each module to be developed, deployed, and scaled independently; a direct demonstration of modularity and scalability. For instance, the post service handles user-generated travel experiences and attractions, while the leaderboard service listens for new posts via Kafka to dynamically update user scores.
 
@@ -503,7 +505,7 @@ These results demonstrate that TravelGo’s microservices architecture supports 
 
 ## 14 Revenue Model
 
-In order to ensure long-term success for a platform, a sustainable revenue model is essential. The presented system would blend reality exploration with competitive gaming, meaning it can attract tourism-focused partnerships, as well as game-industry monetisation.
+In order to ensure long-term success for the platform, a sustainable revenue model is essential. The presented system would blend reality exploration with competitive gaming, meaning it can attract tourism-focused partnerships, as well as game-industry monetisation.
 
 ### 14.1 Revenue Streams
 
@@ -534,7 +536,7 @@ The stages in which the proposed system will be implemented can be seen in the r
 <p style="text-align: center;">Figure 12: Roadmap</p>
 
 ## 16 Future scope
-Due to time constraints, the primary focus of this report was on setting up the system architecture to support the main features of TravelGo. The PoC was therefore limited in scope, since it does not include the features exclusive to our premium subscribers, such as the removal of advertisements. Although we designed the architecture with these extensions in mind, their implications will be addressed in future development. This should not come with significant challenges, as the architecture follows a modular approach.
+Due to time constraints, the primary focus of this report was on setting up the system architecture to support the main features of TravelGo. The PoC was therefore limited in scope, since it does not include the features exclusive to our premium subscribers, such as the removal of advertisements. Although we designed the architecture with these extensions in mind, their implications and implementation details will be addressed in future development stages. This should not come with significant challenges, as the architecture follows a modular approach.
 
 ## Bibliography
 <a id="1">[1]</a>
