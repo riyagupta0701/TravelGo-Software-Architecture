@@ -59,3 +59,19 @@ On Monday, we had an offline meeting where we finalised the report and POC imple
 I worked on the system decomposition and updating the C4 section in the report. I started on the Peer Review by reading the report the following days.
 
 We had an in-person meeting on Thursday, to discuss the report and to further expand upon the content for the open source section and finalising on the testing for the POC. For the rest of the week, I updated the open source section with the interactive map and its alternatives and went through the peer review report and POC.
+
+---
+## Week 8
+
+On Monday, we had an online meeting to divide the remaining minor work for our report after everyone had submitted the peer review. The next day, I went through the feedback we received on our Heron Release and we had an online session to discuss it and decide on any changes or additions we wanted to implement and working on them.
+
+On Wednesday, we had an online meeting with the TA where we discussed about our PoC experiments and feedback on our overall project. Then, on Thursday, we had an offline meeting where we add all the material for our report merged. We fixed the formatting and any final changes with respect to the content for the report, appendices and proof of concept. Furthermore, we recorded the demo for our PoC.
+
+Next, on Saturday and Sunday, we had meetings where we created the Swan release presentation and discussed our execution for the same. I also worked on the evaluation for the feedback we had received through the peer review. 
+
+---
+## Week 9
+
+On Monday, we met in person for dry runs for our presentation. We made minor changes, checked all our documents and files for submissions and practised for the presentation.
+
+We had a successful presentation on Tuesday and then we did some final checks over our project and repository before submitting all the necessary material on the respective platform sections.
