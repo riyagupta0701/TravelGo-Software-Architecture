@@ -39,3 +39,15 @@ On Monday, 8th September, we scheduled a meeting with the TA to discuss our syst
 - I observed that the response time decreased even though number of users increased as I implemented scaling and created replicas of chat service.
 - I added my experiment section in the report about what was the aim of the experiment and what results were observed after it. 
 - While reviewing the rubrics, I realized the open-source section lacked discussion on the components used in our architecture. I communicated this to the team and added NGINX and Locust to the section, justifying why they were the best fit for our system.
+
+## Week 8
+-On Monday, we had a team meeting in the afternoon where we created the class diagram together and discussed the things we still needed to do. 
+-The following day, we had an online meeting to discuss the Heron release feedback and see if we wanted to add something corresponsing to the feedback. We decided to add a user journey diagram.
+-On Wednesday, we had the final meeting with the TA. We got feedback on our experiments and do's and don'ts for the presentation.
+-On Thursday, we spent almost half a day at the uni finalising everything for our report and also recorded the experiments we wanted to show for our poc. We fixed all minor numbering and intendation issues for the report.
+- On Saturday, we met online to create the final presentation and divided the slides so that we can prepare well for the presentation.
+- On Sunday, we again had an online meeting to practice our presentation
+
+## Week 9
+- On Monday, we decided to meet in person and practice our prsentation. 
+- On Tuesday, we had our final presentation. It went okay, I feel we could have done a much better job. Soon after our presentation, we sat together and did the finbal touchups for our report and submitted the presentation and PoC on brightspace. 
