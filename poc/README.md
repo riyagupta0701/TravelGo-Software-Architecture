@@ -1,6 +1,7 @@
 # Team 11: TravelGo
-The proof of concept demonstrates the technical feasibility of the platform’s microservices-based architecture and to validate its core design principles; scalability, and modularity. The PoC serves as a minimal yet functional version of the TravelGo system, simulating the interaction between key components such as the post service, leaderboard service, and chat service, all coordinated through a load balancer, an API Gateway and an event-driven communication model.
+The goal of our proof of concept is to demonstrate the technical feasibility of the platform’s microservices-based architecture and to validate its core design principles; scalability, and modularity. The PoC serves as a minimal yet functional version of the TravelGo system, simulating the interaction between key components/ features such as the interactive map, the post service, leaderboard service, and chat service, all using a load balancer, an API Gateway and an event-driven communication model. Experiments were conducted to prove scalability and modularity using Locust and Docker respectively. 
 
+Further information about the key design choices, experiments and their results can be found in the report.
 
 ### Clone the repository
 ```
@@ -48,7 +49,7 @@ docker compose start leaderboard_service
 ```
 Similarly, these commands can be applied to any service.
 
-### Experiment Setup - Scalability (Locust)
+### Experiment Setup - Scalability
 
 Install locust using the following command:
 ```
